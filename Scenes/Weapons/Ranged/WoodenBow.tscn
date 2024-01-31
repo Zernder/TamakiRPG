@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://slg1t56rs2va"]
+
+[ext_resource type="Texture2D" uid="uid://bjecxux8cgcej" path="res://Assets/Items, Armor and equipment/weapons.png" id="1_4i77j"]
+
+[node name="WoodenBow" type="Node2D"]
+rotation = -0.752011
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4i77j")
+region_enabled = true
+region_rect = Rect2(16, 96, 16, 16)

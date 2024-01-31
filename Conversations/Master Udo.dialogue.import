@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://4uqgrw5ct3uv"
+path="res://.godot/imported/Master Udo.dialogue-15918ec7c43b52b14de994af9aecc52c.tres"
+
+[deps]
+
+source_file="res://Conversations/Master Udo.dialogue"
+dest_files=["res://.godot/imported/Master Udo.dialogue-15918ec7c43b52b14de994af9aecc52c.tres"]
+
+[params]
+
+defaults=true

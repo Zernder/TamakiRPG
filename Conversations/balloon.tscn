@@ -1,0 +1,290 @@
+[gd_scene load_steps=9 format=3 uid="uid://73jm5qjy52vq"]
+
+[ext_resource type="Script" path="res://Conversations/balloon.gd" id="1_4u26j"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_qq3yp"]
+default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 30
+MarginContainer/constants/margin_right = 30
+MarginContainer/constants/margin_top = 15
+Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+
+[sub_resource type="GDScript" id="GDScript_h4igu"]
+script/source = "@icon(\"./assets/responses_menu.svg\")
+
+## A VBoxContainer for dialogue responses provided by [b]Dialogue Manager[/b].
+class_name DialogueResponsesMenu extends VBoxContainer
+
+
+const DialogueResponse = preload(\"./dialogue_response.gd\")
+
+
+## Emitted when a response is selected.
+signal response_selected(response: DialogueResponse)
+
+
+## Optionally specify a control to duplicate for each response
+@export var response_template: Control
+
+# The list of dialogue responses.
+var _responses: Array = []
+
+
+func _ready() -> void:
+	visibility_changed.connect(func():
+		if visible and get_menu_items().size() > 0:
+			get_menu_items()[0].grab_focus()
+	)
+
+	if is_instance_valid(response_template):
+		response_template.hide()
+
+
+## Set the list of responses to show.
+func set_responses(next_responses: Array) -> void:
+	_responses = next_responses
+
+	# Remove any current items
+	for item in get_children():
+		if item == response_template: continue
+
+		remove_child(item)
+		item.queue_free()
+
+	# Add new items
+	if _responses.size() > 0:
+		for response in _responses:
+			var item: Control
+			if is_instance_valid(response_template):
+				item = response_template.duplicate(DUPLICATE_GROUPS | DUPLICATE_SCRIPTS | DUPLICATE_SIGNALS)
+				item.show()
+			else:
+				item = Button.new()
+			item.name = \"Response%d\" % get_child_count()
+			if not response.is_allowed:
+				item.name = String(item.name) + \"Disallowed\"
+				item.disabled = true
+
+			# If the item has a response property then use that
+			if \"response\" in item:
+				item.response = response
+			# Otherwise assume we can just set the text
+			else:
+				item.text = response.text
+
+			item.set_meta(\"response\", response)
+
+			add_child(item)
+
+		_configure_focus()
+
+
+# Prepare the menu for keyboard and mouse navigation.
+func _configure_focus() -> void:
+	var items = get_menu_items()
+	for i in items.size():
+		var item: Control = items[i]
+
+		item.focus_mode = Control.FOCUS_ALL
+
+		item.focus_neighbor_left = item.get_path()
+		item.focus_neighbor_right = item.get_path()
+
+		if i == 0:
+			item.focus_neighbor_top = item.get_path()
+			item.focus_previous = item.get_path()
+		else:
+			item.focus_neighbor_top = items[i - 1].get_path()
+			item.focus_previous = items[i - 1].get_path()
+
+		if i == items.size() - 1:
+			item.focus_neighbor_bottom = item.get_path()
+			item.focus_next = item.get_path()
+		else:
+			item.focus_neighbor_bottom = items[i + 1].get_path()
+			item.focus_next = items[i + 1].get_path()
+
+		item.mouse_entered.connect(_on_response_mouse_entered.bind(item))
+		item.gui_input.connect(_on_response_gui_input.bind(item, item.get_meta(\"response\")))
+
+	items[0].grab_focus()
+
+
+## Get the selectable items in the menu.
+func get_menu_items() -> Array:
+	var items: Array = []
+	for child in get_children():
+		if not child.visible: continue
+		if \"Disallowed\" in child.name: continue
+		items.append(child)
+
+	return items
+
+
+### Signals
+
+
+func _on_response_mouse_entered(item: Control) -> void:
+	if \"Disallowed\" in item.name: return
+
+	item.grab_focus()
+
+
+func _on_response_gui_input(event: InputEvent, item: Control, response: DialogueResponse) -> void:
+	if \"Disallowed\" in item.name: return
+
+	get_viewport().set_input_as_handled()
+
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
+		response_selected.emit(response)
+	elif event.is_action_pressed(\"ui_accept\") and item in get_menu_items():
+		response_selected.emit(response)
+"
+
+[node name="ExampleBalloon" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_4u26j")
+
+[node name="Balloon" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -170.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_qq3yp")
+
+[node name="Dialogue" type="MarginContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 9.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Dialogue"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Portrait" type="TextureRect" parent="Balloon/Dialogue/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Dialogue/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Dialogue/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.862745, 0, 1, 1)
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dialogue..."
+skip_action = &"ui_cancel"
+seconds_per_step = 0.02
+pause_at_characters = ".?!"
+skip_pause_at_character_if_followed_by = ")\""
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+seconds_per_pause_step = 0.3
+
+[node name="Responses" type="MarginContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.226
+anchor_top = 0.166
+anchor_right = 0.961
+anchor_bottom = 0.168
+offset_left = -3.31201
+offset_top = -404.224
+offset_right = -0.63208
+offset_bottom = -0.552
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+script = SubResource("GDScript_h4igu")
+response_template = Object(Button,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":3,"anchors_preset":0,"anchor_left":0.0,"anchor_top":0.0,"anchor_right":0.0,"anchor_bottom":0.0,"offset_left":0.0,"offset_top":0.0,"offset_right":0.0,"offset_bottom":0.0,"grow_horizontal":1,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":2,"mouse_filter":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","disabled":false,"toggle_mode":false,"button_pressed":false,"action_mode":1,"button_mask":1,"keep_pressed_outside":false,"button_group":null,"shortcut":null,"shortcut_feedback":true,"shortcut_in_tooltip":true,"text":"Response example","icon":null,"flat":false,"alignment":1,"text_overrun_behavior":0,"clip_text":false,"icon_alignment":0,"vertical_icon_alignment":1,"expand_icon":false,"text_direction":0,"language":"","script":null)
+
+
+[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
+layout_mode = 2
+text = "Response example"
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

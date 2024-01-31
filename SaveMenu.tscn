@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvky58hgd0x66"]
+
+[ext_resource type="Script" path="res://SaveMenu.gd" id="1_k3v8e"]
+
+[node name="Save menu" type="CanvasLayer"]
+script = ExtResource("1_k3v8e")
+
+[node name="Save Slot 1" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Save Slot 2" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Save Slot 3" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Save Slot 1" to="." method="SaveSlot1"]
+[connection signal="pressed" from="Save Slot 2" to="." method="SaveSlot2"]
+[connection signal="pressed" from="Save Slot 3" to="." method="SaveSlot3"]

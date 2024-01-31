@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://uq35a3lhcepf"]
+
+[ext_resource type="Script" path="res://Code/NPC/Enemies/BlueSlimeSpawner.gd" id="1_o4uur"]
+
+[node name="BlueSlimeSpawner" type="Node2D" node_paths=PackedStringArray("SpawnedSlimes")]
+script = ExtResource("1_o4uur")
+SpawnedSlimes = NodePath("SpawnedSlimes")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="SpawnedSlimes" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

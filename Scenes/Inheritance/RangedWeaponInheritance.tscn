@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://da5rdy020fpfs"]
+
+[ext_resource type="Script" path="res://Code/Weapons/RangedWeapons.gd" id="1_7nxj2"]
+
+[node name="RangedWeapon" type="Area2D" groups=["RangedAttack"]]
+y_sort_enabled = true
+collision_layer = 8
+collision_mask = 30
+script = ExtResource("1_7nxj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="EnteredEnemy"]
+[connection signal="body_entered" from="." to="." method="TilesetEntered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="LeftScreen"]

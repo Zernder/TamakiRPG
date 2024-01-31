@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://blhem835mrwsr"]
+
+[ext_resource type="Script" path="res://Code/GUI/ClassSelect.gd" id="1_rr0ys"]
+
+[node name="ClassSelection" type="CanvasLayer"]
+script = ExtResource("1_rr0ys")
+
+[node name="Warrior Class" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.049
+anchor_right = 0.424
+anchor_bottom = 0.17
+offset_left = -0.192001
+offset_top = 0.247999
+offset_right = 0.551971
+offset_bottom = -0.160004
+theme_override_font_sizes/font_size = 50
+text = "Warrior Class:"
+
+[node name="Warrior" type="Button" parent="Warrior Class"]
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 1.269
+anchor_right = 0.399
+anchor_bottom = 2.242
+offset_left = -0.0200024
+offset_top = 0.0179977
+offset_right = -95.535
+offset_bottom = -39.876
+scale = Vector2(2.24215, 2.10811)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Warrior"
+
+[node name="Ranger Class" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.473
+anchor_top = 0.048
+anchor_right = 0.877
+anchor_bottom = 0.168
+offset_left = 0.104004
+offset_top = -0.104
+offset_right = -0.304016
+offset_bottom = 0.135994
+theme_override_font_sizes/font_size = 50
+text = "Ranger Class:"
+
+[node name="Ranger" type="Button" parent="Ranger Class"]
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 1.218
+anchor_right = 0.467
+anchor_bottom = 2.191
+offset_left = -2.975
+offset_top = -0.00400543
+offset_right = -118.155
+offset_bottom = -39.898
+scale = Vector2(2.24215, 2.10811)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Ranger"
+
+[node name="Mage Class" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.438
+anchor_right = 0.429
+anchor_bottom = 0.559
+offset_left = 0.199999
+offset_top = 0.175995
+offset_right = -0.208008
+offset_bottom = -0.231995
+theme_override_font_sizes/font_size = 50
+text = "Mage Class:"
+
+[node name="Mage" type="Button" parent="Mage Class"]
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 1.41
+anchor_right = 0.473
+anchor_bottom = 2.383
+offset_left = 0.0250301
+offset_top = 0.0199966
+offset_right = -117.945
+offset_bottom = -39.874
+scale = Vector2(2.24215, 2.10811)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Mage"
+
+[node name="Start" type="Button" parent="."]
+offset_left = 321.0
+offset_top = 180.0
+offset_right = 925.0
+offset_bottom = 461.0
+theme_override_font_sizes/font_size = 200
+text = "START"
+
+[connection signal="pressed" from="Warrior Class/Warrior" to="." method="WarriorSelected"]
+[connection signal="pressed" from="Ranger Class/Ranger" to="." method="RangerSelected"]
+[connection signal="pressed" from="Mage Class/Mage" to="." method="MageSelected"]
+[connection signal="pressed" from="Start" to="." method="Start"]

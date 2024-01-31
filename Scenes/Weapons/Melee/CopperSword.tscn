@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://brm8tjg3d2m6h"]
+
+[ext_resource type="Texture2D" uid="uid://bjecxux8cgcej" path="res://Assets/Items, Armor and equipment/weapons.png" id="1_g353v"]
+[ext_resource type="Script" path="res://Code/Weapons/MeleeWeapons.gd" id="1_u5k31"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqgax"]
+radius = 2.82725
+height = 22.618
+
+[sub_resource type="Animation" id="Animation_bl0gk"]
+resource_name = "Swing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbekg"]
+_data = {
+"Swing": SubResource("Animation_bl0gk")
+}
+
+[node name="Copper Sword" type="Area2D"]
+collision_layer = 8
+collision_mask = 31
+script = ExtResource("1_u5k31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g353v")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.76837e-07)
+rotation = -0.814265
+shape = SubResource("CapsuleShape2D_wqgax")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lbekg")
+}
+
+[connection signal="area_entered" from="." to="." method="EnteredEnemy"]

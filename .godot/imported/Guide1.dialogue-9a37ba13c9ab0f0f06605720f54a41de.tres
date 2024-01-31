@@ -1,0 +1,597 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ia63s"]
+
+[resource]
+script = ExtResource("1_ia63s")
+using_states = PackedStringArray()
+titles = {
+"Boar": "42",
+"EndTutorial": "53",
+"Hazard": "29",
+"Jump": "18",
+"Start": "3"
+}
+character_names = PackedStringArray("Guide Gem", "Tamaki")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "Start",
+"type": "title"
+},
+"10": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Alright",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Alright",
+"type": "dialogue"
+},
+"11": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Go north fight the slimes in the forest, once you have defeated them and gained enough XP to level up, come back.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Go north fight the slimes in the forest, once you have defeated them and gained enough XP to level up, come back.",
+"type": "dialogue"
+},
+"12": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "14",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Fine, but Tamaki is not having fun!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Fine, but Tamaki is not having fun!",
+"type": "dialogue"
+},
+"14": {
+"id": "14",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"16": {
+"id": "16",
+"next_id": "18",
+"text": "Jump",
+"type": "title"
+},
+"18": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Salutations, tiny cat girl!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Salutations, tiny cat girl!",
+"type": "dialogue"
+},
+"19": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "19",
+"next_id": "20",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tamaki is NOT tiny!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tamaki is NOT tiny!",
+"type": "dialogue"
+},
+"20": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "20",
+"next_id": "21",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Of course not, my lofty feline friend! See those towering walls? Time to use those legs and jump! or as humans say, the space bar, to ascend!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Of course not, my lofty feline friend! See those towering walls? Time to use those legs and jump! or as humans say, the space bar, to ascend!",
+"type": "dialogue"
+},
+"21": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "21",
+"next_id": "22",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Obviously, Tamaki, the ninja queen, knows this! What is a jump key anyway?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Obviously, Tamaki, the ninja queen, knows this! What is a jump key anyway?",
+"type": "dialogue"
+},
+"22": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "22",
+"next_id": "23",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Don't fret, just leap up those walls like the purr-fessional ninja cat girl you are!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Don't fret, just leap up those walls like the purr-fessional ninja cat girl you are!",
+"type": "dialogue"
+},
+"23": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "23",
+"next_id": "25",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Heck yea!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Heck yea!",
+"type": "dialogue"
+},
+"25": {
+"id": "25",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"27": {
+"id": "27",
+"next_id": "29",
+"text": "Hazard",
+"type": "title"
+},
+"29": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "29",
+"next_id": "30",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Beware, that appears to be hazardous!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Beware, that appears to be hazardous!",
+"type": "dialogue"
+},
+"3": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Greetings, Tamaki, the feline wonder!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Greetings, Tamaki, the feline wonder!",
+"type": "dialogue"
+},
+"30": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "30",
+"next_id": "31",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Indeed, danger lurks. Tamaki must avoid it with grace.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Indeed, danger lurks. Tamaki must avoid it with grace.",
+"type": "dialogue"
+},
+"31": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "31",
+"next_id": "32",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "May I offer a whisker-twitching suggestion?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "May I offer a whisker-twitching suggestion?",
+"type": "dialogue"
+},
+"32": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "32",
+"next_id": "33",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Speak, Gem!.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Speak, Gem!.",
+"type": "dialogue"
+},
+"33": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "33",
+"next_id": "34",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "A leap could save the day! Just jump over it!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "A leap could save the day! Just jump over it!",
+"type": "dialogue"
+},
+"34": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "34",
+"next_id": "35",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "...",
+"type": "dialogue"
+},
+"35": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "35",
+"next_id": "36",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "What? It's fur-real advice!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "What? It's fur-real advice!",
+"type": "dialogue"
+},
+"36": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "36",
+"next_id": "38",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tamaki just... nvm.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tamaki just... nvm.",
+"type": "dialogue"
+},
+"38": {
+"id": "38",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"4": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Gem! what are you doing here! Better question, where is here?!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Gem! what are you doing here! Better question, where is here?!",
+"type": "dialogue"
+},
+"40": {
+"id": "40",
+"next_id": "42",
+"text": "Boar",
+"type": "title"
+},
+"42": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "42",
+"next_id": "43",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "That beast looks angry!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "That beast looks angry!",
+"type": "dialogue"
+},
+"43": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "43",
+"next_id": "44",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tamaki is not scared! a few shurikens will knock it out!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tamaki is not scared! a few shurikens will knock it out!",
+"type": "dialogue"
+},
+"44": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "44",
+"next_id": "45",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Thats very wise young Tamaki!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Thats very wise young Tamaki!",
+"type": "dialogue"
+},
+"45": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "45",
+"next_id": "46",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "(Tamaki Blushes) oh.. thank you Gem!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "(Tamaki Blushes) oh.. thank you Gem!",
+"type": "dialogue"
+},
+"46": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "46",
+"next_id": "47",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Take that thing out and we can move on!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Take that thing out and we can move on!",
+"type": "dialogue"
+},
+"47": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "47",
+"next_id": "49",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "on it!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "on it!",
+"type": "dialogue"
+},
+"49": {
+"id": "49",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"5": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Fear not, oh nimble ninja kitty! I am here to be your guiding light as always!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Fear not, oh nimble ninja kitty! I am here to be your guiding light as always!",
+"type": "dialogue"
+},
+"51": {
+"id": "51",
+"next_id": "53",
+"text": "EndTutorial",
+"type": "title"
+},
+"53": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "53",
+"next_id": "54",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Wow! you are amazing at this!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Wow! you are amazing at this!",
+"type": "dialogue"
+},
+"54": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "54",
+"next_id": "55",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Of course tamaki is!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Of course tamaki is!",
+"type": "dialogue"
+},
+"55": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "55",
+"next_id": "56",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "You may even be able to stop the dark overlord and save the world from destruction!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You may even be able to stop the dark overlord and save the world from destruction!",
+"type": "dialogue"
+},
+"56": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "56",
+"next_id": "57",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Wait, what?!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Wait, what?!",
+"type": "dialogue"
+},
+"57": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "57",
+"next_id": "58",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "oh.. nothing!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "oh.. nothing!",
+"type": "dialogue"
+},
+"58": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "58",
+"next_id": "59",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "What do you mean nothing!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "What do you mean nothing!",
+"type": "dialogue"
+},
+"59": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "59",
+"next_id": "60",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Anyways, Good luck on your adventure!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Anyways, Good luck on your adventure!",
+"type": "dialogue"
+},
+"6": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Sigh.. fine, Just stay out of Tamaki's way! The dark man needs to be stopped!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sigh.. fine, Just stay out of Tamaki's way! The dark man needs to be stopped!",
+"type": "dialogue"
+},
+"60": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "60",
+"next_id": "62",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Don't ignore Tamaki!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Don't ignore Tamaki!",
+"type": "dialogue"
+},
+"62": {
+"id": "62",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"7": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "yes, you have made it very far in a short amount of time, but you will need to be more prepared! a few shurikens and a basic sword won't save you!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "yes, you have made it very far in a short amount of time, but you will need to be more prepared! a few shurikens and a basic sword won't save you!",
+"type": "dialogue"
+},
+"8": {
+"character": "Tamaki",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tamaki means...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tamaki means...",
+"type": "dialogue"
+},
+"9": {
+"character": "Guide Gem",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "10",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Just listen!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Just listen!",
+"type": "dialogue"
+}
+}
+raw_text = "~ Start
+
+Guide Gem: Greetings, Tamaki, the feline wonder!
+Tamaki: Gem! what are you doing here! Better question, where is here?!
+Guide Gem: Fear not, oh nimble ninja kitty! I am here to be your guiding light as always!
+Tamaki: Sigh.. fine, Just stay out of Tamaki's way! The dark man needs to be stopped!
+Guide Gem: yes, you have made it very far in a short amount of time, but you will need to be more prepared! a few shurikens and a basic sword won't save you!
+Tamaki: Tamaki means...
+Guide Gem: Just listen!
+Tamaki: Alright
+Guide Gem: Go north fight the slimes in the forest, once you have defeated them and gained enough XP to level up, come back.
+Tamaki: Fine, but Tamaki is not having fun!
+
+=> END
+
+~ Jump
+
+Guide Gem: Salutations, tiny cat girl!
+Tamaki: Tamaki is NOT tiny!
+Guide Gem: Of course not, my lofty feline friend! See those towering walls? Time to use those legs and jump! or as humans say, the space bar, to ascend!
+Tamaki: Obviously, Tamaki, the ninja queen, knows this! What is a jump key anyway?
+Guide Gem: Don't fret, just leap up those walls like the purr-fessional ninja cat girl you are!
+Tamaki: Heck yea!
+
+=> END
+
+~ Hazard
+
+Guide Gem: Beware, that appears to be hazardous!
+Tamaki: Indeed, danger lurks. Tamaki must avoid it with grace.
+Guide Gem: May I offer a whisker-twitching suggestion?
+Tamaki: Speak, Gem!.
+Guide Gem: A leap could save the day! Just jump over it!
+Tamaki: ...
+Guide Gem: What? It's fur-real advice!
+Tamaki: Tamaki just... nvm.
+
+=> END
+
+~ Boar
+
+Guide Gem: That beast looks angry!
+Tamaki: Tamaki is not scared! a few shurikens will knock it out!
+Guide Gem: Thats very wise young Tamaki!
+Tamaki: (Tamaki Blushes) oh.. thank you Gem!
+Guide Gem: Take that thing out and we can move on!
+Tamaki: on it!
+
+=> END
+
+~ EndTutorial
+
+Guide Gem: Wow! you are amazing at this!
+Tamaki: Of course tamaki is!
+Guide Gem: You may even be able to stop the dark overlord and save the world from destruction!
+Tamaki: Wait, what?!
+Guide Gem: oh.. nothing!
+Tamaki: What do you mean nothing!
+Guide Gem: Anyways, Good luck on your adventure!
+Tamaki: Don't ignore Tamaki!
+
+=> END"
+metadata/dialogue_manager_version = "2.33.1"

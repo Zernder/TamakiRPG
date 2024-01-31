@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4l68nb4yk34s"]
+
+[ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn" id="1_rvhxp"]
+[ext_resource type="Script" path="res://TreeSpawner.gd" id="2_v56yq"]
+
+[node name="TreeSpawner" instance=ExtResource("1_rvhxp")]
+script = ExtResource("2_v56yq")
+MaxTrees = 100

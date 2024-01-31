@@ -1,0 +1,225 @@
+8d8ed3fefe296d4ac7ac1dbb387c9c35
+::res://::1707226590
+AllNPC.tscn::PackedScene::8416501702393917398::1707224747::0::1::::<><>::uid://bjy3dntpbsi5e::::res://Scenes/NPC's/Enemies/BlueSlime.tscn<>uid://b7d0hpqe25dok::::res://Scenes/Player.tscn
+Attributes.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+README.md::TextFile::-1::1707224747::0::1::::<><>::
+SaveMenu.gd::GDScript::-1::1707224747::0::1::::<>RefCounted<>::
+SaveMenu.tscn::PackedScene::6268963387330839441::1707224747::0::1::::<><>::res://SaveMenu.gd
+SmallTree.tscn::PackedScene::8475577599679197626::1707224747::0::1::::<><>::uid://cov6w082nnuk::::res://Assets/Tilesets/OverworldOne.png
+TestMap.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+TestMap.tscn::PackedScene::2933448767740054870::1707224747::0::1::::<><>::uid://uq35a3lhcepf::::res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn<>uid://dxbdvjaatqsqo::::res://Resources/Tilemap/TopDown Tilesets.tres<>uid://b4l68nb4yk34s::::res://Scenes/NPC's/Enemies/EnemySpawners/TreeSpawner.tscn<>uid://x3mofh5m3s4h::::res://Scenes/NPC's/Enemies/EnemySpawners/SkeletonSpawner.tscn
+TreeSpawner.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+::res://addons/::1707224747
+::res://addons/dialogue_manager/::1707224747
+constants.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+dialogue_label.gd::GDScript::-1::1707224747::0::1::::DialogueLabel<>RichTextLabel<>res://addons/dialogue_manager/assets/icon.svg::
+dialogue_label.tscn::PackedScene::5518490004210093266::1707224747::0::1::::<><>::res://addons/dialogue_manager/dialogue_label.gd
+dialogue_line.gd::GDScript::-1::1707224747::0::1::::DialogueLine<>RefCounted<>::
+dialogue_manager.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+dialogue_reponses_menu.gd::GDScript::-1::1707224747::0::1::::DialogueResponsesMenu<>VBoxContainer<>res://addons/dialogue_manager/assets/responses_menu.svg::
+dialogue_resource.gd::GDScript::-1::1707224747::0::1::::DialogueResource<>Resource<>res://addons/dialogue_manager/assets/icon.svg::
+dialogue_response.gd::GDScript::-1::1707224747::0::1::::DialogueResponse<>RefCounted<>::
+editor_translation_parser_plugin.gd::GDScript::-1::1707224747::0::1::::<>EditorTranslationParserPlugin<>::
+import_plugin.gd::GDScript::-1::1707224747::0::1::::<>EditorImportPlugin<>::
+plugin.cfg::TextFile::-1::1707224747::0::1::::<><>::
+plugin.gd::GDScript::-1::1707224747::0::1::::<>EditorPlugin<>::
+settings.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+test_scene.gd::GDScript::-1::1707224747::0::1::::BaseDialogueTestScene<>Node2D<>::
+test_scene.tscn::PackedScene::-1::1707224747::0::1::::<><>::res://addons/dialogue_manager/test_scene.gd
+::res://addons/dialogue_manager/assets/::1707224747
+icon.svg::CompressedTexture2D::9148339284877624195::1707224747::1707226591::1::::<><>::
+responses_menu.svg::CompressedTexture2D::8371359403825774630::1707224747::1707226591::1::::<><>::
+update.svg::CompressedTexture2D::9126631778427806641::1707224747::1707226591::1::::<><>::
+::res://addons/dialogue_manager/components/::1707224747
+code_edit.gd::GDScript::-1::1707224747::0::1::::<>CodeEdit<>::
+code_edit.tscn::PackedScene::5379618807048408118::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/code_edit_syntax_highlighter.gd<>res://addons/dialogue_manager/components/code_edit.gd
+code_edit_syntax_highlighter.gd::GDScript::-1::1707224747::0::1::::<>SyntaxHighlighter<>::
+dialogue_cache.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+download_update_panel.gd::GDScript::-1::1707224747::0::1::::<>Control<>::
+download_update_panel.tscn::PackedScene::1130642722554629364::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/download_update_panel.gd<>uid://d3baj6rygkb3f::::res://addons/dialogue_manager/assets/update.svg
+errors_panel.gd::GDScript::-1::1707224747::0::1::::<>HBoxContainer<>::
+errors_panel.tscn::PackedScene::6105315990352960875::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/errors_panel.gd
+files_list.gd::GDScript::-1::1707224747::0::1::::<>VBoxContainer<>::
+files_list.tscn::PackedScene::8113335055803740416::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/files_list.gd<>uid://d3lr2uas6ax8v::::res://addons/dialogue_manager/assets/icon.svg
+parser.gd::GDScript::-1::1707224747::0::1::::DialogueManagerParser<>Object<>::
+parse_result.gd::GDScript::-1::1707224747::0::1::::DialogueManagerParseResult<>RefCounted<>::
+resolved_line_data.gd::GDScript::-1::1707224747::0::1::::<>RefCounted<>::
+resolved_tag_data.gd::GDScript::-1::1707224747::0::1::::<>RefCounted<>::
+search_and_replace.gd::GDScript::-1::1707224747::0::1::::<>VBoxContainer<>::
+search_and_replace.tscn::PackedScene::458254375860855630::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/search_and_replace.gd
+title_list.gd::GDScript::-1::1707224747::0::1::::<>VBoxContainer<>::
+title_list.tscn::PackedScene::6134415340044566558::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/title_list.gd
+update_button.gd::GDScript::-1::1707224747::0::1::::<>Button<>::
+update_button.tscn::PackedScene::5825087957514786930::1707224747::0::1::::<><>::res://addons/dialogue_manager/components/update_button.gd<>uid://qdxrxv3c3hxk::::res://addons/dialogue_manager/components/download_update_panel.tscn
+::res://addons/dialogue_manager/example_balloon/::1707224747
+example_balloon.gd::GDScript::-1::1707224747::0::1::::<>CanvasLayer<>::
+example_balloon.tscn::PackedScene::2304415056852043862::1707224747::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
+small_example_balloon.tscn::PackedScene::1883859960814163368::1707224747::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
+::res://addons/dialogue_manager/l10n/::1707224747
+en.mo::Translation::-1::1707224747::0::1::::<><>::
+en.po::Translation::-1::1707224747::0::1::::<><>::
+zh.po::Translation::-1::1707224747::0::1::::<><>::
+zh_TW.po::Translation::-1::1707224747::0::1::::<><>::
+::res://addons/dialogue_manager/views/::1707224747
+main_view.gd::GDScript::-1::1707224747::0::1::::<>Control<>::
+main_view.tscn::PackedScene::4884668666408697448::1707224747::0::1::::<><>::res://addons/dialogue_manager/views/main_view.gd<>uid://civ6shmka5e8u::::res://addons/dialogue_manager/components/code_edit.tscn<>uid://dnufpcdrreva3::::res://addons/dialogue_manager/components/files_list.tscn<>uid://ctns6ouwwd68i::::res://addons/dialogue_manager/components/title_list.tscn<>uid://co8yl23idiwbi::::res://addons/dialogue_manager/components/update_button.tscn<>uid://gr8nakpbrhby::::res://addons/dialogue_manager/components/search_and_replace.tscn<>uid://cs8pwrxr5vxix::::res://addons/dialogue_manager/components/errors_panel.tscn<>res://addons/dialogue_manager/components/code_edit_syntax_highlighter.gd<>uid://cpg4lg1r3ff6m::::res://addons/dialogue_manager/views/settings_view.tscn
+settings_view.gd::GDScript::-1::1707224747::0::1::::<>TabContainer<>::
+settings_view.tscn::PackedScene::5839841081119266502::1707224747::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
+::res://Assets/::1707224747
+::res://Assets/Backgrounds/::1707224747
+Tama(1024x1024).png::CompressedTexture2D::5056671914896517367::1707224747::1707224747::1::::<><>::
+TamaIcon(192x192).png::CompressedTexture2D::4900230310639840446::1707224747::1707224747::1::::<><>::
+Tamaki(192x192).png::CompressedTexture2D::1899281762455679743::1707224747::1707224747::1::::<><>::
+::res://Assets/Buttons/::1707224747
+Cat_Exit_Button.png::CompressedTexture2D::7484810635690727262::1707224747::1707224747::1::::<><>::
+Cat_Menu_Button.png::CompressedTexture2D::1577029947616460418::1707224747::1707224747::1::::<><>::
+PurpleArrow.png::CompressedTexture2D::1033664842251889686::1707224747::1707224747::1::::<><>::
+Purple_Menu_Button.png::CompressedTexture2D::7328372521072252902::1707224747::1707224747::1::::<><>::
+Start_Button.png::CompressedTexture2D::5432686474515610033::1707224747::1707224747::1::::<><>::
+Tama_Button.png::CompressedTexture2D::5624406534864832786::1707224747::1707224747::1::::<><>::
+::res://Assets/Characters/::1707224747
+guide gem.png::CompressedTexture2D::6656591339891647520::1707224747::1707224747::1::::<><>::
+master udo.png::CompressedTexture2D::7720789761983487127::1707224747::1707224747::1::::<><>::
+tamaki.png::CompressedTexture2D::974555322671605158::1707224747::1707224747::1::::<><>::
+::res://Assets/Items, Armor and equipment/::1707224747
+clothes and armour.png::CompressedTexture2D::6718104482359508719::1707224747::1707224747::1::::<><>::
+full.png::CompressedTexture2D::5962739156433454890::1707224747::1707224747::1::::<><>::
+items.png::CompressedTexture2D::869635509687079051::1707224747::1707224747::1::::<><>::
+magical items.png::CompressedTexture2D::2480438362408611833::1707224747::1707224747::1::::<><>::
+resources.png::CompressedTexture2D::5493287441978757777::1707224747::1707224747::1::::<><>::
+weapons pixel.png::CompressedTexture2D::6532158264601574931::1707224747::1707224747::1::::<><>::
+weapons.png::CompressedTexture2D::3026541382196761545::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/::1707224747
+::res://Assets/Pixel 16 Village/Barn & Market [Update 1.2]/::1707224747
+barn.png::CompressedTexture2D::5289806723518017839::1707224747::1707224747::1::::<><>::
+market.png::CompressedTexture2D::290401021557933562::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Barrels/::1707224747
+barrels.png::CompressedTexture2D::1394512452330955478::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Boxes/::1707224747
+boxes.png::CompressedTexture2D::8478039967040432883::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Fences/::1707224747
+flower fence.png::CompressedTexture2D::6192366366683133334::1707224747::1707224747::1::::<><>::
+wooden fence.png::CompressedTexture2D::3408146558620668662::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Flower pots and plants/::1707224747
+flower pots.png::CompressedTexture2D::3942991136555320682::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Houses/::1707224747
+::res://Assets/Pixel 16 Village/Houses/l shape houses/::1707224747
+L shape houses.png::CompressedTexture2D::856454102427713859::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Houses/long houses/::1707224747
+long houses.png::CompressedTexture2D::4578405548166013783::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Houses/small houses/::1707224747
+small houses.png::CompressedTexture2D::5675036918042905736::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Houses/special houses/::1707224747
+special houses.png::CompressedTexture2D::5797174336158820769::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Lamps/::1707224747
+lamps.png::CompressedTexture2D::2004090689851037450::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Others/::1707224747
+other.png::CompressedTexture2D::3046544218374059380::1707224747::1707224747::1::::<><>::
+::res://Assets/Pixel 16 Village/Walls & Floor Tiles [Update 1.1]/::1707224747
+floor-tiles.png::CompressedTexture2D::5152044832569816840::1707224747::1707224747::1::::<><>::
+walls.png::CompressedTexture2D::3169245808387654483::1707224747::1707224747::1::::<><>::
+::res://Assets/Sprites/::1707224747
+Master Udo.png::CompressedTexture2D::6927225513923149144::1707224747::1707224747::1::::<><>::
+Tamaki.png::CompressedTexture2D::2855540469681945581::1707224747::1707224747::1::::<><>::
+::res://Assets/Sprites/Enemies/::1707224747
+GreenSlime.png::CompressedTexture2D::8675758757631324786::1707224747::1707224747::1::::<><>::
+skeleton.png::CompressedTexture2D::1380422128034233145::1707224747::1707224747::1::::<><>::
+slime.png::CompressedTexture2D::8575272020412591724::1707224747::1707224747::1::::<><>::
+::res://Assets/Tilesets/::1707224747
+apple-icon.png::CompressedTexture2D::6361328177295265197::1707224747::1707224747::1::::<><>::
+Decorations1.png::CompressedTexture2D::2619148157934406244::1707224747::1707224747::1::::<><>::
+fences.png::CompressedTexture2D::4906094175021302628::1707224747::1707224747::1::::<><>::
+inventory-background.png::CompressedTexture2D::7350545174451508471::1707224747::1707224747::1::::<><>::
+inventory-slot.png::CompressedTexture2D::3874457355401481717::1707224747::1707224747::1::::<><>::
+OverworldOne.png::CompressedTexture2D::170610587961839454::1707224747::1707224747::1::::<><>::
+terrain tiles.png::CompressedTexture2D::922204079238564637::1707224747::1707224747::1::::<><>::
+water1.png::CompressedTexture2D::61166618928682491::1707224747::1707224747::1::::<><>::
+waterfalls1.png::CompressedTexture2D::1897434362767168905::1707224747::1707224747::1::::<><>::
+::res://Assets/Tilesets/Houses/::1707224747
+::res://Assets/Tilesets/Houses/small houses/::1707224747
+small houses.png::CompressedTexture2D::5954271138559271861::1707224747::1707224747::1::::<><>::
+::res://Code/::1707224747
+PauseMenu.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+::res://Code/Dialogue/::1707224747
+actionable.gd::GDScript::-1::1707224747::0::1::::<>Area2D<>::
+::res://Code/GUI/::1707224747
+ClassSelect.gd::GDScript::-1::1707224747::0::1::::<>CanvasLayer<>::
+MainMenu.gd::GDScript::-1::1707224747::0::1::::<>CanvasLayer<>::
+Menus.gd::GDScript::-1::1707224747::0::1::::<>CanvasLayer<>::
+UI.gd::GDScript::-1::1707224747::0::1::::GUI<>CanvasLayer<>::
+Zones.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+::res://Code/NPC/::1707224747
+Master Udo.gd::GDScript::-1::1707224747::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1707224747::0::1::::Player<>CharacterBody2D<>::
+WorldMap.tscn::PackedScene::56351450944867332::1707224747::0::1::::<><>::uid://b7d0hpqe25dok::::res://Scenes/Player.tscn<>uid://rsgrstc10k42::::res://Scenes/Locations/SlimeFields.tscn<>uid://b1egs0n25bg2x::::res://Scenes/Locations/BeginnerForest.tscn<>uid://blhem835mrwsr::::res://Scenes/GUI/ClassSelect.tscn<>uid://dxbdvjaatqsqo::::res://Resources/Tilemap/TopDown Tilesets.tres
+::res://Code/NPC/Enemies/::1707224747
+BlueSlime.gd::GDScript::-1::1707224747::0::1::::<>CharacterBody2D<>::
+BlueSlimeSpawner.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+GreenSlime.gd::GDScript::-1::1707224747::0::1::::<>CharacterBody2D<>::
+GreenSlimeSpawner.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+Skeleton.gd::GDScript::-1::1707224747::0::1::::<>CharacterBody2D<>::
+SkeletonSpawner.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+Spawnermenu.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+::res://Code/Resources/::1707224747
+Characterstats.gd::GDScript::-1::1707224747::0::1::::CharacterStats<>Resource<>::
+Mage_stats.tres::Resource/CharacterStats::3223208841450458901::1707224747::0::1::::<><>::res://Code/Resources/Characterstats.gd
+Ranger_stats.tres::Resource/CharacterStats::1676680946074323554::1707224747::0::1::::<><>::res://Code/Resources/Characterstats.gd
+Tamaki_stats.tres::Resource/CharacterStats::2353579689471209589::1707224747::0::1::::<><>::res://Code/Resources/Characterstats.gd
+Warrior_stats.tres::Resource/CharacterStats::3331311891337999238::1707224747::0::1::::<><>::res://Code/Resources/Characterstats.gd
+::res://Code/Weapons/::1707224747
+MeleeWeapons.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+RangedWeapons.gd::GDScript::-1::1707224747::0::1::::<>Area2D<>::
+Shuriken.gd::GDScript::-1::1707224747::0::1::::<>Area2D<>::
+::res://Conversations/::1707224747
+actionable.tscn::PackedScene::2048386626271359479::1707224747::0::1::::<><>::res://Code/Dialogue/actionable.gd
+balloon.gd::GDScript::-1::1707224747::0::1::::<>CanvasLayer<>::
+balloon.tscn::PackedScene::2304415056852043862::1707224747::0::1::::<><>::res://Conversations/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn
+Guide1.dialogue::Resource::9081003374000893613::1707224747::1707226591::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+GuideTutorial.dialogue::Resource::8855964434800031713::1707224747::1707226591::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+Master Udo.dialogue::Resource::2077747135480992293::1707224747::1707226591::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+small_balloon.tscn::PackedScene::1883859960814163368::1707224747::0::1::::<><>::res://Conversations/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
+::res://Resources/::1707224747
+AllTheStats.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+::res://Resources/Enemies/::1707224747
+BlueSlime.tres::SpriteFrames::3265470556626641361::1707224747::0::1::::<><>::uid://duf6qh1k575vk::::res://Assets/Sprites/Enemies/slime.png
+GreenSlime.tres::SpriteFrames::6442798593500720160::1707224747::0::1::::<><>::uid://dvuuqj7ifhe4a::::res://Assets/Sprites/Enemies/GreenSlime.png
+::res://Resources/Tilemap/::1707224747
+TopDown Tilesets.tres::TileSet::8775889957894601894::1707224747::0::1::::<><>::uid://cov6w082nnuk::::res://Assets/Tilesets/OverworldOne.png<>uid://bdky8tswiyg7m::::res://Assets/Tilesets/Decorations1.png<>uid://neyti2ywycyf::::res://Assets/Tilesets/terrain tiles.png<>uid://cb5swils6qyl5::::res://Assets/Tilesets/fences.png<>uid://2bep4sukwv4l::::res://Assets/Tilesets/waterfalls1.png
+::res://Scenes/::1707224747
+Player.tscn::PackedScene::4640188051534941202::1707224747::0::1::::<><>::res://Code/NPC/Player.gd<>uid://bgxilmq0g55af::::res://Assets/Sprites/Tamaki.png<>uid://c1grc52gaavag::::res://Scenes/GUI/UI.tscn<>uid://biqkxkd7w60kc::::res://Scenes/GUI/PauseMenu.tscn<>uid://slg1t56rs2va::::res://Scenes/Weapons/Ranged/WoodenBow.tscn
+::res://Scenes/GUI/::1707224747
+ClassSelect.tscn::PackedScene::3173214683392671701::1707224747::0::1::::<><>::res://Code/GUI/ClassSelect.gd
+MainMenu.tscn::PackedScene::8327661333150665908::1707224747::0::1::::<><>::res://Code/GUI/MainMenu.gd<>uid://dxbdvjaatqsqo::::res://Resources/Tilemap/TopDown Tilesets.tres<>uid://b7d0hpqe25dok::::res://Scenes/Player.tscn<>uid://uq35a3lhcepf::::res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn
+PauseMenu.tscn::PackedScene::2981610251402289106::1707224747::0::1::::<><>::res://Code/PauseMenu.gd<>uid://dxbdvjaatqsqo::::res://Resources/Tilemap/TopDown Tilesets.tres
+UI.tscn::PackedScene::6611174946647102810::1707224747::0::1::::<><>::res://Code/GUI/UI.gd
+::res://Scenes/Inheritance/::1707224747
+RangedWeaponInheritance.tscn::PackedScene::7222232230400733776::1707224747::0::1::::<><>::res://Code/Weapons/RangedWeapons.gd
+::res://Scenes/Locations/::1707224747
+BeginnerForest.tscn::PackedScene::4219985909978173773::1707224747::0::1::::<><>::res://Code/NPC/Enemies/BlueSlimeSpawner.gd<>uid://dxbdvjaatqsqo::::res://Resources/Tilemap/TopDown Tilesets.tres<>uid://d38c45bu108mq::::res://Scenes/NPC's/Villagers/GemGuide.tscn<>uid://b4l68nb4yk34s::::res://Scenes/NPC's/Enemies/EnemySpawners/TreeSpawner.tscn<>uid://h73ym6wmqryg::::res://Scenes/NPC's/Enemies/EnemySpawners/GreenSlimeSpawner.tscn<>uid://4givmrb65iep::::res://Conversations/actionable.tscn<>uid://dyf5o8cimh2s0::::res://Conversations/GuideTutorial.dialogue<>uid://uq35a3lhcepf::::res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn
+SlimeFields.tscn::PackedScene::1230764776770805765::1707224747::0::1::::<><>::res://Code/GUI/Zones.gd<>uid://dxbdvjaatqsqo::::res://Resources/Tilemap/TopDown Tilesets.tres<>uid://b4l68nb4yk34s::::res://Scenes/NPC's/Enemies/EnemySpawners/TreeSpawner.tscn<>uid://h73ym6wmqryg::::res://Scenes/NPC's/Enemies/EnemySpawners/GreenSlimeSpawner.tscn<>uid://uq35a3lhcepf::::res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn
+::res://Scenes/NPC's/::1707224747
+::res://Scenes/NPC's/Enemies/::1707224747
+BlueSlime.tscn::PackedScene::3069371488550424032::1707224747::0::1::::<><>::res://Code/NPC/Enemies/BlueSlime.gd<>uid://bmr228mjawpf2::::res://Resources/Enemies/BlueSlime.tres
+GreenSlime.tscn::PackedScene::2841751288787277264::1707224747::0::1::::<><>::res://Code/NPC/Enemies/GreenSlime.gd<>uid://cx167l77gymj5::::res://Resources/Enemies/GreenSlime.tres
+Skeleton.tscn::PackedScene::1290471432423369494::1707224747::0::1::::<><>::uid://twxl6qr64xc8::::res://Assets/Sprites/Enemies/skeleton.png<>res://Code/NPC/Enemies/Skeleton.gd
+::res://Scenes/NPC's/Enemies/EnemySpawners/::1707224747
+BlueSlimeSpawner.tscn::PackedScene::1438560610203963379::1707224747::0::1::::<><>::res://Code/NPC/Enemies/BlueSlimeSpawner.gd
+GreenSlimeSpawner.tscn::PackedScene::559125607632721338::1707224747::0::1::::<><>::res://Code/NPC/Enemies/GreenSlimeSpawner.gd
+SkeletonSpawner.tscn::PackedScene::1672899860626887369::1707224747::0::1::::<><>::res://Code/NPC/Enemies/SkeletonSpawner.gd
+TreeSpawner.tscn::PackedScene::4446547148163801740::1707224747::0::1::::<><>::uid://uq35a3lhcepf::::res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn<>res://TreeSpawner.gd
+::res://Scenes/NPC's/Villagers/::1707224747
+GemGuide.tscn::PackedScene::9192848939026740564::1707224747::0::1::::<><>::uid://bblsps16ibe1n::::res://Assets/Items, Armor and equipment/magical items.png
+MasterUdo.tscn::PackedScene::5737966211940039385::1707224747::0::1::::<><>::res://Code/NPC/Master Udo.gd<>uid://c5xunlko1tvh5::::res://Assets/Sprites/Master Udo.png
+::res://Scenes/Weapons/::1707224747
+::res://Scenes/Weapons/Melee/::1707224747
+CopperSword.tscn::PackedScene::3606441632690110045::1707224747::0::1::::<><>::uid://bjecxux8cgcej::::res://Assets/Items, Armor and equipment/weapons.png<>res://Code/Weapons/MeleeWeapons.gd
+Katana.tscn::PackedScene::6296238051882500897::1707224747::0::1::::<><>::uid://c0chxsiq6dorr::::res://Assets/Items, Armor and equipment/weapons pixel.png<>res://Code/Weapons/MeleeWeapons.gd
+::res://Scenes/Weapons/Ranged/::1707224747
+Copperdagger.tscn::PackedScene::2448985861088067294::1707224747::0::1::::<><>::uid://da5rdy020fpfs::::res://Scenes/Inheritance/RangedWeaponInheritance.tscn<>uid://bjecxux8cgcej::::res://Assets/Items, Armor and equipment/weapons.png
+RegularArrow.tscn::PackedScene::9065380048752628197::1707224747::0::1::::<><>::uid://da5rdy020fpfs::::res://Scenes/Inheritance/RangedWeaponInheritance.tscn<>uid://bjecxux8cgcej::::res://Assets/Items, Armor and equipment/weapons.png
+Shuriken.tscn::PackedScene::809367021990591288::1707224747::0::1::::<><>::res://Code/Weapons/Shuriken.gd<>uid://c0chxsiq6dorr::::res://Assets/Items, Armor and equipment/weapons pixel.png
+WoodenBow.tscn::PackedScene::1286519119097106998::1707224747::0::1::::<><>::uid://bjecxux8cgcej::::res://Assets/Items, Armor and equipment/weapons.png
+::res://SingleTons/::1707224747
+Global.gd::GDScript::-1::1707224747::0::1::::<>Node2D<>::
+Quests.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
+SavedGame.gd::GDScript::-1::1707224747::0::1::::<>Node<>::
