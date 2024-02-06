@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqv8moqpktt7q"]
+[gd_scene load_steps=4 format=3 uid="uid://dqv8moqpktt7q"]
 
 [ext_resource type="Script" path="res://Code/GUI/MainMenu.gd" id="1_fu52j"]
 [ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Resources/Tilemap/TopDown Tilesets.tres" id="2_7nowc"]
-[ext_resource type="PackedScene" uid="uid://b7d0hpqe25dok" path="res://Scenes/Player.tscn" id="3_q66iu"]
 [ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn" id="4_rg2oj"]
 
 [node name="Main Menu" type="CanvasLayer"]
@@ -77,18 +76,6 @@ theme_override_font_sizes/font_size = 50
 disabled = true
 text = "Options"
 flat = true
-
-[node name="Player" parent="." instance=ExtResource("3_q66iu")]
-position = Vector2(563, 327)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
-limit_left = -5
-limit_top = 0
-limit_right = 1152
-limit_bottom = 648
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = -1

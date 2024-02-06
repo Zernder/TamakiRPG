@@ -23,4 +23,4 @@ func OptionsPressed():
 
 
 func ExitToMenuPressed():
-	get_tree().change_scene_to_file("res://Scenes/GUI/MainMenu.tscn")
+	get_tree().quit()

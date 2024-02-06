@@ -46,7 +46,6 @@ tilemap = NodePath("../../Scenery")
 z_index = 1
 position = Vector2(0, -7.62939e-06)
 tilemap = NodePath("../../Scenery")
-MaxTrees = 100
 
 [node name="GreenSlimeSpawner" parent="Spawners" node_paths=PackedStringArray("tilemap") instance=ExtResource("5_jd8j8")]
 tilemap = NodePath("../../Scenery")

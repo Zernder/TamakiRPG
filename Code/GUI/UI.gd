@@ -17,7 +17,7 @@ func _process(_delta):
 	Labelled()
 	LevelUp()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	pass
 
 

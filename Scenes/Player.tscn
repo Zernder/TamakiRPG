@@ -182,6 +182,7 @@ shape = SubResource("CapsuleShape2D_sd5jo")
 position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_ssl4q")
 animation = &"walkdown"
+frame_progress = 0.500373
 
 [node name="Weapons" type="Node2D" parent="."]
 
@@ -189,6 +190,7 @@ animation = &"walkdown"
 visible = false
 
 [node name="WeaponDestination" type="Marker2D" parent="Weapons"]
+visible = false
 
 [node name="Timers" type="Node2D" parent="."]
 
@@ -202,6 +204,7 @@ one_shot = true
 [node name="UI" parent="GUI" instance=ExtResource("5_0t5jj")]
 
 [node name="PauseMenu" parent="GUI" instance=ExtResource("7_g8627")]
+process_mode = 2
 visible = false
 
 [node name="Areas" type="Node2D" parent="."]
@@ -214,7 +217,6 @@ collision_mask = 6
 shape = SubResource("CapsuleShape2D_5obuq")
 
 [node name="TalkArea" type="Area2D" parent="Areas"]
-visible = false
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/TalkArea"]
