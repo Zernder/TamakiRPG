@@ -1,11 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqv8moqpktt7q"]
+[gd_scene load_steps=4 format=3 uid="uid://dgb7he6qj6uif"]
 
-[ext_resource type="Script" path="res://Code/GUI/MainMenu.gd" id="1_fu52j"]
-[ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Resources/Tilemap/TopDown Tilesets.tres" id="2_7nowc"]
-[ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn" id="4_rg2oj"]
+[ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Assets/Animations and Tilesets/TopDown Tilesets.tres" id="2_7nowc"]
+[ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://Scenes/Spawners/BlueSlimeSpawner.tscn" id="4_rg2oj"]
+
+[sub_resource type="GDScript" id="GDScript_ppo72"]
+script/source = "extends CanvasLayer
+
+var Location
+
+func Start():
+	Location = 1
+	call_deferred(\"Travel\")
+
+func ExitGame():
+	get_tree().quit()
+
+# World Locations
+func Travel():
+	if Location == 1:
+		get_tree().change_scene_to_file(\"res://Scenes/GUI/ClassSelect.tscn\")
+"
 
 [node name="Main Menu" type="CanvasLayer"]
-script = ExtResource("1_fu52j")
+script = SubResource("GDScript_ppo72")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-8, 0)

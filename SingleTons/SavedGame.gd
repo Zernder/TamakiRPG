@@ -1,6 +1,6 @@
 extends Node
 
-const TAMAKI = preload("res://Code/Resources/Tamaki_stats.tres")
+const TAMAKI = preload("res://Resources/Characters/Tamaki_stats.tres")
 
 func SaveGame():
 	var SavedGame: CharacterStats = CharacterStats.new()

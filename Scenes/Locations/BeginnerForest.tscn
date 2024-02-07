@@ -1,13 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1egs0n25bg2x"]
 
-[ext_resource type="Script" path="res://Code/NPC/Enemies/BlueSlimeSpawner.gd" id="1_be0s1"]
-[ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Resources/Tilemap/TopDown Tilesets.tres" id="2_6gw1m"]
+[ext_resource type="Script" path="res://Scenes/Spawners/BlueSlimeSpawner.gd" id="1_be0s1"]
+[ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Assets/Animations and Tilesets/TopDown Tilesets.tres" id="2_6gw1m"]
 [ext_resource type="PackedScene" uid="uid://d38c45bu108mq" path="res://Scenes/NPC's/Villagers/GemGuide.tscn" id="4_2x5ei"]
-[ext_resource type="PackedScene" uid="uid://b4l68nb4yk34s" path="res://Scenes/NPC's/Enemies/EnemySpawners/TreeSpawner.tscn" id="4_wsgc7"]
-[ext_resource type="PackedScene" uid="uid://h73ym6wmqryg" path="res://Scenes/NPC's/Enemies/EnemySpawners/GreenSlimeSpawner.tscn" id="5_jd8j8"]
-[ext_resource type="PackedScene" uid="uid://4givmrb65iep" path="res://Conversations/actionable.tscn" id="5_kaulp"]
+[ext_resource type="PackedScene" uid="uid://b4l68nb4yk34s" path="res://Scenes/Spawners/TreeSpawner.tscn" id="4_wsgc7"]
+[ext_resource type="PackedScene" uid="uid://h73ym6wmqryg" path="res://Scenes/Spawners/GreenSlimeSpawner.tscn" id="5_jd8j8"]
+[ext_resource type="PackedScene" uid="uid://4givmrb65iep" path="res://Conversations/ConversationStarter.tscn" id="5_kaulp"]
 [ext_resource type="Resource" uid="uid://dyf5o8cimh2s0" path="res://Conversations/GuideTutorial.dialogue" id="6_oxqy4"]
-[ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn" id="8_g7yro"]
+[ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://Scenes/Spawners/BlueSlimeSpawner.tscn" id="8_g7yro"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0rqfp"]
 radius = 12.3378

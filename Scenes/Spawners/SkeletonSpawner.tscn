@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://x3mofh5m3s4h"]
+
+[ext_resource type="Script" path="res://Scenes/Spawners/SkeletonSpawner.gd" id="1_pw4oe"]
+
+
+[node name="SkeletonSpawner" type="Node2D"]
+script = ExtResource("1_pw4oe")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="SpawnedSkeletons" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

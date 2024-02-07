@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjy3dntpbsi5e"]
 
-[ext_resource type="Script" path="res://Code/NPC/Enemies/BlueSlime.gd" id="1_yjdj2"]
-[ext_resource type="SpriteFrames" uid="uid://bmr228mjawpf2" path="res://Resources/Enemies/BlueSlime.tres" id="2_t66ib"]
+[ext_resource type="Script" path="res://Scenes/NPC's/Enemies/BlueSlime.gd" id="1_yjdj2"]
+[ext_resource type="SpriteFrames" uid="uid://bmr228mjawpf2" path="res://Assets/Animations and Tilesets/Resource Files/Enemies/BlueSlime.tres" id="2_t66ib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6vso"]
 radius = 7.0

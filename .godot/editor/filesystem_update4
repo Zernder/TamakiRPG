@@ -1,17 +1,6 @@
-res://Scenes/Locations/SlimeFields.tscn
-res://Resources/Enemies/BlueSlime.tres
-res://Resources/Enemies/GreenSlime.tres
-res://Resources/Tilemap/TopDown Tilesets.tres
-res://Code/NPC/WorldMap.tscn
-res://Scenes/NPC's/Enemies/EnemySpawners/BlueSlimeSpawner.tscn
-res://Scenes/NPC's/Enemies/EnemySpawners/GreenSlimeSpawner.tscn
-res://Scenes/Locations/BeginnerForest.tscn
-res://Scenes/NPC's/Enemies/EnemySpawners/TreeSpawner.tscn
-res://Scenes/Player.tscn
-res://Code/NPC/Player.gd
-res://Scenes/GUI/PauseMenu.tscn
-res://Scenes/GUI/MainMenu.tscn
-res://Code/PauseMenu.gd
-res://Code/GUI/ClassSelect.gd
-res://Scenes/GUI/ClassSelect.tscn
-res://Code/GUI/UI.gd
+res://Scenes/Weapons/Shuriken.tscn
+res://Assets/Animations and Tilesets/Resource Files/Enemies/BlueSlime.tres
+res://Assets/Animations and Tilesets/Resource Files/Enemies/GreenSlime.tres
+res://Assets/Animations and Tilesets/TopDown Tilesets.tres
+res://Primary/Player.tscn
+res://Primary/Player.gd

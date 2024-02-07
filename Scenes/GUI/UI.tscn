@@ -1,11 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1grc52gaavag"]
 
-[ext_resource type="Script" path="res://Code/GUI/UI.gd" id="1_r7n2c"]
+[ext_resource type="Script" path="res://Scenes/GUI/UI.gd" id="1_r7n2c"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_r7n2c")
 
-[node name="Healthbar" type="ProgressBar" parent="."]
+[node name="Bars" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="Bars"]
 modulate = Color(1, 0, 0, 1)
 top_level = true
 anchors_preset = -1
@@ -19,22 +22,45 @@ offset_right = 0.503998
 offset_bottom = -0.136002
 show_percentage = false
 
-[node name="XPBar" type="ProgressBar" parent="."]
+[node name="HealthbarLabel" type="Label" parent="Bars"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 100.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 30
+text = "Health"
+
+[node name="XPBar" type="ProgressBar" parent="Bars"]
 modulate = Color(1, 0, 1, 1)
 anchors_preset = -1
 anchor_left = 0.001
-anchor_top = 0.944
-anchor_right = 0.999
-anchor_bottom = 0.996
-offset_left = -0.152
-offset_top = 0.287964
-offset_right = -308.848
-offset_bottom = 21.592
+anchor_top = 0.941
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_left = 0.848
+offset_top = 0.231995
+offset_right = -309.0
+offset_bottom = 22.944
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.36682, 0.611851)
+show_percentage = false
 
-[node name="LevelLabel" type="Label" parent="."]
+[node name="XPLabel" type="Label" parent="Bars"]
+modulate = Color(1, 0, 1, 1)
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.935
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_left = 0.544
+offset_top = 0.119934
+offset_right = 0.303955
+theme_override_font_sizes/font_size = 30
+text = "hello"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="Bars"]
 modulate = Color(1, 0, 1, 1)
 anchors_preset = -1
 anchor_left = 0.003
@@ -43,14 +69,6 @@ anchor_right = 0.119
 anchor_bottom = 0.958
 offset_left = 182.544
 offset_top = -566.704
-offset_right = 181.912
-offset_bottom = -566.784
+offset_right = 183.544
+offset_bottom = -511.704
 theme_override_font_sizes/font_size = 40
-
-[node name="HealthbarLabel" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 100.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 30
-text = "Health"

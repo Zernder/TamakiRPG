@@ -1,6 +1,10 @@
-Camera2D
-SubViewportContainer
-Window
-SubViewport
-Button
+TextureRect
+PanelContainer
+HBoxContainer
+VBoxContainer
 CanvasLayer
+Control
+Panel
+GridContainer
+Node2D
+Sprite2D

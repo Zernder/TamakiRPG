@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://biqkxkd7w60kc"]
 
-[ext_resource type="Script" path="res://Code/PauseMenu.gd" id="1_5dlne"]
-[ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Resources/Tilemap/TopDown Tilesets.tres" id="1_kyfbx"]
+[ext_resource type="Script" path="res://Scenes/GUI/PauseMenu.gd" id="1_3wnxq"]
+[ext_resource type="TileSet" uid="uid://dxbdvjaatqsqo" path="res://Assets/Animations and Tilesets/TopDown Tilesets.tres" id="1_kyfbx"]
 
 [node name="PauseMenu" type="Node2D"]
 process_mode = 3
@@ -9,7 +9,7 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(-267, -173)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_5dlne")
+script = ExtResource("1_3wnxq")
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(1, 0, 1, 1)

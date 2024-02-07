@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bousqqvs8hdmw"]
+
+[ext_resource type="Script" path="res://Resources/ResourceCode/ItemData.gd" id="1_gp64d"]
+[ext_resource type="Texture2D" uid="uid://djayiwcv8qnkh" path="res://Assets/Weapons and Armor/Shuriken.png" id="2_8qqg4"]
+
+[resource]
+script = ExtResource("1_gp64d")
+type = 4
+name = "Shuriken"
+description = "Used by Ninja's everywhere!"
+texture = ExtResource("2_8qqg4")
