@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 
-const TAMAKI = preload("res://Resources/Characters/Tamaki_stats.tres")
+@onready var Tamaki = Global.TAMAKI
 
 # GUI Variables
 @onready var PMenu = $GUI/PauseMenu
@@ -14,30 +14,27 @@ var direction : Vector2 = Vector2.ZERO
 
 # Combat and Weapon Animations
 @onready var WeaponDestination = $Weapons/WeaponDestination
-@onready var player = $"."
 @onready var WeaponCooldownTimer = $Timers/WeaponCooldown
+@onready var player = $"."
+
 
 @onready var Experience: = 0
 
 # The Runtimes
 func _ready() -> void:
 	PMenu.hide()
-	print("Initial Health:", TAMAKI.Health)
-	print("Initial Speed:", TAMAKI.Speed)
-	print("Initial Level:", TAMAKI.Level)
-	print("Initial Damage:", TAMAKI.Damage)
-	print("Initial XP:", TAMAKI.currentxp)
-	print("Required XP:", TAMAKI.requiredxp)
+	print("Initial Health:", Tamaki.Health)
+	print("Initial Speed:", Tamaki.Speed)
+	print("Initial Level:", Tamaki.Level)
+	print("Initial Damage:", Tamaki.Damage)
+	print("Initial XP:", Tamaki.currentxp)
+	print("Required XP:", Tamaki.requiredxp)
 
 
 func _physics_process(_delta):
 	Movement()
 	Ranged()
 	PauseMenu()
-	Map()
-
-func _process(_delta):
-	pass
 
 func _unhandled_input(_InputEvent) -> void:
 	Interact()
@@ -51,19 +48,19 @@ func Movement():
 	
 	if Input.is_action_pressed("ui_left"):
 		Anim.play("walkleft")
-		velocity = direction * TAMAKI.Speed
+		velocity = direction * Tamaki.Speed
 	elif Input.is_action_pressed("ui_right"):
 		Anim.play("walkright")
-		velocity = direction * TAMAKI.Speed
+		velocity = direction * Tamaki.Speed
 	elif Input.is_action_pressed("ui_up"):
 		Anim.play("walkup")
-		velocity = direction * TAMAKI.Speed
+		velocity = direction * Tamaki.Speed
 	elif Input.is_action_pressed("ui_down"):
 		Anim.play("walkdown")
-		velocity = direction * TAMAKI.Speed
+		velocity = direction * Tamaki.Speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, TAMAKI.Speed)
-		velocity.y = move_toward(velocity.y, 0, TAMAKI.Speed)
+		velocity.x = move_toward(velocity.x, 0, Tamaki.Speed)
+		velocity.y = move_toward(velocity.y, 0, Tamaki.Speed)
 	move_and_slide()
 
 func Interact():
@@ -78,40 +75,39 @@ func Interact():
 
 func PlayerHit(area):
 	if area.is_in_group("SlimeEnemyHitbox"):
-		TAMAKI.Health -= 2
+		Tamaki.Health -= 2
 	if area.is_in_group("SkeletonEnemyHitbox"):
-		TAMAKI.Health -= 5
-	if TAMAKI.Health <= 0:
-		TAMAKI.Health = 20
+		Tamaki.Health -= 5
+	if Tamaki.Health <= 0:
+		Tamaki.Health = 20
 		get_tree().reload_current_scene()
 
 # Combat section, for XP and damage
 const SHURIKEN = preload("res://Scenes/Weapons/Shuriken.tscn")
 
+
 func Ranged():
 	var MousePosition = get_global_mouse_position()
-	var RangedWeaponInstance = 	SHURIKEN.instantiate()
+	var RangedWeaponInstance = SHURIKEN.instantiate()
 	WeaponDestination.look_at(MousePosition)
 	
-	if Input.is_action_just_pressed("Ranged"):
+	if Input.is_action_just_pressed("Ranged") and WeaponCooldownTimer.is_stopped():
+		WeaponCooldownTimer.start()
 		var direction = (MousePosition - WeaponDestination.global_position).normalized()
 		RangedWeaponInstance.rotation = WeaponDestination.rotation
 		RangedWeaponInstance.set_direction(direction)
 		RangedWeaponInstance.global_position = WeaponDestination.global_position
 		add_child(RangedWeaponInstance)
-		WeaponCooldownTimer.start()
 
 
 func WeaponCooldown():
-	Global.Cooldown = 0
-
+	return
 
 func PauseMenu():
 	if Input.is_action_just_pressed('PauseMenu'):
 		PMenu.show()
 		get_tree().paused = true
 
-func Map():
-	if Input.is_action_just_pressed("Map"):
-		$Camera2D.enabled = true
-		
+
+
+

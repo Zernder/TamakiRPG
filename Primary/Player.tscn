@@ -170,7 +170,11 @@ slide_on_ceiling = false
 script = ExtResource("1_ia1jv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 2783
+limit_bottom = 1038
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 light_mask = 3
@@ -191,6 +195,7 @@ visible = false
 [node name="Timers" type="Node2D" parent="."]
 
 [node name="WeaponCooldown" type="Timer" parent="Timers"]
+wait_time = 0.5
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="Timers"]

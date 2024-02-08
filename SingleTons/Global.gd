@@ -7,3 +7,7 @@ var Cooldown = 0
 @onready var BlueSlime = preload("res://Scenes/NPC's/Enemies/BlueSlime.tscn")
 @onready var GreenSlime = preload("res://Scenes/NPC's/Enemies/GreenSlime.tscn")
 @onready var Skeleton = preload("res://Scenes/NPC's/Enemies/Skeleton.tscn")
+
+
+const TAMAKI = preload("res://Resources/NPC/Tamaki.tres")
+const BLUESLIME = preload("res://Resources/NPC/Blueslime.tres")

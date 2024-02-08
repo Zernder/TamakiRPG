@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name GUI
 
-const TAMAKI = preload("res://Resources/Characters/Tamaki_stats.tres")
+@onready var Tamaki = Global.TAMAKI
 
 @onready var healthbarlabel = $Bars/HealthbarLabel
 @onready var HBar = $Bars/Healthbar
@@ -12,21 +12,21 @@ const TAMAKI = preload("res://Resources/Characters/Tamaki_stats.tres")
 
 func _ready():
 	Invready()
-	TAMAKI.currentxp = 0
+	Tamaki.currentxp = 0
 
 
 func _process(_delta):
 	Bars()
-	#InventoryProcess()
+	InventoryProcess()
 
 func Bars():
-	LevelLabel.text = "Level " + str(TAMAKI.Level)
-	HBar.value = TAMAKI.Health
-	healthbarlabel.text = "Health: " + str(TAMAKI.Health)
-	HBar.max_value = TAMAKI.MaxHealth
-	xpbar.value = TAMAKI.currentxp
-	xpbar.max_value = TAMAKI.requiredxp
-	xpLabel.text = "XP: " + str(TAMAKI.currentxp) + "                 Needed: " + str(TAMAKI.requiredxp)
+	LevelLabel.text = "Level " + str(Tamaki.Level)
+	HBar.value = Tamaki.Health
+	healthbarlabel.text = "Health: " + str(Tamaki.Health)
+	HBar.max_value = Tamaki.MaxHealth
+	xpbar.value = Tamaki.currentxp
+	xpbar.max_value = Tamaki.requiredxp
+	xpLabel.text = "XP: " + str(Tamaki.currentxp) + "                 Needed: " + str(Tamaki.requiredxp)
 
 var InvSize = 16
 var itemsload = [
@@ -44,7 +44,7 @@ func Invready():
 		item.init(load(itemsload[i]))
 		%Inv.get_child(i).add_child(item)
 
-#func InventoryProcess():
-	#if Input.is_action_just_pressed("Inventory"):
-		#$Inventory.visible = !$Inventory.visible
+func InventoryProcess():
+	if Input.is_action_just_pressed("Inventory"):
+		$Inventory.visible = !$Inventory.visible
 

@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" path="res://Scenes/Spawners/BlueSlimeSpawner.gd" id="1_o4uur"]
 
-
 [node name="BlueSlimeSpawner" type="Node2D" node_paths=PackedStringArray("SpawnedSlimes")]
 script = ExtResource("1_o4uur")
 SpawnedSlimes = NodePath("SpawnedSlimes")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 autostart = true
 
 [node name="SpawnedSlimes" type="Node2D" parent="."]

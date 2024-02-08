@@ -136,7 +136,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qnjpq")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -159,7 +159,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m3ihu")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -176,7 +176,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hmf2j")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -240,29 +240,31 @@ collision_layer = 2
 collision_mask = 95
 script = ExtResource("1_b8juo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_2r4e3")
-animation = &"idle"
-frame_progress = 0.925305
+animation = &"attack"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jvk8l")
 
-[node name="Hitbox" type="Area2D" parent="." groups=["SkeletonEnemyHitbox"]]
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="Areas" groups=["SkeletonEnemyHitbox"]]
 collision_layer = 2
 collision_mask = 31
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Hitbox"]
 shape = SubResource("RectangleShape2D_lr1u0")
 
-[node name="StateReset" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
+[node name="DetectionRadius" type="Area2D" parent="Areas"]
 
-[node name="DeathTimer" type="Timer" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DetectionRadius"]
+shape = SubResource("CircleShape2D_4wavj")
 
-[node name="Healthbar" type="ProgressBar" parent="."]
+[node name="Gui" type="Node2D" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="Gui"]
 modulate = Color(1, 0, 0, 1)
 offset_left = -14.0
 offset_top = -25.0
@@ -272,21 +274,29 @@ max_value = 20.0
 value = 20.0
 show_percentage = false
 
-[node name="Label2" type="Label" parent="."]
-offset_left = -8.0
-offset_top = -18.0
-offset_right = 73.0
-offset_bottom = 5.0
+[node name="Label" type="Label" parent="Gui/Healthbar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 87.0
+offset_bottom = 30.0
 scale = Vector2(0.245104, 0.304342)
 text = "Skeleton"
 
-[node name="DetectionRadius" type="Area2D" parent="."]
+[node name="Timers" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius"]
-shape = SubResource("CircleShape2D_4wavj")
+[node name="StateMachineTimeout" type="Timer" parent="Timers"]
+wait_time = 0.5
+autostart = true
 
-[connection signal="area_entered" from="Hitbox" to="." method="HitboxEntered"]
-[connection signal="timeout" from="StateReset" to="." method="StateReset"]
-[connection signal="timeout" from="DeathTimer" to="." method="DeathTimer"]
-[connection signal="body_entered" from="DetectionRadius" to="." method="DetectionRadius"]
-[connection signal="body_exited" from="DetectionRadius" to="." method="DetectionRadiusExited"]
+[node name="DeathTimer" type="Timer" parent="Timers"]
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="area_entered" from="Areas/Hitbox" to="." method="HitboxEntered"]
+[connection signal="body_entered" from="Areas/DetectionRadius" to="." method="DetectionRadius"]
+[connection signal="body_exited" from="Areas/DetectionRadius" to="." method="DetectionRadiusExited"]
+[connection signal="timeout" from="Timers/StateMachineTimeout" to="." method="StateReset"]
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="DeathTimerTimeout"]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://cx167l77gymj5"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://cx167l77gymj5"]
 
 [ext_resource type="Texture2D" uid="uid://dvuuqj7ifhe4a" path="res://Assets/Sprites/Enemies/GreenSlime.png" id="1_ljkiu"]
 
@@ -21,6 +21,14 @@ region = Rect2(384, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4sab"]
 atlas = ExtResource("1_ljkiu")
 region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8512f"]
+atlas = ExtResource("1_ljkiu")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfu4k"]
+atlas = ExtResource("1_ljkiu")
+region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5p2a"]
 atlas = ExtResource("1_ljkiu")
@@ -78,6 +86,26 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8512f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfu4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8512f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfu4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8512f")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 5.0
 }, {
 "frames": [{

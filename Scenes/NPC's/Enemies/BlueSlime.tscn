@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjy3dntpbsi5e"]
+[gd_scene load_steps=6 format=3 uid="uid://bjy3dntpbsi5e"]
 
 [ext_resource type="Script" path="res://Scenes/NPC's/Enemies/BlueSlime.gd" id="1_yjdj2"]
 [ext_resource type="SpriteFrames" uid="uid://bmr228mjawpf2" path="res://Assets/Animations and Tilesets/Resource Files/Enemies/BlueSlime.tres" id="2_t66ib"]
@@ -9,38 +9,43 @@ radius = 7.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_b38ki"]
 radius = 9.0
 
-[node name="Slime" type="CharacterBody2D" groups=["Slime"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjj8n"]
+radius = 62.2013
+
+[node name="BlueSlime" type="CharacterBody2D" groups=["Slime"]]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 95
 script = ExtResource("1_yjdj2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = ExtResource("2_t66ib")
-animation = &"idle"
+animation = &"death"
 
 [node name="Collisionbubble" type="CollisionShape2D" parent="."]
+visible = false
 light_mask = 3
 visibility_layer = 3
 shape = SubResource("CircleShape2D_a6vso")
 
-[node name="HitBox" type="Area2D" parent="." groups=["SlimeEnemyHitbox"]]
-collision_layer = 2
-collision_mask = 29
+[node name="Timers" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["Enemy"]]
-shape = SubResource("CircleShape2D_b38ki")
-
-[node name="DecisionTimer" type="Timer" parent="."]
+[node name="StateMachineTimeout" type="Timer" parent="Timers"]
 autostart = true
 
-[node name="DeathTimer" type="Timer" parent="."]
-wait_time = 0.4
+[node name="DeathTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
 one_shot = true
 
-[node name="Healthbar" type="ProgressBar" parent="."]
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Gui" type="Node2D" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="Gui"]
 modulate = Color(1, 0, 0, 1)
 offset_left = -10.0
 offset_top = -21.0
@@ -50,14 +55,35 @@ max_value = 6.0
 value = 6.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="."]
-offset_left = -9.0
-offset_top = -16.0
-offset_right = 72.0
-offset_bottom = 7.0
+[node name="Label" type="Label" parent="Gui/Healthbar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 82.0
+offset_bottom = 28.0
 scale = Vector2(0.245104, 0.304342)
 text = "Blue Slime"
 
-[connection signal="area_entered" from="HitBox" to="." method="HitboxEntered"]
-[connection signal="timeout" from="DecisionTimer" to="." method="StateReset"]
-[connection signal="timeout" from="DeathTimer" to="." method="DeathTimer"]
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="Areas" groups=["SlimeEnemyHitbox"]]
+visible = false
+collision_layer = 2
+collision_mask = 29
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Hitbox" groups=["Enemy"]]
+shape = SubResource("CircleShape2D_b38ki")
+
+[node name="DetectionRadius" type="Area2D" parent="Areas"]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DetectionRadius"]
+shape = SubResource("CircleShape2D_vjj8n")
+
+[connection signal="timeout" from="Timers/StateMachineTimeout" to="." method="StateReset"]
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="DeathTimerTimeout"]
+[connection signal="area_entered" from="Areas/Hitbox" to="." method="HitboxEntered"]
+[connection signal="body_entered" from="Areas/DetectionRadius" to="." method="DetectionRadius"]
+[connection signal="body_exited" from="Areas/DetectionRadius" to="." method="DetectionRadiusExited"]

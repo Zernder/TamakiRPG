@@ -1,47 +1,75 @@
 extends CharacterBody2D
 
-const TAMAKI_STATS = preload("res://Resources/Characters/Tamaki_stats.tres")
+const TAMAKI = preload("res://Resources/NPC/Tamaki.tres")
+# Green Slime Code
 
+# Health, Speed, and animations
+@onready var animation = $Animations
+@export var Health = 10
+@export var Speed = 20
+@export var Damage = 10
 
-# Skeleton Code
+# Combat Variables
 
-@export var Health = 6
-@export var Speed = 50
-@onready var Anim = $AnimatedSprite2D
+var player = null
+var playerchase: bool
+var TakeDamage: bool
+var Dying: bool
+
+# GUI
+
+@onready var HealthBar = $Gui/Healthbar
+@onready var label = $Gui/Healthbar/Label
+
+# Areas
+
+@onready var HitBox = $Areas/Hitbox
+@onready var DetectionBox = $Areas/DetectionRadius
+
+# Timers
+
+@onready var StateMachineTimeout = $Timers/StateMachineTimeout
+@onready var DeathTimer = $Timers/DeathTimer
+@onready var HitTimer = $Timers/HitTimer
+
+# State Machine
 var CurrentState = IDLE
 var dir = Vector2.RIGHT
 
+
 func _ready():
-	Anim.play("idle")
+	animation.play("idle")
 	randomize()
-	$Healthbar.max_value = Health
-	
-	
-	
+	HealthBar.max_value = Health
+
 func _process(delta):
 	statemachine(delta)
-	HealthBar()
+	Bars()
 
 func _physics_process(_delta):
 	GiveChase()
 
+# state Machine Code
 
 enum {
 		IDLE,
 		CHASE,
-		MOVE
+		MOVE,
+		HIT
 	}
 
 func statemachine(delta):
 	if Health > 0:
 		match CurrentState:
 			IDLE:
-				Anim.play("idle")
+				animation.play("idle")
 				dir = choose([Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN])
 			MOVE:
 				move(delta)
 			CHASE:
 				GiveChase()
+			HIT:
+				animation.play("hit")
 
 func choose(array):
 	array.shuffle()
@@ -53,53 +81,44 @@ func StateReset():
 		CurrentState = CHASE
 	else:
 		CurrentState = IDLE
-		$StateReset.start(3)
+		StateMachineTimeout.start(3)
 		CurrentState = MOVE
+
+
+# ---------------------------------------------------------------------------------
+
+# Movement and Animations
+
 
 func move(delta):
 	position += dir * Speed * delta
 	
 	if dir.x > 0:
-		Anim.play("walk")
-		Anim.flip_h = true
+		animation.play("walk")
+		animation.flip_h = true
 	elif dir.x < 0:
-		Anim.play("walk")
-		Anim.flip_h = false
+		animation.play("walk")
+		animation.flip_h = false
 	elif dir.y > 0:
-		Anim.play("walk")
+		animation.play("walk")
 	elif dir.y < 0:
-		Anim.play("walk")
+		animation.play("walk")
 	else:
-		Anim.play("idle")
+		animation.play("idle")
 	move_and_slide()
 
+# ---------------------------------------------------------------------------------
 
-func HealthBar():
-	$Healthbar.value = Health
+# GUI Components
 
-var Dying: bool = false
+func Bars():
+	HealthBar.value = Health
 
-func HitboxEntered(area):
-	if area.is_in_group("RangedAttack") and Dying == false:
-		Health -= TAMAKI_STATS.Damage
-	if Health <= 0 and Dying == false:
-		Dying = true
-		TAMAKI_STATS.currentxp += 10
-		Anim.play("death")
-		$DeathTimer.start()
-
-
-func DeathTimer():
-	Dying = false
-	queue_free()
-
-
-var playerchase = false
-var player = null
+# Combat and Death Commands
 
 func GiveChase():
 	if playerchase:
-		position += (player.global_position - global_position) / Speed
+		position += (player.position - position) / (Speed + 50)
 
 func DetectionRadius(body):
 	player = body
@@ -109,3 +128,22 @@ func DetectionRadius(body):
 func DetectionRadiusExited(_body):
 	player = null
 	playerchase = false
+
+
+func HitboxEntered(area):
+	if area.is_in_group("RangedAttack") and Dying == false:
+		Health -= TAMAKI.Damage
+		TakeDamage = true
+		CurrentState = HIT
+		HitTimer.start(1)
+		TakeDamage = false
+	if Health <= 0 and Dying == false:
+		Dying = true
+		TAMAKI.currentxp += 50
+		animation.play("death")
+		DeathTimer.start(.5)
+
+
+func DeathTimerTimeout():
+	Dying = false
+	queue_free()

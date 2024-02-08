@@ -1,25 +1,25 @@
 extends Node
 
-const TAMAKI = preload("res://Resources/Characters/Tamaki_stats.tres")
+@onready var Tamaki = Global.TAMAKI
 
 func SaveGame():
 	var SavedGame: CharacterStats = CharacterStats.new()
 	
-	SavedGame.Health = TAMAKI.Health
-	SavedGame.MaxHealth = TAMAKI.MaxHealth
-	SavedGame.Stamina = TAMAKI.Stamina
-	SavedGame.MaxStamina = TAMAKI.MaxStamina
-	SavedGame.Mana = TAMAKI.Mana
-	SavedGame.MaxMana = TAMAKI.MaxMana
-	SavedGame.Level = TAMAKI.Level
-	SavedGame.Strength = TAMAKI.Strength
-	SavedGame.Dexterity = TAMAKI.Dexterity
-	SavedGame.Intelligence = TAMAKI.Intelligence
-	SavedGame.Speed = TAMAKI.Speed
-	SavedGame.Damage = TAMAKI.Damage
-	SavedGame.currentxp = TAMAKI.currentxp
-	SavedGame.requiredxp = TAMAKI.requiredxp
-	SavedGame.overallexp = TAMAKI.overallexp
+	SavedGame.Health = Tamaki.Health
+	SavedGame.MaxHealth = Tamaki.MaxHealth
+	SavedGame.Stamina = Tamaki.Stamina
+	SavedGame.MaxStamina = Tamaki.MaxStamina
+	SavedGame.Mana = Tamaki.Mana
+	SavedGame.MaxMana = Tamaki.MaxMana
+	SavedGame.Level = Tamaki.Level
+	SavedGame.Strength = Tamaki.Strength
+	SavedGame.Dexterity = Tamaki.Dexterity
+	SavedGame.Intelligence = Tamaki.Intelligence
+	SavedGame.Speed = Tamaki.Speed
+	SavedGame.Damage = Tamaki.Damage
+	SavedGame.currentxp = Tamaki.currentxp
+	SavedGame.requiredxp = Tamaki.requiredxp
+	SavedGame.overallexp = Tamaki.overallexp
 
 	# Save the game to a file
 	ResourceSaver.save(SavedGame, "user://SaveGame.tres")
@@ -27,19 +27,19 @@ func SaveGame():
 func LoadGame():
 	var SavedGame: CharacterStats = load("user://SaveGame.tres") as CharacterStats
 	
-	# Assign the loaded values to TAMAKI
-	TAMAKI.Health = SavedGame.Health
-	TAMAKI.MaxHealth = SavedGame.MaxHealth
-	TAMAKI.Stamina = SavedGame.Stamina
-	TAMAKI.MaxStamina = SavedGame.MaxStamina
-	TAMAKI.Mana = SavedGame.Mana
-	TAMAKI.MaxMana = SavedGame.MaxMana
-	TAMAKI.Level = SavedGame.Level
-	TAMAKI.Strength = SavedGame.Strength
-	TAMAKI.Dexterity = SavedGame.Dexterity
-	TAMAKI.Intelligence = SavedGame.Intelligence
-	TAMAKI.Speed = SavedGame.Speed
-	TAMAKI.Damage = SavedGame.Damage
-	TAMAKI.currentxp = SavedGame.currentxp
-	TAMAKI.requiredxp = SavedGame.requiredxp
-	TAMAKI.overallexp = SavedGame.overallexp
+	# Assign the loaded values to Tamaki
+	Tamaki.Health = SavedGame.Health
+	Tamaki.MaxHealth = SavedGame.MaxHealth
+	Tamaki.Stamina = SavedGame.Stamina
+	Tamaki.MaxStamina = SavedGame.MaxStamina
+	Tamaki.Mana = SavedGame.Mana
+	Tamaki.MaxMana = SavedGame.MaxMana
+	Tamaki.Level = SavedGame.Level
+	Tamaki.Strength = SavedGame.Strength
+	Tamaki.Dexterity = SavedGame.Dexterity
+	Tamaki.Intelligence = SavedGame.Intelligence
+	Tamaki.Speed = SavedGame.Speed
+	Tamaki.Damage = SavedGame.Damage
+	Tamaki.currentxp = SavedGame.currentxp
+	Tamaki.requiredxp = SavedGame.requiredxp
+	Tamaki.overallexp = SavedGame.overallexp

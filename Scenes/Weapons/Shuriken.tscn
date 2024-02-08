@@ -7,6 +7,7 @@
 size = Vector2(14.6793, 14.4315)
 
 [node name="Shuriken" type="Area2D" groups=["RangedAttack"]]
+z_index = 1
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
@@ -28,6 +29,7 @@ rotation = -0.00440366
 scale = Vector2(0.728877, 0.72767)
 
 [node name="ShurikenKiller" type="Timer" parent="."]
+wait_time = 1.5
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="EnteredEnemy"]

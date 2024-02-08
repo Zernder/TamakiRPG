@@ -1,42 +1,42 @@
 extends Node2D
 
 #Experience GD
-const TAMAKI = preload("res://Resources/Characters/Tamaki_stats.tres")
+@onready var Tamaki = Global.TAMAKI
 
 
 
-func _process(delta):
+func _process(_delta):
 	LevelUp()
 
 func LevelUp():
-	if TAMAKI.currentxp >= TAMAKI.requiredxp:
+	if Tamaki.currentxp >= Tamaki.requiredxp:
 		print("Leveling Up!")
-		TAMAKI.overallexp += TAMAKI.currentxp
-		TAMAKI.currentxp = 0
-		TAMAKI.Level += 1
+		Tamaki.overallexp += Tamaki.currentxp
+		Tamaki.currentxp = 0
+		Tamaki.Level += 1
 		
 		# Calculate required XP for the next level using exponential growth
-		TAMAKI.requiredxp = calculateXPForLevel(TAMAKI.Level)
+		Tamaki.requiredxp = calculateXPForLevel(Tamaki.Level)
 
 		# Increment attributes based on level up
-		TAMAKI.Strength += 2
-		TAMAKI.MaxHealth += TAMAKI.Strength + 5
-		TAMAKI.Damage += TAMAKI.Strength + 2
+		Tamaki.Strength += 2
+		Tamaki.MaxHealth += Tamaki.Strength + 5
+		Tamaki.Damage += Tamaki.Strength + 2
 
-		TAMAKI.Dexterity += 2
-		TAMAKI.MaxStamina += 10
+		Tamaki.Dexterity += 2
+		Tamaki.MaxStamina += 10
 
-		TAMAKI.Intelligence += 2
-		TAMAKI.MaxMana += 10
+		Tamaki.Intelligence += 2
+		Tamaki.MaxMana += 10
 
 		# Print updated stats
-		print("Current Level:", TAMAKI.Level)
-		print("Current XP:", TAMAKI.currentxp)
-		print("Required XP:", TAMAKI.requiredxp)
-		print("Max Health:", TAMAKI.MaxHealth)
-		print("Max Stamina:", TAMAKI.MaxStamina)
-		print("Max Mana:", TAMAKI.MaxMana)
-		print("Damage: ", TAMAKI.Damage)
+		print("Current Level:", Tamaki.Level)
+		print("Current XP:", Tamaki.currentxp)
+		print("Required XP:", Tamaki.requiredxp)
+		print("Max Health:", Tamaki.MaxHealth)
+		print("Max Stamina:", Tamaki.MaxStamina)
+		print("Max Mana:", Tamaki.MaxMana)
+		print("Damage: ", Tamaki.Damage)
 
 
 
