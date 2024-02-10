@@ -1,0 +1,30 @@
+res://Assets/Characters/Blue Slime/BlueSlime.tres::cf766ab8f5c19c412d77d645f1c5be1e::1709823895::res://.godot/exported/133200997/export-5e63037e274a7a9e11d7bc5440922556-BlueSlime.res
+res://Assets/Characters/Green Slime/GreenSlime.tres::8c4efcaed65b38cf8ff15e18bbbac7e1::1709769110::res://.godot/exported/133200997/export-e7baad9899c9407454a088274e94b918-GreenSlime.res
+res://Assets/Characters/Skeleton/Skeleton.tres::57d1fe025d2f8bd0e062ead0efbee4d2::1709724042::res://.godot/exported/133200997/export-7650e9ca3f248e220a4b8560ef62d87b-Skeleton.res
+res://Assets/Characters/Tamaki/Tamaki.tres::5b0aa40b23eab0789f1812623990f82c::1709724042::res://.godot/exported/133200997/export-bb38c5e96fc071a198deb1880c618c2a-Tamaki.res
+res://Assets/Characters/Tamaki/TamakiOld.tres::ed37ca003445744413e44455fe6c2712::1709724042::res://.godot/exported/133200997/export-70efbc8730b59c9e9cc8f2a7089a010b-TamakiOld.res
+res://Assets/Tilesets/Primary Tileset.tres::e26f4b07eae5b33937351f5ec24efe59::1709823895::res://.godot/exported/133200997/export-714642b91be0d69a8643bb66b74c4cca-Primary Tileset.res
+res://Primary/Main.tscn::3e61ea803f489bacd04f6c931f28f7ee::1709836686::res://.godot/exported/133200997/export-38b7260d3e8596517f203fb92899ddc8-Main.scn
+res://Resources/Crafting/Crafting Materials/PlayerCraftingMaterials.tres::3d0388cfba958473574b2aba8ab3236e::1709762211::res://.godot/exported/133200997/export-a69b65238a1ba0a53923712f5e12915c-PlayerCraftingMaterials.res
+res://Resources/Crafting/Crafting Materials/Wood.tres::20601fc58a311f794ba8e7cde447178b::1709757274::res://.godot/exported/133200997/export-df426a7c75c876b34ffc93e8148645c8-Wood.res
+res://Resources/Items/Weapons/Katana.tres::df529bee5487cf0a9cb3060492c921e8::1709795691::res://.godot/exported/133200997/export-477d06e24b81f8be25cad8bde338ca7f-Katana.res
+res://Resources/Items/Weapons/Shuriken.tres::7481282ee7f48b33037e03f25f25bd27::1709827870::res://.godot/exported/133200997/export-f4aba451761d1020fce241ecc6b1feaf-Shuriken.res
+res://Resources/Stats/Enemies/BlueSlimeStats.tres::c9764fb3cae03dc46b9d799816466d89::1709835743::res://.godot/exported/133200997/export-f575ad14c844743ae74cbd020b2f10ba-BlueSlimeStats.res
+res://Resources/Stats/Enemies/SkeletonStats.tres::5780b352d4992aeb3c31e39170897459::1709768338::res://.godot/exported/133200997/export-da2fb16e016e3326bae9da2829c92b8a-SkeletonStats.res
+res://Resources/Stats/TamakiStats.tres::e3e77ba02411a4a65e9c243fb5344666::1709835553::res://.godot/exported/133200997/export-2871fb3639e3486a418b8ff09940a891-TamakiStats.res
+res://Scenes/Crafting Materials/WoodLog.tscn::7647035871e1d3a2e10bd574a26de95c::1709757204::res://.godot/exported/133200997/export-ffaf469f66e4a45d3e6d7c4be81dcebd-WoodLog.scn
+res://Scenes/GUI/Menus/MainMenu.tscn::a96e668def7b301ed1987be0a6cc045d::1709836686::res://.godot/exported/133200997/export-e8c237cc6bb9614a378d6ab7010e8e57-MainMenu.scn
+res://Scenes/GUI/PauseMenu.tscn::57f4883f5dca49d6594eb9abdcc7cb12::1709724042::res://.godot/exported/133200997/export-a439f5f570830b6d351ace83f4733528-PauseMenu.scn
+res://Scenes/GUI/UI.tscn::2af70c5356fc611466ffb68d7c416fdb::1709833351::res://.godot/exported/133200997/export-7a66d0f18c2bd244dc89507cec04603b-UI.scn
+res://Scenes/Inheritance/BaseCharacter.tscn::66074ddc618b997d53442ba7880e8237::1709724042::res://.godot/exported/133200997/export-04746a22031ea9e2d2727a37de7d6dd1-BaseCharacter.scn
+res://Scenes/Locations/BeginnerForest.tscn::2f5dc8c54538159cdf7a18fc6cbdf529::1709724042::res://.godot/exported/133200997/export-a2414fdd34d753822ac030d186eb7060-BeginnerForest.scn
+res://Scenes/NPC's/Enemies/Spawners/EnemySpawner.tscn::3207220ba6d8b660923183115f6f0b08::1709836687::res://.godot/exported/133200997/export-12cdaed9bb02235ba95a533f8ff17a5d-EnemySpawner.scn
+res://Scenes/NPC's/Enemies/BlueSlime.tscn::6a974daeee9a6195c65a48a1ed25f75f::1709836686::res://.godot/exported/133200997/export-3b2ffc1f907806e911cdd8e19c39b706-BlueSlime.scn
+res://Scenes/NPC's/Fighters/FighterNPC.tscn::c25bc188bae717b479240e9ab2db7ed8::1709724042::res://.godot/exported/133200997/export-a8b91fb24ac39b0d0f921be31a7a47c8-FighterNPC.scn
+res://Scenes/Weapons/Katana.tscn::aaf263d57f7d072b397ae440d4387ab5::1709836687::res://.godot/exported/133200997/export-b752d5e41dbbe16fb90a747d0c819452-Katana.scn
+res://Scenes/Weapons/Shuriken.tscn::9d8cf961da4e384cb09ba1928792c80d::1709833351::res://.godot/exported/133200997/export-7431e1ddf3a64ebcf3472c5431b844ad-Shuriken.scn
+res://Primary/Tamaki.tscn::8894694c865004a0a9750d056a01f3b2::1709836686::res://.godot/exported/133200997/export-6a7eb5fb7d13e22197eac362d6a1ea40-Tamaki.scn
+res://Resources/Stats/Enemies/RedSlimeStats.tres::b55f632eba0557be9b98816f2fe8d2fb::1709836569::res://.godot/exported/133200997/export-4ece256ff44a41d0bf36f4667300f953-RedSlimeStats.res
+res://Scenes/NPC's/Enemies/RedSlime.tscn::4246f9f556e5847c45531d0def5549a6::1709836830::res://.godot/exported/133200997/export-b4a8bed6a8af84c741c13974aa8999e5-RedSlime.scn
+res://Resources/Items/Spells/Fireball.tres::9c1dc5d6f0716c2732d82dfa71a14f67::1709827843::res://.godot/exported/133200997/export-f87fb912d2ad53fbab9b572043a8e22b-Fireball.res
+res://Scenes/Spells/Fireball.tscn::127c861860c718eb933deaba3c142237::1709833351::res://.godot/exported/133200997/export-126621a16cb2536e0adb9c52be35c6f6-Fireball.scn

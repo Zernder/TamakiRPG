@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgb7he6qj6uif"]
+
+[sub_resource type="GDScript" id="GDScript_ppo72"]
+script/source = "extends Control
+"
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_ppo72")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 741.0
+alignment = 1
+
+[node name="Tutorial" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.862745, 0, 1, 1)
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Tutorial"
+flat = true
+
+[node name="SinglePlayer" type="Button" parent="VBoxContainer" groups=["StartButton"]]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.862745, 0, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Single Player"
+flat = true
+
+[node name="Multiplayer" type="Button" parent="VBoxContainer" groups=["StartButton"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.862745, 0, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Multiplayer"
+flat = true
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.862745, 0, 1, 1)
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Settings"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.862745, 0, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Exit Game"
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/SinglePlayer" to="." method="SinglePlayer"]
+[connection signal="pressed" from="VBoxContainer/Multiplayer" to="." method="Multiplayer"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="ExitGame"]

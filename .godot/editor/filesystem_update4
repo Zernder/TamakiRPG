@@ -1,28 +1,5 @@
-res://Scenes/GUI/ClassSelect.tscn
-res://Assets/Animations and Tilesets/Resource Files/Enemies/BlueSlime.tres
-res://Assets/Animations and Tilesets/Resource Files/Enemies/GreenSlime.tres
-res://Assets/Animations and Tilesets/TopDown Tilesets.tres
-res://Primary/WorldMap.tscn
-res://Primary/Player.tscn
-res://Scenes/GUI/UI.tscn
-res://Scenes/Locations/BeginnerForest.tscn
-res://Scenes/Weapons/Shuriken.tscn
-res://Primary/Player.gd
-res://Scenes/GUI/UI.gd
-res://Resources/Shuriken.tres
-res://Scenes/NPC's/Enemies/BlueSlime.tscn
-res://Scenes/NPC's/Enemies/BlueSlime.gd
-res://Resources/Characters/Tamaki_stats.tres
-res://Scenes/Spawners/BlueSlimeSpawner.tscn
-res://Scenes/NPC's/Enemies/GreenSlime.gd
-res://Scenes/NPC's/Enemies/GreenSlime.tscn
-res://Resources/ResourceCode/EnemyStats.gd
-res://Resources/NPC/Enemies.tres
-res://Scenes/NPC's/Enemies/Skeleton.gd
-res://Resources/NPC/Blueslime.tres
-res://SingleTons/Global.gd
-res://SingleTons/SavedGame.gd
-res://SingleTons/ExperienceSystem.gd
-res://Scenes/GUI/ClassSelect.gd
-res://Scenes/Inventory/InventorySlot.gd
-res://Scenes/NPC's/Enemies/Skeleton.tscn
+res://Scenes/Characters/Tamaki.tscn
+res://Assets/Characters/Blue Slime/BlueSlime.tres
+res://Primary/Main.tscn
+res://Assets/Tilesets/Primary Tileset.tres
+res://Scenes/Characters/Tamaki.gd

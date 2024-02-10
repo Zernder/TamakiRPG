@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgb7he6qj6uif"]
+
+[ext_resource type="Script" path="res://Scenes/GUI/Menus/MainMenu.gd" id="1_bnf2a"]
+[ext_resource type="Texture2D" uid="uid://caeultv7bepry" path="res://Assets/Icons and Background/MenuBackground.png" id="1_ut7x8"]
+[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://Primary/Main.tscn" id="2_uvxlw"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bnf2a")
+MainScene = ExtResource("2_uvxlw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuBackground" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(594.25, 344.5)
+scale = Vector2(3.16666, 2.14196)
+texture = ExtResource("1_ut7x8")
+
+[node name="Tutorial" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Tutorial"
+flat = true
+
+[node name="SinglePlayer" type="Button" parent="VBoxContainer" groups=["StartButton"]]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "Single Player"
+flat = true
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Settings"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Exit Game"
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/SinglePlayer" to="." method="SinglePlayer"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="ExitGame"]

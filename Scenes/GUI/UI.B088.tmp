@@ -1,0 +1,345 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1grc52gaavag"]
+
+[ext_resource type="Script" path="res://Scenes/GUI/UI.gd" id="1_r7n2c"]
+[ext_resource type="Script" path="res://Scenes/Inventory/InventorySlot.gd" id="2_1pk0i"]
+[ext_resource type="Script" path="res://Scenes/Inventory/InventoryItem.gd" id="3_nk137"]
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_r7n2c")
+
+[node name="Bars" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Healthbar" type="ProgressBar" parent="Bars"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_right = 0.001
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 202.0
+offset_bottom = 52.0
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="HealthbarLabel" type="Label" parent="Bars/Healthbar"]
+unique_name_in_owner = true
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.019
+anchor_right = 0.069
+anchor_bottom = 0.062
+offset_left = 0.0240002
+offset_top = -0.312001
+offset_right = 0.511993
+offset_bottom = -0.176003
+theme_override_font_sizes/font_size = 20
+text = "Health"
+
+[node name="StaminaBar" type="ProgressBar" parent="Bars"]
+unique_name_in_owner = true
+modulate = Color(0, 0.298039, 0, 1)
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.085
+anchor_right = 0.174
+anchor_bottom = 0.162
+offset_left = 2.0
+offset_top = -0.0800018
+offset_right = 1.55199
+offset_bottom = 0.0240021
+value = 100.0
+show_percentage = false
+
+[node name="StaminaText" type="Label" parent="Bars/StaminaBar"]
+unique_name_in_owner = true
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.1
+anchor_right = 0.082
+anchor_bottom = 0.144
+offset_left = 0.0240002
+offset_top = 0.199997
+offset_right = 0.535995
+offset_bottom = -0.312004
+theme_override_font_sizes/font_size = 20
+text = "Stamina"
+
+[node name="XPBar" type="ProgressBar" parent="Bars"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 373.0
+offset_top = 5.0
+offset_right = 974.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="XPLabel" type="Label" parent="Bars/XPBar"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.182
+anchor_right = 0.994
+anchor_bottom = 0.818
+offset_left = -0.0510011
+offset_top = -0.0180016
+offset_right = -0.153992
+offset_bottom = 0.0179977
+theme_override_font_sizes/font_size = 45
+text = "XP: 10000 Needed: 10000"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="Bars/XPBar"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.273
+anchor_top = 1.03
+anchor_right = 0.652
+anchor_bottom = 2.071
+offset_left = 0.00701904
+offset_top = 0.0299988
+offset_right = 0.227997
+offset_bottom = -0.0289917
+theme_override_font_sizes/font_size = 75
+text = "Level: "
+
+[node name="ManaBar" type="ProgressBar" parent="Bars"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 1, 1)
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.168
+anchor_right = 0.169
+anchor_bottom = 0.248
+offset_left = -0.152
+offset_top = 0.135994
+offset_right = 0.311981
+offset_bottom = 0.29599
+value = 100.0
+show_percentage = false
+
+[node name="ManaText" type="Label" parent="Bars/ManaBar"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.176
+anchor_right = 0.107
+anchor_bottom = 0.241
+offset_left = 3.0
+offset_top = -118.2
+offset_right = 63.242
+offset_bottom = -79.58
+theme_override_font_sizes/font_size = 30
+text = "Mana"
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+modulate = Color(1, 0, 1, 1)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.84
+anchor_bottom = 0.099
+offset_left = 131.0
+offset_top = 23.0
+offset_right = 874.0
+offset_bottom = 482.0
+tooltip_text = "This Inventory crap is hard!"
+
+[node name="Inv" type="GridContainer" parent="Inventory/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.05
+anchor_right = 0.965
+anchor_bottom = 0.951
+offset_left = -33.892
+offset_top = -12.95
+offset_right = -34.3506
+offset_bottom = -12.965
+columns = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 56.0
+offset_right = 415.0
+offset_bottom = 424.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeadSlot" type="PanelContainer" parent="Inventory/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="Helmet" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer/HeadSlot"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="ChestSlot" type="PanelContainer" parent="Inventory/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="ChestPlate" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer/ChestSlot"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="LegSlot" type="PanelContainer" parent="Inventory/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="Pants" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer2/LegSlot"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="FeetSlot" type="PanelContainer" parent="Inventory/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="Boots" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer2/FeetSlot"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="Weapon Slot" type="PanelContainer" parent="Inventory/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="Katana" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer3/Weapon Slot"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="AccessorySlot" type="PanelContainer" parent="Inventory/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="Necklace" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer3/AccessorySlot"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="HotBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -43.0
+offset_top = 199.0
+offset_right = -43.0
+offset_bottom = 199.0
+scale = Vector2(0.7, 0.7)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HotBar"]
+layout_mode = 0
+offset_left = 542.857
+offset_top = 518.571
+offset_right = 1162.86
+offset_bottom = 618.571
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HotBar/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Slot1" type="PanelContainer" parent="HotBar/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="TextureRect" type="TextureRect" parent="HotBar/VBoxContainer2/HBoxContainer/Slot1"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="Slot2" type="PanelContainer" parent="HotBar/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="TextureRect" type="TextureRect" parent="HotBar/VBoxContainer2/HBoxContainer/Slot2"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="Slot3" type="PanelContainer" parent="HotBar/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="TextureRect" type="TextureRect" parent="HotBar/VBoxContainer2/HBoxContainer/Slot3"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="Slot4" type="PanelContainer" parent="HotBar/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="TextureRect" type="TextureRect" parent="HotBar/VBoxContainer2/HBoxContainer/Slot4"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="Slot5" type="PanelContainer" parent="HotBar/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="TextureRect" type="TextureRect" parent="HotBar/VBoxContainer2/HBoxContainer/Slot5"]
+layout_mode = 2
+script = ExtResource("3_nk137")
+
+[node name="Slot6" type="PanelContainer" parent="HotBar/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2_1pk0i")
+
+[node name="TextureRect" type="TextureRect" parent="HotBar/VBoxContainer2/HBoxContainer/Slot6"]
+layout_mode = 2
+script = ExtResource("3_nk137")

@@ -1,10 +1,17 @@
-res://Resources/Enemies
-res://Resources/ResourceCode
-res://Assets/Sprites/Enemies
-res://
+res://Resources/Stats
+res://Code/GDScript/Characters
+res://Code/GDScript
+res://Resources/Stats/Enemy
+res://Scenes/Inheritance
+res://Scenes/Modular
+res://Resources/Stats/NPC
+D:/XanFiles/Projects/GameDev Projects/Godot Projects/2D/Executables/Purple Haze of Shadows/Purple Haze of Shadows Web
 res://Assets/Icons and Background
-res://Scenes/NPC's/Enemies
+D:/XanFiles/Projects/GameDev Projects/Godot Projects/2D/Executables/Purple Haze of Shadows
 res://SingleTons
-res://Resources
-res://Conversations
-res://Scenes/Locations
+res://Scenes/Spells
+res://Assets
+D:/XanFiles/Projects/GameDev Projects/Godot Projects
+res://Resources/Crafting/Crafting Materials
+res://Scenes/Crafting Materials
+res://Assets/Characters/Tamaki/Stealth

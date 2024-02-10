@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://4givmrb65iep"]
-
-[ext_resource type="Script" path="res://Conversations/ConversationStarter.gd" id="1_beg55"]
-
-
-[node name="Actionable" type="Area2D"]
-collision_layer = 0
-script = ExtResource("1_beg55")

@@ -1,2 +1,4 @@
-EnemyStats
-Resource
+GameStats
+Spells
+AllTheItems
+CraftingMaterial

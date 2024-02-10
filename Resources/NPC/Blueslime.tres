@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://lmc4hxup8g4t"]
-
-[ext_resource type="Script" path="res://Resources/ResourceCode/EnemyStats.gd" id="1_db5m7"]
-
-[resource]
-script = ExtResource("1_db5m7")
-Health = 5
-Damage = 2
-Speed = 20

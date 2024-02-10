@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjy3dntpbsi5e"]
+
+[ext_resource type="Script" path="res://Scenes/NPC's/Enemies/BlueSlime.gd" id="1_2w34s"]
+[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Resources/Stats/TamakiStats.tres" id="2_lxq2d"]
+[ext_resource type="Script" path="res://Resources/Stats/GameStats.gd" id="3_xrhqd"]
+[ext_resource type="SpriteFrames" uid="uid://bmr228mjawpf2" path="res://Assets/Characters/Blue Slime/BlueSlime.tres" id="5_trhbo"]
+
+[sub_resource type="Resource" id="Resource_5aa4v"]
+resource_name = "Blue Slime"
+script = ExtResource("3_xrhqd")
+Name = "Blue Slime"
+level = 1
+Strength = 2
+Dexterity = 2
+Constitution = 2
+Intelligence = 2
+Wisdom = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4mub"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b38ki"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjj8n"]
+radius = 84.0952
+
+[node name="BlueSlime" type="CharacterBody2D" groups=["Slime"]]
+z_index = 2
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 31
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2w34s")
+Tamaki = ExtResource("2_lxq2d")
+Enemystats = SubResource("Resource_5aa4v")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = ExtResource("5_trhbo")
+animation = &"idle"
+
+[node name="Collisionbubble" type="CollisionShape2D" parent="." groups=["Slime"]]
+visible = false
+light_mask = 3
+visibility_layer = 3
+shape = SubResource("CircleShape2D_s4mub")
+
+[node name="Timers" type="Node2D" parent="."]
+visible = false
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="NavigationTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+autostart = true
+
+[node name="StateMachineTimeout" type="Timer" parent="Timers"]
+wait_time = 3.0
+autostart = true
+
+[node name="Gui" type="Node2D" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="Gui"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 10.0
+offset_bottom = -17.0
+max_value = 6.0
+value = 6.0
+show_percentage = false
+
+[node name="NameLabel" type="Label" parent="Gui/Healthbar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 82.0
+offset_bottom = 28.0
+scale = Vector2(0.245104, 0.304342)
+text = "Blue Slime"
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="Areas" groups=["SlimeHitbox"]]
+visible = false
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Hitbox"]
+shape = SubResource("CircleShape2D_b38ki")
+
+[node name="DetectionRadius" type="Area2D" parent="Areas" groups=["EnemyDetection"]]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 517
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DetectionRadius"]
+shape = SubResource("CircleShape2D_vjj8n")
+
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="DeathTimerTimeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="HitTimeout"]
+[connection signal="timeout" from="Timers/NavigationTimer" to="." method="NavTimeout"]
+[connection signal="timeout" from="Timers/StateMachineTimeout" to="." method="StateReset"]
+[connection signal="area_entered" from="Areas/Hitbox" to="." method="HitboxEntered"]
+[connection signal="body_entered" from="Areas/DetectionRadius" to="." method="DetectionRadius"]
+[connection signal="body_exited" from="Areas/DetectionRadius" to="." method="DetectionRadiusExited"]

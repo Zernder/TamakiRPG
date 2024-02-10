@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameStats" load_steps=2 format=3 uid="uid://o8bmcsqsvepm"]
+
+[ext_resource type="Script" path="res://Resources/Stats/GameStats.gd" id="1_qggwq"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_qggwq")
+Name = "Red Slime"
+Type = "Red Slime"
+level = 0.0
+DifficultyLevel = 1.0
+speed = 30.0
+location = Vector2(0, 0)

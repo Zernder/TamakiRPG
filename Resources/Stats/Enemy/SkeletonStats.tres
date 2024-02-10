@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameStats" load_steps=2 format=3 uid="uid://dujt4rpg2ca3m"]
+
+[ext_resource type="Script" path="res://Resources/Stats/GameStats.gd" id="1_dflw3"]
+
+[resource]
+script = ExtResource("1_dflw3")
+Name = "Skeleton"
+level = 0
+Strength = 0
+Dexterity = 0
+Constitution = 0
+Intelligence = 0
+Wisdom = 0

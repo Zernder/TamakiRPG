@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c33wghgjfl0j"]
+
+[ext_resource type="Texture2D" uid="uid://i0u7x0t7sylt" path="res://Assets/Items/Wood Logs.png" id="1_gucse"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nevsx"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtq0f"]
+size = Vector2(14, 13)
+
+[node name="Wood Log" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_nevsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gucse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mtq0f")

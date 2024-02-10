@@ -1,0 +1,418 @@
+[gd_scene load_steps=47 format=3 uid="uid://b7d0hpqe25dok"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Tamaki.gd" id="1_344n5"]
+[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Resources/Stats/TamakiStats.tres" id="2_7r188"]
+[ext_resource type="Texture2D" uid="uid://cyxy07xpdoigs" path="res://Assets/Characters/Tamaki/Tamaki.png" id="4_h556l"]
+[ext_resource type="PackedScene" uid="uid://b67rcvhl30bxe" path="res://Scenes/Weapons/Katana.tscn" id="5_78ge5"]
+[ext_resource type="Animation" uid="uid://bkhm4tu6uts41" path="res://Assets/Characters/Tamaki/Status/Damaged.res" id="6_i0jju"]
+[ext_resource type="AnimationLibrary" uid="uid://cdp5p8m1c50om" path="res://Assets/Characters/Tamaki/Idle/Tamaki Idle Animations.res" id="7_20d0x"]
+[ext_resource type="AnimationLibrary" uid="uid://ll804yqmkmgd" path="res://Assets/Characters/Tamaki/Katana/Tamaki Katana Animations.res" id="8_w6tri"]
+[ext_resource type="AnimationLibrary" uid="uid://iv586r1pdo85" path="res://Assets/Characters/Tamaki/Shuriken/Tamaki Shuriken Animations.res" id="9_ewg8l"]
+[ext_resource type="AnimationLibrary" uid="uid://wx8vlh5gslme" path="res://Assets/Characters/Tamaki/Stealth/Stealth.res" id="10_37ohk"]
+[ext_resource type="AnimationLibrary" uid="uid://bptwvxhu2e1gl" path="res://Assets/Characters/Tamaki/Walk/Tamaki Walking Animations.res" id="11_vtjwe"]
+[ext_resource type="PackedScene" uid="uid://c1grc52gaavag" path="res://Scenes/GUI/UI.tscn" id="12_qjvni"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2vpk7"]
+height = 36.0
+
+[sub_resource type="Animation" id="Animation_53nl4"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapons/Katana:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapons/Katana:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Weapons/Katana:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Weapons/WeaponMarker:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfd2d"]
+_data = {
+"Damaged": ExtResource("6_i0jju"),
+"RESET": SubResource("Animation_53nl4")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_anjct"]
+animation = &"Idle Animations/Idle Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_maeg8"]
+animation = &"Idle Animations/Idle Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m7eov"]
+animation = &"Idle Animations/Idle Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5okgh"]
+animation = &"Idle Animations/Idle Down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ji4o5"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_anjct")
+blend_point_0/pos = Vector2(-1.1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_maeg8")
+blend_point_1/pos = Vector2(1.1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_m7eov")
+blend_point_2/pos = Vector2(0, -1.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_5okgh")
+blend_point_3/pos = Vector2(0.0024, 1.1)
+min_space = Vector2(-1.5, -1.5)
+max_space = Vector2(1.5, 1.5)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hhtfw"]
+animation = &"Katana Animations/Swing Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vk2cs"]
+animation = &"Katana Animations/Swing Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ikdw"]
+animation = &"Katana Animations/Swing Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2q80o"]
+animation = &"Katana Animations/Swing Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2ck3n"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_hhtfw")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_vk2cs")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_4ikdw")
+blend_point_2/pos = Vector2(1.1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2q80o")
+blend_point_3/pos = Vector2(-1.1, 0)
+min_space = Vector2(-1.5, -1.5)
+max_space = Vector2(1.5, 1.5)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_76cps"]
+animation = &"Shuriken Animations/Shuriken Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ipi6"]
+animation = &"Shuriken Animations/Shuriken Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uisgg"]
+animation = &"Shuriken Animations/Shuriken Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m1ega"]
+animation = &"Shuriken Animations/Shuriken Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_m4fms"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_76cps")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_4ipi6")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_uisgg")
+blend_point_2/pos = Vector2(1.1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_m1ega")
+blend_point_3/pos = Vector2(-1.1, 0)
+min_space = Vector2(-1.1, -1.1)
+max_space = Vector2(1.1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sovsb"]
+animation = &"Walking Animations/Walk Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ctwf4"]
+animation = &"Walking Animations/Walk Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ogmho"]
+animation = &"Walking Animations/Walk Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_053g5"]
+animation = &"Walking Animations/Walk Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8pgxw"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_sovsb")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ctwf4")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ogmho")
+blend_point_2/pos = Vector2(1.1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_053g5")
+blend_point_3/pos = Vector2(-1.1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6yxvs"]
+advance_mode = 2
+advance_condition = &"Swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sxoad"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wvl05"]
+advance_mode = 2
+advance_condition = &"Throw"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sjrdr"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c0bpd"]
+advance_mode = 2
+advance_condition = &"Walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8d0i1"]
+advance_mode = 2
+advance_condition = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_03px5"]
+advance_mode = 2
+advance_condition = &"Throw"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hu2t"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_va65i"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4vbpn"]
+advance_mode = 2
+advance_condition = &"Swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q3gqy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6vfh3"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_ji4o5")
+states/Idle/position = Vector2(378, 143)
+states/Katana/node = SubResource("AnimationNodeBlendSpace2D_2ck3n")
+states/Katana/position = Vector2(536, 46)
+states/Shuriken/node = SubResource("AnimationNodeBlendSpace2D_m4fms")
+states/Shuriken/position = Vector2(531, 219)
+states/Start/position = Vector2(190, 143)
+states/Walking/node = SubResource("AnimationNodeBlendSpace2D_8pgxw")
+states/Walking/position = Vector2(723, 132)
+transitions = ["Idle", "Katana", SubResource("AnimationNodeStateMachineTransition_6yxvs"), "Katana", "Idle", SubResource("AnimationNodeStateMachineTransition_sxoad"), "Idle", "Shuriken", SubResource("AnimationNodeStateMachineTransition_wvl05"), "Shuriken", "Idle", SubResource("AnimationNodeStateMachineTransition_sjrdr"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_c0bpd"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_8d0i1"), "Walking", "Shuriken", SubResource("AnimationNodeStateMachineTransition_03px5"), "Shuriken", "Walking", SubResource("AnimationNodeStateMachineTransition_1hu2t"), "Katana", "Walking", SubResource("AnimationNodeStateMachineTransition_va65i"), "Walking", "Katana", SubResource("AnimationNodeStateMachineTransition_4vbpn"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_q3gqy")]
+graph_offset = Vector2(-7, 29)
+
+[node name="Tamaki" type="CharacterBody2D" groups=["Tamaki"]]
+z_index = 2
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+collision_mask = 15
+slide_on_ceiling = false
+script = ExtResource("1_344n5")
+Stats = ExtResource("2_7r188")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2vpk7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+limit_left = 7
+limit_top = 23
+limit_right = 2783
+limit_bottom = 1038
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+texture = ExtResource("4_h556l")
+hframes = 10
+vframes = 13
+region_rect = Rect2(14, 10, 37, 48)
+
+[node name="Weapons" type="Node2D" parent="."]
+
+[node name="WeaponMarker" type="Marker2D" parent="Weapons"]
+unique_name_in_owner = true
+position = Vector2(0, 30)
+
+[node name="Katana" parent="Weapons" instance=ExtResource("5_78ge5")]
+position = Vector2(-24, 0)
+
+[node name="Shurikens" type="Node2D" parent="Weapons"]
+
+[node name="Fireballs" type="Node2D" parent="Weapons"]
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="ActionCooldownTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
+[node name="RegenTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 8.0
+autostart = true
+
+[node name="StaminaRegen" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true
+
+[node name="ManaRegen" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 5.0
+autostart = true
+
+[node name="Damaged" type="Timer" parent="Timers"]
+wait_time = 5.0
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Tamaki Hitbox" type="Area2D" parent="Areas" groups=["TamakiHitbox"]]
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Tamaki Hitbox"]
+shape = SubResource("CapsuleShape2D_2vpk7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_kfd2d"),
+"Idle Animations": ExtResource("7_20d0x"),
+"Katana Animations": ExtResource("8_w6tri"),
+"Shuriken Animations": ExtResource("9_ewg8l"),
+"Stealth": ExtResource("10_37ohk"),
+"Walking Animations": ExtResource("11_vtjwe")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kfd2d"),
+"Idle Animations": ExtResource("7_20d0x"),
+"Katana Animations": ExtResource("8_w6tri"),
+"Shuriken Animations": ExtResource("9_ewg8l"),
+"Stealth": ExtResource("10_37ohk"),
+"Walking Animations": ExtResource("11_vtjwe")
+}
+tree_root = SubResource("AnimationNodeStateMachine_6vfh3")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/Idle = false
+parameters/conditions/Swing = false
+parameters/conditions/Throw = false
+parameters/conditions/Walking = false
+parameters/Idle/blend_position = Vector2(0.00959992, 0.801587)
+parameters/Katana/blend_position = Vector2(0, 0)
+parameters/Shuriken/blend_position = Vector2(0, 0)
+parameters/Walking/blend_position = Vector2(0, 0)
+
+[node name="UI" parent="." instance=ExtResource("12_qjvni")]
+
+[connection signal="timeout" from="Timers/ActionCooldownTimer" to="." method="WeaponCooldown"]
+[connection signal="timeout" from="Timers/RegenTimer" to="." method="RegenTimer"]
+[connection signal="timeout" from="Timers/StaminaRegen" to="." method="StaminaRegenTimer"]
+[connection signal="timeout" from="Timers/ManaRegen" to="." method="ManaRegenTimer"]
+[connection signal="timeout" from="Timers/Damaged" to="." method="DamageTimeout"]
+[connection signal="area_entered" from="Areas/Tamaki Hitbox" to="." method="HitboxEntered"]

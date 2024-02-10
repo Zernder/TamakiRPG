@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b67rcvhl30bxe"]
+
+[ext_resource type="Texture2D" uid="uid://dqux6rup6kueh" path="res://Assets/Characters/Tamaki/Katana/Katana.png" id="1_q5um7"]
+[ext_resource type="Script" path="res://Scenes/Weapons/Katana.gd" id="1_sq1ap"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukkik"]
+height = 86.6667
+
+[node name="Katana" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_sq1ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.3, 2.7)
+texture = ExtResource("1_q5um7")
+
+[node name="DamageBox" type="Area2D" parent="." groups=["Katana", "Melee"]]
+collision_layer = 32
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
+shape = SubResource("CapsuleShape2D_ukkik")
+
+[node name="Collision Box" type="Area2D" parent="." groups=["Katana", "Melee"]]
+collision_layer = 128
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Box"]
+shape = SubResource("CapsuleShape2D_ukkik")
+
+[connection signal="body_entered" from="Collision Box" to="." method="onCollision"]

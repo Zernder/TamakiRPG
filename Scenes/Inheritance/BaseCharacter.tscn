@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxutxipkuj88w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1ads"]
+radius = 101.319
+
+[node name="BaseCharacter" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="StateMachineTimeout" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Gui" type="Node2D" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="Gui"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 10.0
+offset_bottom = -17.0
+max_value = 6.0
+value = 6.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Gui/Healthbar"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 28.0
+scale = Vector2(0.245104, 0.304342)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "Warrior NPC"
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="HitBox" type="Area2D" parent="Areas" groups=["NPCHitbox"]]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/HitBox"]
+
+[node name="TalkArea" type="Area2D" parent="Areas"]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/TalkArea"]
+
+[node name="DetectionRadius" type="Area2D" parent="Areas" groups=["NPCDetection"]]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DetectionRadius"]
+shape = SubResource("CircleShape2D_i1ads")
+
+[connection signal="timeout" from="Timers/StateMachineTimeout" to="." method="StateReset"]
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="DeathTimerTimeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="HitTimerTimeout"]
+[connection signal="area_entered" from="Areas/HitBox" to="." method="HitboxEntered"]
+[connection signal="body_entered" from="Areas/DetectionRadius" to="." method="DetectionRadius"]
+[connection signal="body_exited" from="Areas/DetectionRadius" to="." method="DetectionRadiusExited"]

@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://lscflbdeug6c"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/Shuriken.gd" id="1_4b2eg"]
-[ext_resource type="Texture2D" uid="uid://c0chxsiq6dorr" path="res://Assets/Weapons and Armor/Weapons2.png" id="2_m8afu"]
+[ext_resource type="Texture2D" uid="uid://c0chxsiq6dorr" path="res://Assets/Items/Weapons and Armor/Weapons2.png" id="2_m8afu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5k2pj"]
 size = Vector2(14.6793, 14.4315)
 
-[node name="Shuriken" type="Area2D" groups=["RangedAttack"]]
+[node name="Shuriken" type="Area2D" groups=["Ranged", "Shuriken"]]
 z_index = 1
 y_sort_enabled = true
-scale = Vector2(0.5, 0.5)
-collision_layer = 8
-collision_mask = 30
+scale = Vector2(0.3, 0.3)
+collision_layer = 32
+collision_mask = 24
 script = ExtResource("1_4b2eg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Shuriken"]]
@@ -29,7 +29,7 @@ rotation = -0.00440366
 scale = Vector2(0.728877, 0.72767)
 
 [node name="ShurikenKiller" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.5
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="EnteredEnemy"]

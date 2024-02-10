@@ -1,45 +1,44 @@
 extends Node
 
-@onready var Tamaki = Global.TAMAKI
+@onready var TamakiStats = preload("res://Resources/Stats/TamakiStats.tres")
 
 func SaveGame():
-	var SavedGame: CharacterStats = CharacterStats.new()
-	
-	SavedGame.Health = Tamaki.Health
-	SavedGame.MaxHealth = Tamaki.MaxHealth
-	SavedGame.Stamina = Tamaki.Stamina
-	SavedGame.MaxStamina = Tamaki.MaxStamina
-	SavedGame.Mana = Tamaki.Mana
-	SavedGame.MaxMana = Tamaki.MaxMana
-	SavedGame.Level = Tamaki.Level
-	SavedGame.Strength = Tamaki.Strength
-	SavedGame.Dexterity = Tamaki.Dexterity
-	SavedGame.Intelligence = Tamaki.Intelligence
-	SavedGame.Speed = Tamaki.Speed
-	SavedGame.Damage = Tamaki.Damage
-	SavedGame.currentxp = Tamaki.currentxp
-	SavedGame.requiredxp = Tamaki.requiredxp
-	SavedGame.overallexp = Tamaki.overallexp
+	var SavedGame: GameStats = GameStats.new()
+
+	SavedGame.Position = TamakiStats.Position
+
+	SavedGame.Health = TamakiStats.Health
+	SavedGame.MaxHealth = TamakiStats.MaxHealth
+
+	SavedGame.Stamina = TamakiStats.Stamina
+	SavedGame.MaxStamina = TamakiStats.MaxStamina
+
+	SavedGame.Speed = TamakiStats.Speed
+	SavedGame.Damage = TamakiStats.Damage
+
+	SavedGame.Level = TamakiStats.Level
+	SavedGame.currentxp = TamakiStats.currentxp
+	SavedGame.requiredxp = TamakiStats.requiredxp
+	SavedGame.overallexp = TamakiStats.overallexp
 
 	# Save the game to a file
 	ResourceSaver.save(SavedGame, "user://SaveGame.tres")
 
 func LoadGame():
-	var SavedGame: CharacterStats = load("user://SaveGame.tres") as CharacterStats
-	
-	# Assign the loaded values to Tamaki
-	Tamaki.Health = SavedGame.Health
-	Tamaki.MaxHealth = SavedGame.MaxHealth
-	Tamaki.Stamina = SavedGame.Stamina
-	Tamaki.MaxStamina = SavedGame.MaxStamina
-	Tamaki.Mana = SavedGame.Mana
-	Tamaki.MaxMana = SavedGame.MaxMana
-	Tamaki.Level = SavedGame.Level
-	Tamaki.Strength = SavedGame.Strength
-	Tamaki.Dexterity = SavedGame.Dexterity
-	Tamaki.Intelligence = SavedGame.Intelligence
-	Tamaki.Speed = SavedGame.Speed
-	Tamaki.Damage = SavedGame.Damage
-	Tamaki.currentxp = SavedGame.currentxp
-	Tamaki.requiredxp = SavedGame.requiredxp
-	Tamaki.overallexp = SavedGame.overallexp
+	var SavedGame: GameStats = load("user://SaveGame.tres") as GameStats
+
+
+	TamakiStats.Position = SavedGame.Position
+
+	TamakiStats.Health = SavedGame.Health
+	TamakiStats.MaxHealth = SavedGame.MaxHealth
+	TamakiStats.Stamina = SavedGame.Stamina
+	TamakiStats.MaxStamina = SavedGame.MaxStamina
+
+	TamakiStats.Speed = SavedGame.Speed
+	TamakiStats.Damage = SavedGame.Damage
+
+	TamakiStats.Level = SavedGame.Level
+	TamakiStats.currentxp = SavedGame.currentxp
+	TamakiStats.requiredxp = SavedGame.requiredxp
+	TamakiStats.overallexp = SavedGame.overallexp

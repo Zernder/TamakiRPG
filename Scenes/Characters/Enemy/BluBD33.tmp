@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjy3dntpbsi5e"]
+
+[ext_resource type="Script" path="res://Scenes/NPC's/Enemies/BlueSlime.gd" id="1_2w34s"]
+[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Resources/Stats/TamakiStats.tres" id="2_lxq2d"]
+[ext_resource type="Resource" uid="uid://6e4mjiburbol" path="res://Resources/Stats/BlueSlime.tres" id="3_r5aoi"]
+[ext_resource type="Texture2D" uid="uid://duf6qh1k575vk" path="res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png" id="4_jlf7d"]
+[ext_resource type="SpriteFrames" uid="uid://bmr228mjawpf2" path="res://Assets/Characters/Blue Slime/BlueSlime.tres" id="5_trhbo"]
+[ext_resource type="AnimationLibrary" uid="uid://bpd4wwbykybkq" path="res://Assets/Characters/Blue Slime/Idle/Blue Slime Idle.res" id="6_b61ek"]
+[ext_resource type="AnimationLibrary" uid="uid://bovgxk6q2vag1" path="res://Assets/Characters/Blue Slime/Walk/Blue Slime Walk.res" id="7_w0su8"]
+[ext_resource type="AnimationLibrary" uid="uid://m10fcgho65ql" path="res://Assets/Characters/Blue Slime/Combat/Combat Animations.res" id="8_fs6w6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4mub"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b38ki"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjj8n"]
+radius = 25.0
+
+[sub_resource type="Animation" id="Animation_04euj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gh06"]
+_data = {
+"RESET": SubResource("Animation_04euj")
+}
+
+[node name="BlueSlime" type="CharacterBody2D" groups=["Slime"]]
+z_index = 2
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 31
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2w34s")
+TamakiData = ExtResource("2_lxq2d")
+BlueSlimeData = ExtResource("3_r5aoi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_jlf7d")
+hframes = 7
+vframes = 5
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -2)
+sprite_frames = ExtResource("5_trhbo")
+animation = &"idle"
+
+[node name="Collisionbubble" type="CollisionShape2D" parent="." groups=["Slime"]]
+visible = false
+light_mask = 3
+visibility_layer = 3
+shape = SubResource("CircleShape2D_s4mub")
+
+[node name="Timers" type="Node2D" parent="."]
+visible = false
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="NavigationTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+autostart = true
+
+[node name="StateMachineTimeout" type="Timer" parent="Timers"]
+wait_time = 3.0
+autostart = true
+
+[node name="Gui" type="Node2D" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="Gui"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 10.0
+offset_bottom = -17.0
+max_value = 6.0
+value = 6.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Gui/Healthbar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 82.0
+offset_bottom = 28.0
+scale = Vector2(0.245104, 0.304342)
+text = "Blue Slime"
+
+[node name="Areas" type="Node2D" parent="."]
+visible = false
+
+[node name="Hitbox" type="Area2D" parent="Areas" groups=["SlimeHitbox"]]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Hitbox"]
+shape = SubResource("CircleShape2D_b38ki")
+
+[node name="DetectionRadius" type="Area2D" parent="Areas" groups=["EnemyDetection"]]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 517
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DetectionRadius"]
+shape = SubResource("CircleShape2D_vjj8n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_5gh06"),
+"Blue Slime Idle": ExtResource("6_b61ek"),
+"Blue Slime Walk": ExtResource("7_w0su8"),
+"Combat Animations": ExtResource("8_fs6w6")
+}
+
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="DeathTimerTimeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="HitTimeout"]
+[connection signal="timeout" from="Timers/NavigationTimer" to="." method="NavTimeout"]
+[connection signal="timeout" from="Timers/StateMachineTimeout" to="." method="StateReset"]
+[connection signal="area_entered" from="Areas/Hitbox" to="." method="HitboxEntered"]
+[connection signal="body_entered" from="Areas/DetectionRadius" to="." method="DetectionRadius"]
+[connection signal="body_exited" from="Areas/DetectionRadius" to="." method="DetectionRadiusExited"]

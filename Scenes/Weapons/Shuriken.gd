@@ -2,7 +2,7 @@ extends Area2D
 
 
 @onready var weapon = $"."
-var speed = 150
+var speed = 300
 var rotation_speed = 750  # Adjust the rotation speed as needed
 
 func _ready():
@@ -25,7 +25,6 @@ func LeftScreen():
 	queue_free()
 
 func EnteredEnemy(area):
-	if area.is_in_group("EnemyHitbox"):
 		queue_free()
 
 func TilesetEntered(_body):

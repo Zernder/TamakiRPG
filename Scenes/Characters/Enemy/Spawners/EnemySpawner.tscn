@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://uq35a3lhcepf"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Enemy/Spawners/EnemySpawner.gd" id="1_dfoq6"]
+
+[node name="Spawner" type="Node2D" node_paths=PackedStringArray("SpawnedBlueSlimes", "SpawnedRedSlimes", "SpawnedWarriorSlimes")]
+script = ExtResource("1_dfoq6")
+SpawnedBlueSlimes = NodePath("BlueSlimes")
+SpawnedRedSlimes = NodePath("RedSlimes")
+SpawnedWarriorSlimes = NodePath("WarriorSlimes")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="BlueSlimes" type="Node2D" parent="."]
+
+[node name="RedSlimes" type="Node2D" parent="."]
+
+[node name="WarriorSlimes" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="SpawnTimer"]
