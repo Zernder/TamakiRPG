@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name GUI
 
-@export var TamakiStats: GameStats
+@export var TamakiStats: CharacterStats
 
 @onready var HBar = %Healthbar
 @onready var HBarlabel = %HealthbarLabel

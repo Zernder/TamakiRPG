@@ -1,26 +1,33 @@
 extends Node2D
 
+
 var Cooldown: bool
 # Weapons and Spells
 
-
 # Melee
 
-const KatanaData = preload("res://Resources/Items/Weapons/Katana.tres")
+const KATANADATA = preload("res://Scenes/Weapons, Tools, and Spells/Weapons/Katana.tres")
 
 # Ranged
 
-const ShurikenData = preload("res://Resources/Items/Weapons/Shuriken.tres")
+const SHURIKENDATA = preload("res://Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.tres")
 
 # Magic
 
-const FireballData = preload("res://Resources/Items/Spells/Fireball.tres")
+const FIREBALLDATA = preload("res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.tres")
+
+# Characters
+
+const TAMAKI = preload("res://Scenes/Characters/Tamaki/Tamaki.tscn")
+const TAMAKIDATA = preload("res://Scenes/Characters/Tamaki/TamakiStats.tres")
 
 
-const TamakiStats = preload("res://Resources/Stats/TamakiStats.tres")
-const WarriorStats = preload("res://Resources/Stats/NPC/Warrior.tres")
+# Adventurers
+
+const WARRIOR = preload("res://Scenes/Characters/Adventurer/Warrior/Warrior.tscn")
+const WARRIORDATA = preload("res://Scenes/Characters/Adventurer/Warrior/Warrior.tres")
 
 # Enemy Stats
-const BlueslimeStats = preload("res://Resources/Stats/Enemy/BlueSlimeStats.tres")
-const RedSlimeStats = preload("res://Resources/Stats/Enemy/RedSlimeStats.tres")
-const SkeletonStats = preload("res://Resources/Stats/Enemy/SkeletonStats.tres")
+
+const BLUESLIME = preload("res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tscn")
+const BLUESLIMEDATA = preload("res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tres")

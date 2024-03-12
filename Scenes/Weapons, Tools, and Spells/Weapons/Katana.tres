@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://blhhvs52xpnlx"]
+
+[ext_resource type="Script" path="res://Resources/Weapons.gd" id="1_jmb1r"]
+[ext_resource type="Texture2D" uid="uid://dqux6rup6kueh" path="res://Assets/Characters/Tamaki/Katana/Katana.png" id="2_gcq5t"]
+[ext_resource type="PackedScene" uid="uid://b67rcvhl30bxe" path="res://Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn" id="2_k2djf"]
+
+
+[resource]
+script = ExtResource("1_jmb1r")
+ItemName = "Katana"
+ItemTexture = ExtResource("2_gcq5t")
+BaseDamage = 4.0
+Scene = ExtResource("2_k2djf")
+ItemDescription = "Swish Swish dude, its a sword not a fighter jet"

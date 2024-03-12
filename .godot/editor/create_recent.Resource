@@ -1,4 +1,3 @@
-GameStats
+CharacterInfo
 Spells
-AllTheItems
 CraftingMaterial

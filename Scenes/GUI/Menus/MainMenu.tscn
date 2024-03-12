@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/GUI/Menus/MainMenu.gd" id="1_bnf2a"]
 [ext_resource type="Texture2D" uid="uid://caeultv7bepry" path="res://Assets/Icons and Background/MenuBackground.png" id="1_ut7x8"]
-[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://Primary/Main.tscn" id="2_uvxlw"]
+[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://Scenes/GUI/Main.tscn" id="2_uvxlw"]
+
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3

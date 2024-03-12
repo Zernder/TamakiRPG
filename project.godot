@@ -25,7 +25,6 @@ config/icon="res://Assets/Icons and Background/Tama Icon Large.png"
 
 Global="*res://SingleTons/Global.gd"
 SavedGame="*res://SingleTons/SavedGame.gd"
-Weapons="*res://SingleTons/Weapons.gd"
 
 [dialogue_manager]
 
@@ -41,6 +40,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Purple Haze of Shadow"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
 
 [filesystem]
 

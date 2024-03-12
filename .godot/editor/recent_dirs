@@ -1,17 +1,12 @@
-res://Resources/Stats
-res://Code/GDScript/Characters
-res://Code/GDScript
-res://Resources/Stats/Enemy
+res://Scenes/Characters/Tamaki
+res://Scenes/Characters/Enemy/Blue Slime
 res://Scenes/Inheritance
 res://Scenes/Modular
-res://Resources/Stats/NPC
 D:/XanFiles/Projects/GameDev Projects/Godot Projects/2D/Executables/Purple Haze of Shadows/Purple Haze of Shadows Web
 res://Assets/Icons and Background
 D:/XanFiles/Projects/GameDev Projects/Godot Projects/2D/Executables/Purple Haze of Shadows
 res://SingleTons
-res://Scenes/Spells
 res://Assets
 D:/XanFiles/Projects/GameDev Projects/Godot Projects
-res://Resources/Crafting/Crafting Materials
 res://Scenes/Crafting Materials
 res://Assets/Characters/Tamaki/Stealth

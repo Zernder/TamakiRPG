@@ -1,9 +1,10 @@
 extends Node
 
-@onready var TamakiStats = preload("res://Resources/Stats/TamakiStats.tres")
+@onready var TamakiStats = Global.TAMAKIDATA
+
 
 func SaveGame():
-	var SavedGame: GameStats = GameStats.new()
+	var SavedGame: CharacterStats = CharacterStats.new()
 
 	SavedGame.Position = TamakiStats.Position
 
@@ -25,7 +26,7 @@ func SaveGame():
 	ResourceSaver.save(SavedGame, "user://SaveGame.tres")
 
 func LoadGame():
-	var SavedGame: GameStats = load("user://SaveGame.tres") as GameStats
+	var SavedGame: CharacterStats = load("user://SaveGame.tres") as CharacterStats
 
 
 	TamakiStats.Position = SavedGame.Position

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1grc52gaavag"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/UI.gd" id="1_r7n2c"]
-[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Resources/Stats/TamakiStats.tres" id="2_61vla"]
+[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Scenes/Characters/Tamaki/TamakiStats.tres" id="2_61vla"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
