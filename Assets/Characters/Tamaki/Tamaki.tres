@@ -239,9 +239,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y4cq6")
 }],
-"loop": false,
+"loop": true,
 "name": &"attackside",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -308,9 +308,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6exo7")
 }],
-"loop": false,
+"loop": true,
 "name": &"shurikenside",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,

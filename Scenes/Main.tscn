@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4vuedxnjabbw"]
+
+[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://2D/Scenes/GUI/Main2D.tscn" id="1_oatp8"]
+[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_r40or"]
+[ext_resource type="PackedScene" uid="uid://4ik83j43m6l7" path="res://3D/Main3D.tscn" id="2_nhnan"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r40or")
+
+[node name="Main2D" parent="." instance=ExtResource("1_oatp8")]
+unique_name_in_owner = true
+
+[node name="Main3D" parent="." instance=ExtResource("2_nhnan")]
+unique_name_in_owner = true

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://2kdn131l8h1"]
+
+[ext_resource type="Script" path="res://2D/Scenes/GUI/Main.gd" id="1_p6dfs"]
+[ext_resource type="PackedScene" uid="uid://b7d0hpqe25dok" path="res://2D/Scenes/Characters/Tamaki/Tamaki.tscn" id="2_pdg4v"]
+[ext_resource type="PackedScene" uid="uid://uq35a3lhcepf" path="res://2D/Scenes/Spawners/Spawner.tscn" id="3_rtqb4"]
+[ext_resource type="PackedScene" uid="uid://ciyug6i7bkol4" path="res://2D/Scenes/Locations/TutorialArea.tscn" id="3_snme7"]
+[ext_resource type="AudioStream" uid="uid://bk0qstprtxt0p" path="res://Assets/Sound and Music/On The Move.ogg" id="4_j3nvb"]
+
+[sub_resource type="GDScript" id="GDScript_1h4vr"]
+
+[node name="Main2D" type="Node2D"]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_p6dfs")
+TamakiScene = ExtResource("2_pdg4v")
+
+[node name="Locations" type="Node2D" parent="."]
+script = SubResource("GDScript_1h4vr")
+
+[node name="TutorialArea" parent="Locations" instance=ExtResource("3_snme7")]
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="BlueSlimeSpawner" parent="Spawners" instance=ExtResource("3_rtqb4")]
+
+[node name="BeginnerForestMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_j3nvb")
+volume_db = -30.0
+autoplay = true
+
+[node name="Spawn" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(1021, 118)
+
+[node name="Tamaki" parent="." instance=ExtResource("2_pdg4v")]
+position = Vector2(1017, 116)

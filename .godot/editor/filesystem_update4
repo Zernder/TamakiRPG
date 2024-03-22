@@ -1,32 +1,17 @@
-res://Scenes/Characters/Tamaki/Tamaki.tscn
+res://2D/Scenes/GUI/Menus/MainMenu.tscn
+res://Assets/Characters/Blue Slime/BlueSlime.tres
+res://Assets/Characters/Tamaki/Tamaki.tres
 res://Assets/Tilesets/Primary Tileset.tres
-res://SingleTons/SavedGame.gd
-res://SingleTons/Global.gd
-res://Scenes/GUI/Main.tscn
-res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tscn
-res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.gd
-res://Scenes/Spawners/Spawner.gd
-res://Scenes/Characters/Tamaki/Tamaki.gd
-res://Resources/GameStats.gd
-res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tres
-res://Resources/CharacterStats.gd
-res://Resources/CharacterInfo.gd
-res://Scenes/Characters/Tamaki/TamakiStats.tres
-res://Scenes/Characters/Tamaki/TamakiInfo.tres
-res://Scenes/GUI/UI.gd
-res://Scenes/Characters/Adventurer/Warrior/Warrior.gd
-res://Scenes/Characters/Adventurer/Warrior/Warrior.tscn
-res://Scenes/GUI/UI.tscn
-res://Assets/Characters/Tamaki/Idle/Idle Down.res
-res://Assets/Characters/Tamaki/Idle/Idle Left.res
-res://Assets/Characters/Tamaki/Idle/Idle Right.res
-res://Assets/Characters/Tamaki/Idle/Idle Up.res
-res://Assets/Characters/Tamaki/Shuriken/Shuriken Down.res
-res://Assets/Characters/Tamaki/Shuriken/Shuriken Left.res
-res://Assets/Characters/Tamaki/Shuriken/Shuriken Right.res
-res://Assets/Characters/Tamaki/Shuriken/Tamaki Shuriken Animations.res
-res://Assets/Characters/Tamaki/Walk/Walk Down.res
-res://Assets/Characters/Tamaki/Walk/Walk Left.res
-res://Assets/Characters/Tamaki/Walk/Walk Right.res
-res://Assets/Characters/Tamaki/Walk/Walk Up.res
-res://Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.tscn
+res://3D/Resources/Blocks.tres
+res://Scenes/Main.tscn
+res://2D/Scenes/GUI/Main2D.tscn
+res://2D/Scenes/Characters/Tamaki/Tamaki.tscn
+res://3D/Main3D.tscn
+res://3D/Tamaki3D.tscn
+res://3D/blocks.tscn
+res://Scenes/Main.gd
+res://3D/Scenes/Main3D.tscn
+res://3D/Scenes/Characters/Tamaki3D.tscn
+res://3D/Scenes/Tamaki3D.gd
+res://2D/Resources/CharacterStats.gd
+res://2D/Scenes/Characters/Tamaki/TamakiStats.tres

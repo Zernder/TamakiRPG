@@ -1,3 +1,0 @@
-CharacterInfo
-Spells
-CraftingMaterial

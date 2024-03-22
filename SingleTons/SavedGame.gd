@@ -1,6 +1,6 @@
 extends Node
 
-@onready var TamakiStats = Global.TAMAKIDATA
+const TamakiStats = preload("res://2D/Scenes/Characters/Tamaki/TamakiStats.tres")
 
 
 func SaveGame():

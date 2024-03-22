@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b67rcvhl30bxe"]
+
+[ext_resource type="Texture2D" uid="uid://dqux6rup6kueh" path="res://Assets/Characters/Tamaki/Katana/Katana.png" id="1_q5um7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukkik"]
+height = 86.6667
+
+[node name="Katana" type="Area2D" groups=["Katana", "Melee"]]
+collision_layer = 32
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ukkik")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.3, 2.7)
+scale = Vector2(1, 1)
+texture = ExtResource("1_q5um7")
