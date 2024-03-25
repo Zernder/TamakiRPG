@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=14 format=3 uid="uid://dxbdvjaatqsqo"]
 
 [ext_resource type="Texture2D" uid="uid://2bep4sukwv4l" path="res://Assets/Tilesets/Images/Outdoors/Water and Waterfalls.png" id="4_87ie7"]
+[ext_resource type="Texture2D" uid="uid://dmfu1866fftbx" path="res://Assets/Tilesets/Grass.png" id="4_ysmkc"]
+[ext_resource type="Texture2D" uid="uid://dc10uq2cd2mk" path="res://Assets/Tilesets/Rock.png" id="5_m76iw"]
 [ext_resource type="Texture2D" uid="uid://cb5swils6qyl5" path="res://Assets/Tilesets/Images/Objects/fences.png" id="5_xsqap"]
 [ext_resource type="Texture2D" uid="uid://llnu5blcx6b1" path="res://Assets/Tilesets/Images/forest_objects.png" id="7_nbxfk"]
-[ext_resource type="Texture2D" uid="uid://dmfu1866fftbx" path="res://Assets/Grass.png" id="8_864ua"]
-[ext_resource type="Texture2D" uid="uid://dc10uq2cd2mk" path="res://Assets/Rock.png" id="9_mc21i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_54nad"]
 rough = true
@@ -857,7 +857,7 @@ texture = ExtResource("5_xsqap")
 3:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ru37"]
-texture = ExtResource("8_864ua")
+texture = ExtResource("4_ysmkc")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -876,7 +876,7 @@ texture = ExtResource("8_864ua")
 1:1/0/custom_data_0 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cpu0"]
-texture = ExtResource("9_mc21i")
+texture = ExtResource("5_m76iw")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)

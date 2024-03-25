@@ -1,17 +1,29 @@
-res://2D/Scenes/GUI/Menus/MainMenu.tscn
-res://Assets/Characters/Blue Slime/BlueSlime.tres
-res://Assets/Characters/Tamaki/Tamaki.tres
+res://Scenes/Locations/Main3D/Main3D.tscn
 res://Assets/Tilesets/Primary Tileset.tres
-res://3D/Resources/Blocks.tres
-res://Scenes/Main.tscn
-res://2D/Scenes/GUI/Main2D.tscn
-res://2D/Scenes/Characters/Tamaki/Tamaki.tscn
-res://3D/Main3D.tscn
-res://3D/Tamaki3D.tscn
-res://3D/blocks.tscn
-res://Scenes/Main.gd
-res://3D/Scenes/Main3D.tscn
-res://3D/Scenes/Characters/Tamaki3D.tscn
-res://3D/Scenes/Tamaki3D.gd
-res://2D/Resources/CharacterStats.gd
-res://2D/Scenes/Characters/Tamaki/TamakiStats.tres
+res://Assets/Characters/Tamaki/Tamaki2D/TamakiOld.tres
+res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.tres
+res://Assets/Characters/Blue Slime/BlueSlime.tres
+res://Resources/Blocks.tres
+res://Scenes/GUI/Menus/MainMenu.tscn
+res://Scenes/GUI/Main2D.tscn
+res://Scenes/Characters/Tamaki/Tamaki2D/Tamaki.tscn
+res://Scenes/Characters/Tamaki/Tamaki3D/Tamaki3D.tscn
+res://Scenes/GUI/UI.tscn
+res://Scenes/Locations/TutorialArea.tscn
+res://Documents/Game Design Document.md
+res://Resources/CharacterStats.gd
+res://Scenes/Weapons, Tools, and Spells/Spells/Blink/blink.tscn
+res://Scenes/Weapons, Tools, and Spells/Spells/Blink/Blink.gd
+res://Scenes/Characters/Enemy/Blue Slime/BlueSlimeSummon.tscn
+res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.gd
+res://Scenes/Characters/Enemy/Blue Slime/BlueSlimeSummon.gd
+res://Scenes/GUI/HotBar.tscn
+res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tscn
+res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tres
+res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres
+res://Scenes/GUI/minimapTama.gd
+res://Documents/Spells.txt
+res://SingleTons/Global.gd
+res://Scenes/GUI/SubViewport.gd
+res://Scenes/Spawners/Spawner.tscn
+res://Scenes/Spawners/Spawner.gd

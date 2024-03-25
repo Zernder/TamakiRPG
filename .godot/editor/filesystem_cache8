@@ -1,104 +1,18 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1711250283
+::res://::1711456147
 export_presets.cfg::TextFile::-1::1711241515::0::1::::<><>::
-::res://2D/::1711244208
-::res://2D/Resources/::0
-::res://2D/Scenes/::1711241955
-::res://2D/Scenes/Characters/::1711241955
-::res://2D/Scenes/Characters/Adventurer/::1710263008
-::res://2D/Scenes/Characters/Adventurer/Warrior/::1711244208
-Warrior.gd::GDScript::-1::1710263009::0::1::::<>CharacterBody2D<>::
-Warrior.tres::Resource/Resource::408269507989695802::1710263009::0::1::::<><>::res://Resources/CharacterStats.gd
-Warrior.tscn::PackedScene::5549310542477639380::1711244208::0::1::::<><>::res://2D/Scenes/Characters/Adventurer/Warrior/Warrior.gd<>res://Resources/CharacterStats.gd<>uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
-::res://2D/Scenes/Characters/Enemy/::1711241955
-::res://2D/Scenes/Characters/Enemy/Blue Slime/::1711244475
-BlueSlime.gd::GDScript::-1::1711244475::0::1::::<>CharacterBody2D<>::
-BlueSlime.tres::Resource/Resource::5927952365791484653::1710263009::0::1::::<><>::res://Resources/CharacterStats.gd
-BlueSlime.tscn::PackedScene::3069371488550424032::1711244208::0::1::::<><>::res://2D/Scenes/Characters/Enemy/Blue Slime/BlueSlime.gd<>res://Resources/CharacterStats.gd<>uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres<>uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
-::res://2D/Scenes/Characters/Enemy/Skeleton/::1710263009
-SkeletonStats.tres::Resource/Resource::8582824650890085508::1710263009::0::1::::<><>::res://Resources/CharacterStats.gd
-::res://2D/Scenes/Characters/Tamaki/::1711250406
-Tamaki.gd::GDScript::-1::1711250013::0::1::::Tamaki<>CharacterBody2D<>::
-Tamaki.tscn::PackedScene::4640188051534941202::1711250406::0::1::::<><>::res://2D/Scenes/Characters/Tamaki/Tamaki.gd<>uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres<>uid://cyxy07xpdoigs::::res://Assets/Characters/Tamaki/Tamaki.png<>uid://b67rcvhl30bxe::::res://2D/Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn<>uid://bkhm4tu6uts41::::res://Assets/Characters/Tamaki/Status/Damaged.res<>uid://cdp5p8m1c50om::::res://Assets/Characters/Tamaki/Idle/Tamaki Idle Animations.res<>uid://ll804yqmkmgd::::res://Assets/Characters/Tamaki/Katana/Tamaki Katana Animations.res<>uid://iv586r1pdo85::::res://Assets/Characters/Tamaki/Shuriken/Tamaki Shuriken Animations.res<>uid://wx8vlh5gslme::::res://Assets/Characters/Tamaki/Stealth/Stealth.res<>uid://bptwvxhu2e1gl::::res://Assets/Characters/Tamaki/Walk/Tamaki Walking Animations.res<>uid://c1grc52gaavag::::res://2D/Scenes/GUI/UI.tscn
-TamakiStats.tres::Resource/Resource::2353579689471209589::1711118893::0::1::::<><>::res://Resources/CharacterStats.gd
-::res://2D/Scenes/Crafting Materials/::1710254425
-WoodLog.tscn::PackedScene::199919953891688639::1710254425::0::1::::<><>::uid://i0u7x0t7sylt::::res://Assets/Items/Wood Logs.png
-::res://2D/Scenes/GUI/::1711250406
-Blinkbutton.gd::GDScript::-1::1711223411::0::1::::<>TextureButton<>::
-CharacterSheet.gd::GDScript::-1::1711233826::0::1::::<>Control<>::
-CharacterSheet.tscn::PackedScene::7525580439463824879::1711249820::0::1::::<><>::res://2D/Scenes/GUI/CharacterSheet.gd<>uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres<>uid://c0rbe7lty6le8::::res://Assets/Characters/Tamaki/Tamaki.tres
-HotBar.gd::GDScript::-1::1711241955::0::1::::<>HBoxContainer<>::
-Main2D.tscn::PackedScene::56351450944867332::1711250406::0::1::::<><>::res://2D/Scenes/GUI/Main.gd<>uid://b7d0hpqe25dok::::res://2D/Scenes/Characters/Tamaki/Tamaki.tscn<>uid://uq35a3lhcepf::::res://2D/Scenes/Spawners/Spawner.tscn<>uid://ciyug6i7bkol4::::res://2D/Scenes/Locations/TutorialArea.tscn<>uid://bk0qstprtxt0p::::res://Assets/Sound and Music/On The Move.ogg
-Main.gd::GDScript::-1::1711231366::0::1::::<>Node2D<>::
-UI.gd::GDScript::-1::1711233713::0::1::::GUI<>CanvasLayer<>::
-UI.tscn::PackedScene::6611174946647102810::1711249820::0::1::::<><>::res://2D/Scenes/GUI/UI.gd<>uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres<>res://2D/Scenes/GUI/HotBar.gd<>uid://d2kfkxr2o3hco::::res://2D/Scenes/Weapons, Tools, and Spells/Spells/Blink/blink.tscn<>uid://cof06tw5ry8ft::::res://2D/Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.tscn<>uid://cvdruxx1onap4::::res://Assets/Items/Bone.png<>uid://cx4be1qko1oo8::::res://Assets/Items/Branch.png<>uid://dfhphffc1sml0::::res://2D/Scenes/GUI/CharacterSheet.tscn
-::res://2D/Scenes/GUI/Menus/::1711250406
-MainMenu.gd::GDScript::-1::1711241955::0::1::::<>Control<>::
-MainMenu.tscn::PackedScene::7584415193709991469::1711250516::0::1::::<><>::res://2D/Scenes/GUI/Menus/MainMenu.gd<>uid://caeultv7bepry::::res://Assets/Icons and Background/MenuBackground.png<>uid://2kdn131l8h1::::res://2D/Scenes/GUI/Main2D.tscn<>uid://ciyug6i7bkol4::::res://2D/Scenes/Locations/TutorialArea.tscn<>uid://c0rbe7lty6le8::::res://Assets/Characters/Tamaki/Tamaki.tres<>uid://b0slo0xn4uymj::::res://Assets/CharacterScreen.png
-PauseMenu.tscn::PackedScene::9208013016700631014::1710263008::0::1::::<><>::uid://dxbdvjaatqsqo::::res://Assets/Tilesets/Primary Tileset.tres
-::res://2D/Scenes/Inheritance/::1710254425
-BaseCharacter.tscn::PackedScene::6429667466104859268::1710254425::0::1::::<><>::
-::res://2D/Scenes/Locations/::1711244208
-BeginnerForest.tscn::PackedScene::2585520367400878249::1711233242::0::1::::<><>::uid://dxbdvjaatqsqo::::res://Assets/Tilesets/Primary Tileset.tres
-TutorialArea.tscn::PackedScene::5385123879244623787::1711244208::0::1::::<><>::uid://bc3pe370utpk8::::res://2D/Scenes/Locations/BeginnerForest.tscn<>uid://dxbdvjaatqsqo::::res://Assets/Tilesets/Primary Tileset.tres
-::res://2D/Scenes/Materials/::1710263008
-Wood.tres::Resource/Resource::7177133860382057135::1710263008::0::1::::<><>::res://Resources/CraftMaterials.gd<>uid://i0u7x0t7sylt::::res://Assets/Items/Wood Logs.png
-::res://2D/Scenes/Modular/::1710263008
-::res://2D/Scenes/Modular/Boxes/::1710263008
-DamageBox.tscn::PackedScene::1230211766721093718::1710263008::0::1::::<><>::
-DetectionBox.tscn::PackedScene::6556576865249323841::1710263008::0::1::::<><>::
-HitBox.tscn::PackedScene::8565717486807523878::1710263008::0::1::::<><>::
-::res://2D/Scenes/Modular/UI/::1710263008
-NPCUI.tscn::PackedScene::3340012416573315647::1710263008::0::1::::<><>::
-::res://2D/Scenes/Spawners/::1711244298
-Spawner.gd::GDScript::-1::1711244298::0::1::::<>Node2D<>::
-Spawner.tscn::PackedScene::1438560610203963379::1711244208::0::1::::<><>::res://2D/Scenes/Spawners/Spawner.gd
-::res://2D/Scenes/Weapons, Tools, and Spells/::1710263008
-::res://2D/Scenes/Weapons, Tools, and Spells/Spells/::1711232891
-::res://2D/Scenes/Weapons, Tools, and Spells/Spells/Blink/::1711244208
-Blink.gd::GDScript::-1::1711241955::0::1::::<>Sprite2D<>::
-blink.tscn::PackedScene::9075327285294958798::1711244208::0::1::::<><>::uid://cyxy07xpdoigs::::res://Assets/Characters/Tamaki/Tamaki.png<>res://2D/Scenes/Weapons, Tools, and Spells/Spells/Blink/Blink.gd<>uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres
-::res://2D/Scenes/Weapons, Tools, and Spells/Spells/FireBall/::1711244208
-Fireball.gd::GDScript::-1::1711241955::0::1::::<>Area2D<>::
-Fireball.tres::Resource/Resource::3976616214239750433::1711244208::0::1::::<><>::uid://bbon8fps60fqo::::res://Assets/Fire.png<>res://Resources/Spells.gd<>uid://cof06tw5ry8ft::::res://2D/Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.tscn
-Fireball.tscn::PackedScene::5767381384835279697::1711244208::0::1::::<><>::uid://bbon8fps60fqo::::res://Assets/Fire.png<>res://2D/Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.gd<>uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres
-::res://2D/Scenes/Weapons, Tools, and Spells/Weapons/::1711244208
-Katana.gd::GDScript::-1::1710254425::0::1::::<>Node2D<>::
-Katana.tres::Resource/Resource::3173412121633776009::1711244208::0::1::::<><>::res://Resources/Weapons.gd<>uid://dqux6rup6kueh::::res://Assets/Characters/Tamaki/Katana/Katana.png<>uid://b67rcvhl30bxe::::res://2D/Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn
-Katana.tscn::PackedScene::4629371799409033022::1711054386::0::1::::<><>::uid://dqux6rup6kueh::::res://Assets/Characters/Tamaki/Katana/Katana.png
-Shuriken.gd::GDScript::-1::1711053764::0::1::::<>Area2D<>::
-Shuriken.tres::Resource/Resource::3411474401955735426::1711244208::0::1::::<><>::uid://djayiwcv8qnkh::::res://Assets/Characters/Tamaki/Shuriken/Shuriken.png<>uid://lscflbdeug6c::::res://2D/Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.tscn<>res://Resources/Weapons.gd
-Shuriken.tscn::PackedScene::809367021990591288::1711244208::0::1::::<><>::res://2D/Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.gd<>uid://c0chxsiq6dorr::::res://Assets/Items/Weapons and Armor/Weapons2.png
-::res://3D/::1711250406
-blocks.tscn::PackedScene::2751787571751685982::1711250406::0::1::::<><>::
-Main3D.tscn::PackedScene::2052659074574539922::1711250406::0::1::::<><>::uid://pgre3x3t4e3u::::res://3D/Scenes/Characters/Tamaki3D.tscn<>uid://cuafllhaei68t::::res://3D/Resources/Blocks.tres<>res://3D/Scenes/GridMap.gd
-PurpleMateriel.tres::StandardMaterial3D::156120518668206786::1711244133::0::1::::<><>::
-Tamaki3D.tscn::PackedScene::5621859019160002427::1711250406::0::1::::<><>::res://3D/Scenes/Tamaki3D.gd
-::res://3D/Resources/::1711250288
-Blocks.tres::MeshLibrary::6176942057419815217::1711250288::0::1::::<><>::
-::res://3D/Scenes/::1711249121
-blocks.tscn::PackedScene::887464344190348310::1711249121::0::1::::<><>::
-GridMap.gd::GDScript::-1::1711248708::0::1::::<>GridMap<>::
-Main3D.tscn::PackedScene::6934947511506318031::1711250580::0::1::::<><>::uid://pgre3x3t4e3u::::res://3D/Scenes/Characters/Tamaki3D.tscn<>res://3D/Scenes/GridMap.gd<>uid://cuafllhaei68t::::res://3D/Resources/Blocks.tres
-Tamaki3D.gd::GDScript::-1::1711248815::0::1::::<>CharacterBody3D<>::
-::res://3D/Scenes/Characters/::1711249121
-Tamaki3D.tscn::PackedScene::1066259760630527156::1711249121::0::1::::<><>::res://3D/Scenes/Tamaki3D.gd
-::res://Assets/::1711241955
-CharacterScreen.png::CompressedTexture2D::4178994811496569937::1711241955::1711241955::1::::<><>::
-Fire.png::CompressedTexture2D::2486359354641865850::1710254425::1711057980::1::::<><>::
-Grass.png::CompressedTexture2D::8013112616577737245::1710938005::1711057980::1::::<><>::
-Rock.png::CompressedTexture2D::216319649495219366::1710939557::1711057980::1::::<><>::
-Tree.png::CompressedTexture2D::3155343029848592148::1710944585::1711057980::1::::<><>::
-::res://Assets/Buttons/::1711057981
-Arrow.png::CompressedTexture2D::4499550535224608515::1710254424::1711057980::1::::<><>::
-Exit Button.png::CompressedTexture2D::7026791710184564082::1710254424::1711057981::1::::<><>::
-Purple Menu Button.png::CompressedTexture2D::3769496813203161567::1710254424::1711057981::1::::<><>::
-Start Button.png::CompressedTexture2D::3364647065148107541::1710254424::1711057981::1::::<><>::
-T Button.png::CompressedTexture2D::5293451359295620332::1710254425::1711057981::1::::<><>::
-::res://Assets/Characters/::1710254425
-::res://Assets/Characters/Blue Slime/::1711250287
-Blue Slime SpriteSheet.png::CompressedTexture2D::8575272020412591724::1710254425::1711057980::1::::<><>::
-BlueSlime.tres::SpriteFrames::3265470556626641361::1711250287::0::1::::<><>::uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
+::res://Assets/::1711456661
+Fire.png::CompressedTexture2D::2486359354641865850::1710254425::1711354361::1::::<><>::
+::res://Assets/Buttons/::1711354362
+Arrow.png::CompressedTexture2D::4499550535224608515::1710254424::1711354361::1::::<><>::
+Exit Button.png::CompressedTexture2D::7026791710184564082::1710254424::1711354361::1::::<><>::
+Purple Menu Button.png::CompressedTexture2D::3769496813203161567::1710254424::1711354361::1::::<><>::
+Start Button.png::CompressedTexture2D::3364647065148107541::1710254424::1711354362::1::::<><>::
+T Button.png::CompressedTexture2D::5293451359295620332::1710254425::1711354361::1::::<><>::
+::res://Assets/Characters/::1711352268
+::res://Assets/Characters/Blue Slime/::1711456190
+Blue Slime SpriteSheet.png::CompressedTexture2D::8575272020412591724::1710254425::1711354361::1::::<><>::
+BlueSlime.tres::SpriteFrames::3265470556626641361::1711456190::0::1::::<><>::uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
 ::res://Assets/Characters/Blue Slime/Combat/::1710254425
 Combat Animations.res::AnimationLibrary::897466913704165979::1710254425::0::1::::<><>::uid://b4djkjdy3k2e3::::res://Assets/Characters/Blue Slime/Combat/Damaged.res
 Damaged.res::Animation::4428655071805023200::1710254425::0::1::::<><>::
@@ -110,113 +24,225 @@ Idle Right.res::Animation::7649717274183916783::1710254425::0::1::::<><>::
 Blue Slime Walk.res::AnimationLibrary::3412822376563532926::1710254425::0::1::::<><>::uid://wdxvfd8nqyd7::::res://Assets/Characters/Blue Slime/Walk/Walk Left.res<>uid://cqjsvyhh77jo3::::res://Assets/Characters/Blue Slime/Walk/Walk Right.res
 Walk Left.res::Animation::1551781954573085334::1710254425::0::1::::<><>::
 Walk Right.res::Animation::5915573944659171132::1710254425::0::1::::<><>::
-::res://Assets/Characters/Boar/::1711057980
-Boar Spritesheet.png::CompressedTexture2D::7150048741959312307::1710254425::1711057980::1::::<><>::
-::res://Assets/Characters/Fighter NPC Human/::1711057980
-FighterNPC.png::CompressedTexture2D::7021949636421849546::1710254425::1711057980::1::::<><>::
-::res://Assets/Characters/Green Slime/::1711057980
-Green Slime Spritesheet.png::CompressedTexture2D::8675758757631324786::1710254425::1711057980::1::::<><>::
+::res://Assets/Characters/Boar/::1711354361
+Boar Spritesheet.png::CompressedTexture2D::7150048741959312307::1710254425::1711354361::1::::<><>::
+::res://Assets/Characters/Fighter NPC Human/::1711354361
+FighterNPC.png::CompressedTexture2D::7021949636421849546::1710254425::1711354361::1::::<><>::
+::res://Assets/Characters/Green Slime/::1711354361
+Green Slime Spritesheet.png::CompressedTexture2D::8675758757631324786::1710254425::1711354361::1::::<><>::
 GreenSlime.tres::SpriteFrames::6442798593500720160::1710254425::0::1::::<><>::uid://dvuuqj7ifhe4a::::res://Assets/Characters/Green Slime/Green Slime Spritesheet.png
-::res://Assets/Characters/Skeleton/::1711057980
-Skeleton Spritesheet.png::CompressedTexture2D::1380422128034233145::1710254425::1711057980::1::::<><>::
+::res://Assets/Characters/Skeleton/::1711354361
+Skeleton Spritesheet.png::CompressedTexture2D::1380422128034233145::1710254425::1711354361::1::::<><>::
 Skeleton.tres::SpriteFrames::8132836974080689622::1710254425::0::1::::<><>::uid://twxl6qr64xc8::::res://Assets/Characters/Skeleton/Skeleton Spritesheet.png
-::res://Assets/Characters/Tamaki/::1711250287
-Tamaki.png::CompressedTexture2D::6506357872680177982::1710254425::1711057980::1::::<><>::
-Tamaki.tres::SpriteFrames::6562726438961043565::1711250287::0::1::::<><>::uid://cyxy07xpdoigs::::res://Assets/Characters/Tamaki/Tamaki.png
-TamakiOld.png::CompressedTexture2D::2855540469681945581::1710254425::1711057980::1::::<><>::
-TamakiOld.tres::SpriteFrames::7311013779444049830::1710254425::0::1::::<><>::uid://bgxilmq0g55af::::res://Assets/Characters/Tamaki/TamakiOld.png
-::res://Assets/Characters/Tamaki/Idle/::1710342450
+::res://Assets/Characters/Tamaki/::1711352268
+::res://Assets/Characters/Tamaki/Tamaki2D/::1711456190
+Tamaki.png::CompressedTexture2D::6506357872680177982::1710254425::1711354361::1::::<><>::
+Tamaki.tres::SpriteFrames::6562726438961043565::1711456190::0::1::::<><>::uid://cyxy07xpdoigs::::res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.png
+TamakiOld.png::CompressedTexture2D::2855540469681945581::1710254425::1711354361::1::::<><>::
+TamakiOld.tres::SpriteFrames::7311013779444049830::1711456190::0::1::::<><>::uid://bgxilmq0g55af::::res://Assets/Characters/Tamaki/Tamaki2D/TamakiOld.png
+::res://Assets/Characters/Tamaki/Tamaki2D/Idle/::1711352268
 Idle Down.res::Animation::5762185391704910876::1710342450::0::1::::<><>::
 Idle Left.res::Animation::5989683560859840860::1710342450::0::1::::<><>::
 Idle Right.res::Animation::5976563316882893823::1710342450::0::1::::<><>::
 Idle Up.res::Animation::7493575325546253296::1710342450::0::1::::<><>::
-Tamaki Idle Animations.res::AnimationLibrary::5016223614296173212::1710254425::0::1::::<><>::uid://codil7m0vexmy::::res://Assets/Characters/Tamaki/Idle/Idle Down.res<>uid://crlphinnryq01::::res://Assets/Characters/Tamaki/Idle/Idle Left.res<>uid://crfdeic65xsjn::::res://Assets/Characters/Tamaki/Idle/Idle Right.res<>uid://de07dc7jr0ux1::::res://Assets/Characters/Tamaki/Idle/Idle Up.res
-::res://Assets/Characters/Tamaki/Katana/::1711118075
+Tamaki Idle Animations.res::AnimationLibrary::5016223614296173212::1711352268::0::1::::<><>::uid://codil7m0vexmy::::res://Assets/Characters/Tamaki/Tamaki2D/Idle/Idle Down.res<>uid://crlphinnryq01::::res://Assets/Characters/Tamaki/Tamaki2D/Idle/Idle Left.res<>uid://crfdeic65xsjn::::res://Assets/Characters/Tamaki/Tamaki2D/Idle/Idle Right.res<>uid://de07dc7jr0ux1::::res://Assets/Characters/Tamaki/Tamaki2D/Idle/Idle Up.res
+::res://Assets/Characters/Tamaki/Tamaki2D/Katana/::1711354361
 Katana Down.res::Animation::383566637268537127::1711118075::0::1::::<><>::
 Katana Left.res::Animation::2004848878580660412::1710254425::0::1::::<><>::
 Katana Right.res::Animation::4982941729400027241::1710254425::0::1::::<><>::
 Katana Up.res::Animation::6382024104996063625::1710254425::0::1::::<><>::
-Katana.png::CompressedTexture2D::8325023879330112127::1710254425::1711057980::1::::<><>::
-Tamaki Katana Animations.res::AnimationLibrary::796835301917799567::1710254425::0::1::::<><>::uid://fp2j0fwhxxbb::::res://Assets/Characters/Tamaki/Katana/Katana Down.res<>uid://3tftk0kyoduy::::res://Assets/Characters/Tamaki/Katana/Katana Left.res<>uid://cc81k7smc6jbl::::res://Assets/Characters/Tamaki/Katana/Katana Right.res<>uid://cw6rafkfvf45b::::res://Assets/Characters/Tamaki/Katana/Katana Up.res
-::res://Assets/Characters/Tamaki/Shuriken/::1711057980
+Katana.png::CompressedTexture2D::8325023879330112127::1710254425::1711354361::1::::<><>::
+Tamaki Katana Animations.res::AnimationLibrary::796835301917799567::1711352268::0::1::::<><>::uid://fp2j0fwhxxbb::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Katana Down.res<>uid://3tftk0kyoduy::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Katana Left.res<>uid://cc81k7smc6jbl::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Katana Right.res<>uid://cw6rafkfvf45b::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Katana Up.res
+::res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/::1711354361
 Shuriken Down.res::Animation::2594478035906568124::1710342417::0::1::::<><>::
 Shuriken Left.res::Animation::8220480950494523104::1710342450::0::1::::<><>::
 Shuriken Right.res::Animation::8995349180576140678::1710342450::0::1::::<><>::
 Shuriken Up.res::Animation::3817564336278552695::1710254425::0::1::::<><>::
-Shuriken.png::CompressedTexture2D::7792434297601428159::1710254425::1711057980::1::::<><>::
-Tamaki Shuriken Animations.res::AnimationLibrary::606744778608400704::1710342450::0::1::::<><>::uid://bc71w6mq52ymm::::res://Assets/Characters/Tamaki/Shuriken/Shuriken Down.res<>uid://dpecec8oeqw3q::::res://Assets/Characters/Tamaki/Shuriken/Shuriken Left.res<>uid://d1foc7kkbfry1::::res://Assets/Characters/Tamaki/Shuriken/Shuriken Right.res
-::res://Assets/Characters/Tamaki/Status/::1710254425
+Shuriken.png::CompressedTexture2D::7792434297601428159::1710254425::1711354361::1::::<><>::
+Tamaki Shuriken Animations.res::AnimationLibrary::606744778608400704::1711352268::0::1::::<><>::uid://bc71w6mq52ymm::::res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/Shuriken Down.res<>uid://dpecec8oeqw3q::::res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/Shuriken Left.res<>uid://d1foc7kkbfry1::::res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/Shuriken Right.res
+::res://Assets/Characters/Tamaki/Tamaki2D/Status/::1710254425
 Damaged.res::Animation::3103541186564017396::1710254425::0::1::::<><>::
 RESET.res::Animation::959008481064641219::1710254425::0::1::::<><>::
-::res://Assets/Characters/Tamaki/Stealth/::1711244208
+::res://Assets/Characters/Tamaki/Tamaki2D/Stealth/::1711351419
 Stealth Off.res::Animation::7651985919894193729::1710254425::0::1::::<><>::
 Stealth On.res::Animation::7439148449605988562::1710254425::0::1::::<><>::
-Stealth.res::AnimationLibrary::1593677000755667256::1711244208::0::1::::<><>::uid://8sdd4l35tq1j::::res://2D/Scenes/Characters/Tamaki/TamakiStats.tres
-::res://Assets/Characters/Tamaki/Walk/::1710263009
-Tamaki Walking Animations.res::AnimationLibrary::3479851010899248847::1710254425::0::1::::<><>::uid://rbivn4eo68mm::::res://Assets/Characters/Tamaki/Walk/Walk Down.res<>uid://dkdy6pvutlqne::::res://Assets/Characters/Tamaki/Walk/Walk Left.res<>uid://d024fpbcvro0::::res://Assets/Characters/Tamaki/Walk/Walk Right.res<>uid://b0myiorg1rjc6::::res://Assets/Characters/Tamaki/Walk/Walk Up.res
+Stealth.res::AnimationLibrary::1593677000755667256::1711351419::0::1::::<><>::uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres
+::res://Assets/Characters/Tamaki/Tamaki2D/Walk/::1711352268
+Tamaki Walking Animations.res::AnimationLibrary::3479851010899248847::1711352268::0::1::::<><>::uid://rbivn4eo68mm::::res://Assets/Characters/Tamaki/Tamaki2D/Walk/Walk Down.res<>uid://dkdy6pvutlqne::::res://Assets/Characters/Tamaki/Tamaki2D/Walk/Walk Left.res<>uid://d024fpbcvro0::::res://Assets/Characters/Tamaki/Tamaki2D/Walk/Walk Right.res<>uid://b0myiorg1rjc6::::res://Assets/Characters/Tamaki/Tamaki2D/Walk/Walk Up.res
 Walk Down.res::Animation::1195798685019332160::1710263009::0::1::::<><>::
 Walk Left.res::Animation::7868857009384948294::1710263009::0::1::::<><>::
 Walk Right.res::Animation::263867407431298657::1710263009::0::1::::<><>::
 Walk Up.res::Animation::4167386563766875311::1710263009::0::1::::<><>::
-::res://Assets/Icons and Background/::1711057981
-MenuBackground.png::CompressedTexture2D::4782333893830714886::1710254425::1711057980::1::::<><>::
-Tama Icon Large.png::CompressedTexture2D::833655528817395421::1710254425::1711057981::1::::<><>::
-Tama Icon Small.png::CompressedTexture2D::4672552313697197909::1710254425::1711057980::1::::<><>::
-::res://Assets/Icons and Background/Conversation bubbles/::1711057980
-Tamaki icon.png::CompressedTexture2D::1865904829164102856::1710254425::1711057980::1::::<><>::
-::res://Assets/Items/::1711057980
-Bone.png::CompressedTexture2D::6254069366570285411::1710254425::1711057980::1::::<><>::
-Branch.png::CompressedTexture2D::6447120976895142437::1710254425::1711057980::1::::<><>::
-Coal.png::CompressedTexture2D::1483931582677339053::1710254425::1711057980::1::::<><>::
-Gold Ingot.png::CompressedTexture2D::1172492170306563636::1710254425::1711057980::1::::<><>::
-Gold Ore.png::CompressedTexture2D::8568884859560783241::1710254425::1711057980::1::::<><>::
-Iron Ore.png::CompressedTexture2D::529603502362137234::1710254425::1711057980::1::::<><>::
-IronIngot.png::CompressedTexture2D::3615379731151958328::1710254425::1711057980::1::::<><>::
-Items.png::CompressedTexture2D::869635509687079051::1710254425::1711057980::1::::<><>::
-MagicalItems.png::CompressedTexture2D::2480438362408611833::1710254425::1711057980::1::::<><>::
-Resources.png::CompressedTexture2D::5493287441978757777::1710254425::1711057980::1::::<><>::
-Stone.png::CompressedTexture2D::7287042035136142141::1710254425::1711057980::1::::<><>::
-Wood Logs.png::CompressedTexture2D::614392925779974553::1710254425::1711057980::1::::<><>::
-::res://Assets/Items/Weapons and Armor/::1711057980
-Gear.png::CompressedTexture2D::6718104482359508719::1710254425::1711057980::1::::<><>::
-weapons1.png::CompressedTexture2D::3026541382196761545::1710254425::1711057980::1::::<><>::
-Weapons2.png::CompressedTexture2D::6532158264601574931::1710254425::1711057980::1::::<><>::
-::res://Assets/Sound and Music/::1711057980
-On The Move.ogg::AudioStreamOggVorbis::3140923202013909237::1710254425::1711057980::1::::<><>::
-::res://Assets/Tilesets/::1711250288
-Barell.png::CompressedTexture2D::6890085783871533718::1710254425::1711057980::1::::<><>::
-Barell_V2.png::CompressedTexture2D::1147554112086358793::1710254425::1711057980::1::::<><>::
-Primary Tileset.tres::TileSet::8775889957894601894::1711250287::0::1::::<><>::uid://2bep4sukwv4l::::res://Assets/Tilesets/Images/Outdoors/Water and Waterfalls.png<>uid://cb5swils6qyl5::::res://Assets/Tilesets/Images/Objects/fences.png<>uid://llnu5blcx6b1::::res://Assets/Tilesets/Images/forest_objects.png<>uid://dmfu1866fftbx::::res://Assets/Grass.png<>uid://dc10uq2cd2mk::::res://Assets/Rock.png
-::res://Assets/Tilesets/Images/::1711057980
-forest_objects.png::CompressedTexture2D::795612049845786672::1710254425::1711057980::1::::<><>::
-Xan Created.png::CompressedTexture2D::1331349047429943848::1710254425::1711057980::1::::<><>::
-::res://Assets/Tilesets/Images/Gui/::1711057980
-inventory-background.png::CompressedTexture2D::7350545174451508471::1710254425::1711057980::1::::<><>::
+::res://Assets/Characters/Tamaki/Tamaki3D/::1711352365
+::res://Assets/Characters/Tamaki/Tamaki3D/Animations/::1711356023
+Idle.res::Animation::3907545690226116525::1711356023::0::1::::<><>::
+Jump.res::Animation::7558413342209765438::1711353924::0::1::::<><>::
+Run.res::Animation::4040049182675710634::1711352900::0::1::::<><>::
+walk.res::Animation::5050186503876026401::1711352900::0::1::::<><>::
+::res://Assets/Characters/Tamaki/Tamaki3D/FBX Files/::1711354375
+Idle.FBX::PackedScene::4262456815353837324::1711319390::1711354374::1::::<><>::
+Jump.FBX::PackedScene::4556887208644255513::1711319390::1711354374::1::::<><>::
+Running.FBX::PackedScene::1853585083728379582::1711319390::1711354375::1::::<><>::
+Walk.FBX::PackedScene::8531664685246482621::1711319390::1711354372::1::::<><>::
+::res://Assets/Characters/Tamaki/Tamaki3D/Model/::1711354549
+characterTamaki.gltf::PackedScene::3944223721988004334::1711354497::1711354548::1::::<><>::uid://cf1fh7aaykao1::::res://Assets/Characters/Tamaki/Tamaki3D/Model/M_NEEEEEW_BaseColor.png
+M_NEEEEEW_BaseColor.png::CompressedTexture2D::5177777173482755014::1711354497::1711354549::1::::<><>::
+::res://Assets/Icons and Background/::1711354362
+MenuBackground.png::CompressedTexture2D::4782333893830714886::1710254425::1711354361::1::::<><>::
+Tama Icon Large.png::CompressedTexture2D::833655528817395421::1710254425::1711354362::1::::<><>::
+Tama Icon Small.png::CompressedTexture2D::4672552313697197909::1710254425::1711354361::1::::<><>::
+::res://Assets/Icons and Background/Conversation bubbles/::1711354361
+Tamaki icon.png::CompressedTexture2D::1865904829164102856::1710254425::1711354361::1::::<><>::
+::res://Assets/Items/::1711355774
+Bone.png::CompressedTexture2D::6254069366570285411::1710254425::1711354361::1::::<><>::
+Branch.png::CompressedTexture2D::6447120976895142437::1710254425::1711354361::1::::<><>::
+Coal.png::CompressedTexture2D::1483931582677339053::1710254425::1711354361::1::::<><>::
+Gold Ingot.png::CompressedTexture2D::1172492170306563636::1710254425::1711354361::1::::<><>::
+Gold Ore.png::CompressedTexture2D::8568884859560783241::1710254425::1711354361::1::::<><>::
+Iron Ore.png::CompressedTexture2D::529603502362137234::1710254425::1711354361::1::::<><>::
+IronIngot.png::CompressedTexture2D::3615379731151958328::1710254425::1711354361::1::::<><>::
+Items.png::CompressedTexture2D::869635509687079051::1710254425::1711354361::1::::<><>::
+MagicalItems.png::CompressedTexture2D::2480438362408611833::1710254425::1711354361::1::::<><>::
+Resources.png::CompressedTexture2D::5493287441978757777::1710254425::1711354361::1::::<><>::
+Stone.png::CompressedTexture2D::7287042035136142141::1710254425::1711354361::1::::<><>::
+Wood Logs.png::CompressedTexture2D::614392925779974553::1710254425::1711354361::1::::<><>::
+::res://Assets/Sound and Music/::1711354361
+On The Move.ogg::AudioStreamOggVorbis::3140923202013909237::1710254425::1711354361::1::::<><>::
+::res://Assets/Tilesets/::1711456190
+Barell.png::CompressedTexture2D::6890085783871533718::1710254425::1711354361::1::::<><>::
+Barell_V2.png::CompressedTexture2D::1147554112086358793::1710254425::1711354361::1::::<><>::
+CharacterScreen.png::CompressedTexture2D::4178994811496569937::1711241955::1711455125::1::::<><>::
+Grass.png::CompressedTexture2D::8013112616577737245::1710938005::1711455113::1::::<><>::
+Primary Tileset.tres::TileSet::8775889957894601894::1711456190::0::1::::<><>::uid://2bep4sukwv4l::::res://Assets/Tilesets/Images/Outdoors/Water and Waterfalls.png<>uid://dmfu1866fftbx::::res://Assets/Tilesets/Grass.png<>uid://dc10uq2cd2mk::::res://Assets/Tilesets/Rock.png<>uid://cb5swils6qyl5::::res://Assets/Tilesets/Images/Objects/fences.png<>uid://llnu5blcx6b1::::res://Assets/Tilesets/Images/forest_objects.png
+Rock.png::CompressedTexture2D::216319649495219366::1710939557::1711455113::1::::<><>::
+Screenshot 2024-03-25 171705.png::CompressedTexture2D::4070044047080680239::1711412236::1711455120::1::::<><>::
+Tree.png::CompressedTexture2D::3155343029848592148::1710944585::1711455113::1::::<><>::
+::res://Assets/Tilesets/Images/::1711354361
+forest_objects.png::CompressedTexture2D::795612049845786672::1710254425::1711354361::1::::<><>::
+Xan Created.png::CompressedTexture2D::1331349047429943848::1710254425::1711354361::1::::<><>::
+::res://Assets/Tilesets/Images/Gui/::1711354361
+inventory-background.png::CompressedTexture2D::7350545174451508471::1710254425::1711354361::1::::<><>::
 ::res://Assets/Tilesets/Images/Indoors/::1710254425
-::res://Assets/Tilesets/Images/Indoors/Houses/::1711057980
-small houses.png::CompressedTexture2D::5954271138559271861::1710254425::1711057980::1::::<><>::
-::res://Assets/Tilesets/Images/Objects/::1711057980
-apple-icon.png::CompressedTexture2D::6361328177295265197::1710254425::1711057980::1::::<><>::
-fences.png::CompressedTexture2D::4906094175021302628::1710254425::1711057980::1::::<><>::
-inventory-slot.png::CompressedTexture2D::3874457355401481717::1710254425::1711057980::1::::<><>::
-::res://Assets/Tilesets/Images/Outdoors/::1711057980
-Basic Water.png::CompressedTexture2D::61166618928682491::1710254425::1711057980::1::::<><>::
-Grass and Desert.png::CompressedTexture2D::922204079238564637::1710254425::1711057980::1::::<><>::
-Rocks and Trees.png::CompressedTexture2D::7367566718441691359::1710254425::1711057980::1::::<><>::
-RPG Overworld Sprites.png::CompressedTexture2D::170610587961839454::1710254425::1711057980::1::::<><>::
-Trees, Flowers and Rocks.png::CompressedTexture2D::2619148157934406244::1710254425::1711057980::1::::<><>::
-Water and Waterfalls.png::CompressedTexture2D::1897434362767168905::1710254425::1711057980::1::::<><>::
-::res://Documents/::1710254425
-Game Design Document.md::TextFile::-1::1710254425::0::1::::<><>::
+::res://Assets/Tilesets/Images/Indoors/Houses/::1711354361
+small houses.png::CompressedTexture2D::5954271138559271861::1710254425::1711354361::1::::<><>::
+::res://Assets/Tilesets/Images/Objects/::1711354361
+apple-icon.png::CompressedTexture2D::6361328177295265197::1710254425::1711354361::1::::<><>::
+fences.png::CompressedTexture2D::4906094175021302628::1710254425::1711354361::1::::<><>::
+inventory-slot.png::CompressedTexture2D::3874457355401481717::1710254425::1711354361::1::::<><>::
+::res://Assets/Tilesets/Images/Outdoors/::1711354361
+Basic Water.png::CompressedTexture2D::61166618928682491::1710254425::1711354361::1::::<><>::
+Grass and Desert.png::CompressedTexture2D::922204079238564637::1710254425::1711354361::1::::<><>::
+Rocks and Trees.png::CompressedTexture2D::7367566718441691359::1710254425::1711354361::1::::<><>::
+RPG Overworld Sprites.png::CompressedTexture2D::170610587961839454::1710254425::1711354361::1::::<><>::
+Trees, Flowers and Rocks.png::CompressedTexture2D::2619148157934406244::1710254425::1711354361::1::::<><>::
+Water and Waterfalls.png::CompressedTexture2D::1897434362767168905::1710254425::1711354361::1::::<><>::
+::res://Assets/Weapons and Armor/::1711355792
+::res://Assets/Weapons and Armor/2D/::1711355792
+Gear.png::CompressedTexture2D::6718104482359508719::1710254425::1711355792::1::::<><>::
+weapons1.png::CompressedTexture2D::3026541382196761545::1710254425::1711355792::1::::<><>::
+Weapons2.png::CompressedTexture2D::6532158264601574931::1710254425::1711355792::1::::<><>::
+::res://Assets/Weapons and Armor/3D/::1711355796
+Bone_Shiv.fbx::PackedScene::192817060482870280::1711355796::1711355796::1::::<><>::
+::res://Documents/::1711458670
+Game Design Document.md::TextFile::-1::1711458670::0::1::::<><>::
 ::res://executables/::1711241956
-::res://Resources/::1711241955
-CharacterStats.gd::GDScript::-1::1711241955::0::1::::CharacterStats<>Resource<>::
+::res://Resources/::1711460277
+Blocks.tres::MeshLibrary::6176942057419815217::1711458426::0::1::::<><>::
+CharacterStats.gd::GDScript::-1::1711460277::0::1::::CharacterStats<>Resource<>::
 CraftMaterials.gd::GDScript::-1::1710263008::0::1::::CraftingMaterial<>Resource<>::
 Spells.gd::GDScript::-1::1710263008::0::1::::Spells<>Resource<>::
 Weapons.gd::GDScript::-1::1710263008::0::1::::WeaponData<>Resource<>::
-::res://Scenes/::1711250377
-Main.gd::GDScript::-1::1711250362::0::1::::<>Node<>::
-Main.tscn::PackedScene::4466470758765485100::1711250377::0::1::::<><>::uid://2kdn131l8h1::::res://2D/Scenes/GUI/Main2D.tscn<>res://Scenes/Main.gd<>uid://4ik83j43m6l7::::res://3D/Main3D.tscn
-::res://SingleTons/::1711244345
-Global.gd::GDScript::-1::1711244249::0::1::::<>Node2D<>::
-SavedGame.gd::GDScript::-1::1711244345::0::1::::<>Node<>::
+::res://Resources/Colors/::1711351340
+PurpleMateriel.tres::StandardMaterial3D::156120518668206786::1711349993::0::1::::<><>::
+::res://Scenes/::1711351328
+::res://Scenes/Characters/::1711351423
+::res://Scenes/Characters/Adventurer/::1710263008
+::res://Scenes/Characters/Adventurer/Warrior/::1711350793
+Warrior.gd::GDScript::-1::1710263009::0::1::::<>CharacterBody2D<>::
+Warrior.tres::Resource/Resource::408269507989695802::1711350732::0::1::::<><>::res://Resources/CharacterStats.gd
+Warrior.tscn::PackedScene::5549310542477639380::1711350793::0::1::::<><>::res://Scenes/Characters/Adventurer/Warrior/Warrior.gd<>res://Resources/CharacterStats.gd<>uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
+::res://Scenes/Characters/Enemy/::1711241955
+::res://Scenes/Characters/Enemy/Blue Slime/::1711351419
+BlueSlime.gd::GDScript::-1::1711244475::0::1::::<>CharacterBody2D<>::
+BlueSlime.tres::Resource/Resource::5927952365791484653::1711350732::0::1::::<><>::res://Resources/CharacterStats.gd
+BlueSlime.tscn::PackedScene::3069371488550424032::1711351419::0::1::::<><>::res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.gd<>res://Resources/CharacterStats.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
+BlueSlimeSummon.tscn::PackedScene::5284830982346823488::1711460459::0::1::::<><>::res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.gd<>res://Resources/CharacterStats.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://duf6qh1k575vk::::res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png
+::res://Scenes/Characters/Enemy/Skeleton/::1711350732
+SkeletonStats.tres::Resource/Resource::8582824650890085508::1711350732::0::1::::<><>::res://Resources/CharacterStats.gd
+::res://Scenes/Characters/Tamaki/::1711351423
+::res://Scenes/Characters/Tamaki/Tamaki2D/::1711456195
+Tamaki.gd::GDScript::-1::1711393525::0::1::::Tamaki<>CharacterBody2D<>::
+Tamaki.tscn::PackedScene::4640188051534941202::1711456195::0::1::::<><>::res://Scenes/Characters/Tamaki/Tamaki2D/Tamaki.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://cyxy07xpdoigs::::res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.png<>uid://b67rcvhl30bxe::::res://Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn<>uid://bkhm4tu6uts41::::res://Assets/Characters/Tamaki/Tamaki2D/Status/Damaged.res<>uid://cdp5p8m1c50om::::res://Assets/Characters/Tamaki/Tamaki2D/Idle/Tamaki Idle Animations.res<>uid://ll804yqmkmgd::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Tamaki Katana Animations.res<>uid://iv586r1pdo85::::res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/Tamaki Shuriken Animations.res<>uid://wx8vlh5gslme::::res://Assets/Characters/Tamaki/Tamaki2D/Stealth/Stealth.res<>uid://bptwvxhu2e1gl::::res://Assets/Characters/Tamaki/Tamaki2D/Walk/Tamaki Walking Animations.res<>uid://c1grc52gaavag::::res://Scenes/GUI/UI.tscn
+TamakiStats.tres::Resource/Resource::2353579689471209589::1711393514::0::1::::<><>::res://Resources/CharacterStats.gd
+::res://Scenes/Characters/Tamaki/Tamaki3D/::1711458426
+TamaCamera3D.gd::GDScript::-1::1711399361::0::1::::<>Camera3D<>::
+Tamaki3D.gd::GDScript::-1::1711400066::0::1::::<>CharacterBody3D<>::
+Tamaki3D.tscn::PackedScene::5453771177163677670::1711458426::0::1::::<><>::res://Scenes/Characters/Tamaki/Tamaki3D/Tamaki3D.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://bee3ef56t2rba::::res://Scenes/Characters/Tamaki/Tamaki3D/Animations/M_NEEEEEW_BaseColor.png<>uid://bvw3ya36xce66::::res://Assets/Characters/Tamaki/Tamaki3D/Animations/Idle.res<>uid://dfxl700mq2fic::::res://Assets/Characters/Tamaki/Tamaki3D/Animations/Jump.res<>uid://bxtbaw4o4ccu1::::res://Assets/Characters/Tamaki/Tamaki3D/Animations/Run.res<>uid://cd7l3l7ylhyn6::::res://Assets/Characters/Tamaki/Tamaki3D/Animations/walk.res<>uid://ci1otycp2kr3k::::res://Scenes/Weapons, Tools, and Spells/Weapons/3D/boneshiv.tscn
+::res://Scenes/Characters/Tamaki/Tamaki3D/Animations/::1711354372
+characterTamaki.gltf::PackedScene::514838884995616335::1711350880::1711354372::1::::<><>::uid://bee3ef56t2rba::::res://Scenes/Characters/Tamaki/Tamaki3D/Animations/M_NEEEEEW_BaseColor.png
+Idle.FBX::AnimationLibrary::2305880205712819699::1711348851::1711354365::1::::<><>::
+Jump.FBX::AnimationLibrary::3137968360453055629::1711348851::1711354363::1::::<><>::
+M_NEEEEEW_BaseColor.png::CompressedTexture2D::2677141098630402894::1711350880::1711354362::1::::<><>::
+Running.FBX::AnimationLibrary::7704719917010668925::1711348851::1711354363::1::::<><>::
+Walk.FBX::AnimationLibrary::1748572108740654021::1711348851::1711354362::1::::<><>::
+::res://Scenes/Crafting Materials/::1711351494
+WoodLog.tscn::PackedScene::199919953891688639::1710254425::0::1::::<><>::uid://i0u7x0t7sylt::::res://Assets/Items/Wood Logs.png
+::res://Scenes/GUI/::1711458676
+Blinkbutton.gd::GDScript::-1::1711223411::0::1::::<>TextureButton<>::
+CharacterSheet.gd::GDScript::-1::1711391888::0::1::::<>Control<>::
+CharacterSheet.tscn::PackedScene::7525580439463824879::1711391552::0::1::::<><>::res://Scenes/GUI/CharacterSheet.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://c0rbe7lty6le8::::res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.tres
+HotBar.gd::GDScript::-1::1711393214::0::1::::<>HBoxContainer<>::
+HotBar.tscn::PackedScene::1927622114864748099::1711395367::0::1::::<><>::res://Scenes/GUI/HotBar.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://d2kfkxr2o3hco::::res://Scenes/Weapons, Tools, and Spells/Spells/Blink/blink.tscn<>uid://cof06tw5ry8ft::::res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.tscn<>uid://cvdruxx1onap4::::res://Assets/Items/Bone.png<>uid://cx4be1qko1oo8::::res://Assets/Items/Branch.png
+Main2D.gd::GDScript::-1::1711391516::0::1::::<>Node2D<>::
+Main2D.tscn::PackedScene::56351450944867332::1711458676::0::1::::<><>::res://Scenes/GUI/Main2D.gd<>uid://b7d0hpqe25dok::::res://Scenes/Characters/Tamaki/Tamaki2D/Tamaki.tscn<>uid://ciyug6i7bkol4::::res://Scenes/Locations/TutorialArea.tscn<>uid://uq35a3lhcepf::::res://Scenes/Spawners/Spawner.tscn<>uid://bk0qstprtxt0p::::res://Assets/Sound and Music/On The Move.ogg
+minimapTama.gd::GDScript::-1::1711413524::0::1::::<>AnimatedSprite2D<>::
+SubViewport.gd::GDScript::-1::1711412732::0::1::::<>SubViewport<>::
+UI.gd::GDScript::-1::1711361334::0::1::::GUI<>CanvasLayer<>::
+UI.tscn::PackedScene::6611174946647102810::1711456198::0::1::::<><>::res://Scenes/GUI/UI.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres<>uid://2p0wiyrfsibb::::res://Scenes/GUI/HotBar.tscn<>uid://ciyug6i7bkol4::::res://Scenes/Locations/TutorialArea.tscn<>res://Scenes/GUI/SubViewport.gd<>uid://bgxilmq0g55af::::res://Assets/Characters/Tamaki/Tamaki2D/TamakiOld.png<>uid://dcfrlgc7sr4h3::::res://Assets/Characters/Tamaki/Tamaki2D/TamakiOld.tres<>uid://dfhphffc1sml0::::res://Scenes/GUI/CharacterSheet.tscn<>res://Scenes/GUI/minimapTama.gd
+::res://Scenes/GUI/Menus/::1711456195
+MainMenu.gd::GDScript::-1::1711241955::0::1::::<>Control<>::
+MainMenu.tscn::PackedScene::7584415193709991469::1711456195::0::1::::<><>::res://Scenes/GUI/Menus/MainMenu.gd<>uid://caeultv7bepry::::res://Assets/Icons and Background/MenuBackground.png<>uid://2kdn131l8h1::::res://Scenes/GUI/Main2D.tscn<>uid://ciyug6i7bkol4::::res://Scenes/Locations/TutorialArea.tscn<>uid://c0rbe7lty6le8::::res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.tres<>uid://b0slo0xn4uymj::::res://Assets/Tilesets/CharacterScreen.png
+PauseMenu.tscn::PackedScene::9208013016700631014::1710263008::0::1::::<><>::uid://dxbdvjaatqsqo::::res://Assets/Tilesets/Primary Tileset.tres
+::res://Scenes/Inheritance/::1710254425
+BaseCharacter.tscn::PackedScene::6429667466104859268::1710254425::0::1::::<><>::
+::res://Scenes/Locations/::1711458592
+BeginnerForest.tscn::PackedScene::2585520367400878249::1711233242::0::1::::<><>::uid://dxbdvjaatqsqo::::res://Assets/Tilesets/Primary Tileset.tres
+TutorialArea.tscn::PackedScene::5385123879244623787::1711458592::0::1::::<><>::uid://bc3pe370utpk8::::res://Scenes/Locations/BeginnerForest.tscn<>uid://dxbdvjaatqsqo::::res://Assets/Tilesets/Primary Tileset.tres
+::res://Scenes/Locations/Main3D/::1711458389
+blocks.tscn::PackedScene::2751787571751685982::1711395078::0::1::::<><>::
+GridMap.gd::GDScript::-1::1711349982::0::1::::<>GridMap<>::
+Main3D.gd::GDScript::-1::1711391039::0::1::::<>Node3D<>::
+Main3D.tscn::PackedScene::2103675301714201595::1711458389::0::1::::<><>::res://Scenes/Locations/Main3D/Main3D.gd<>uid://cuafllhaei68t::::res://Resources/Blocks.tres<>res://Scenes/Locations/Main3D/GridMap.gd<>uid://cjx32xsnsrap7::::res://Scenes/Characters/Tamaki/Tamaki3D/Tamaki3D.tscn<>uid://chvjue7phihm::::res://Resources/Colors/PurpleMateriel.tres
+::res://Scenes/Materials/::1711350732
+Wood.tres::Resource/Resource::7177133860382057135::1711350732::0::1::::<><>::res://Resources/CraftMaterials.gd<>uid://i0u7x0t7sylt::::res://Assets/Items/Wood Logs.png
+::res://Scenes/Modular/::1710263008
+::res://Scenes/Modular/Boxes/::1710263008
+DamageBox.tscn::PackedScene::1230211766721093718::1710263008::0::1::::<><>::
+DetectionBox.tscn::PackedScene::6556576865249323841::1710263008::0::1::::<><>::
+HitBox.tscn::PackedScene::8565717486807523878::1710263008::0::1::::<><>::
+::res://Scenes/Modular/UI/::1710263008
+NPCUI.tscn::PackedScene::3340012416573315647::1710263008::0::1::::<><>::
+::res://Scenes/Spawners/::1711360437
+Spawner.gd::GDScript::-1::1711360437::0::1::::<>Node2D<>::
+Spawner.tscn::PackedScene::1438560610203963379::1711350793::0::1::::<><>::res://Scenes/Spawners/Spawner.gd
+::res://Scenes/Weapons, Tools, and Spells/::1710263008
+::res://Scenes/Weapons, Tools, and Spells/Spells/::1711232891
+::res://Scenes/Weapons, Tools, and Spells/Spells/Blink/::1711393127
+Blink.gd::GDScript::-1::1711460392::0::1::::<>Sprite2D<>::
+blink.tscn::PackedScene::9075327285294958798::1711460392::0::1::::<><>::uid://cyxy07xpdoigs::::res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.png<>res://Scenes/Weapons, Tools, and Spells/Spells/Blink/Blink.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres
+::res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/::1711351419
+Fireball.gd::GDScript::-1::1711241955::0::1::::<>Area2D<>::
+Fireball.tres::Resource/Resource::3976616214239750433::1711350793::0::1::::<><>::uid://bbon8fps60fqo::::res://Assets/Fire.png<>res://Resources/Spells.gd<>uid://cof06tw5ry8ft::::res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.tscn
+Fireball.tscn::PackedScene::5767381384835279697::1711351419::0::1::::<><>::uid://bbon8fps60fqo::::res://Assets/Fire.png<>res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.gd<>uid://8sdd4l35tq1j::::res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres
+::res://Scenes/Weapons, Tools, and Spells/Weapons/::1711355963
+Katana.gd::GDScript::-1::1710254425::0::1::::<>Node2D<>::
+Katana.tres::Resource/Resource::3173412121633776009::1711352268::0::1::::<><>::res://Resources/Weapons.gd<>uid://dqux6rup6kueh::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Katana.png<>uid://b67rcvhl30bxe::::res://Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn
+Katana.tscn::PackedScene::4629371799409033022::1711352268::0::1::::<><>::uid://dqux6rup6kueh::::res://Assets/Characters/Tamaki/Tamaki2D/Katana/Katana.png
+Shuriken.gd::GDScript::-1::1711305530::0::1::::<>Area2D<>::
+Shuriken.tres::Resource/Resource::3411474401955735426::1711352268::0::1::::<><>::uid://djayiwcv8qnkh::::res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/Shuriken.png<>uid://lscflbdeug6c::::res://Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.tscn<>res://Resources/Weapons.gd
+Shuriken.tscn::PackedScene::809367021990591288::1711355792::0::1::::<><>::res://Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.gd<>uid://c0chxsiq6dorr::::res://Assets/Weapons and Armor/2D/Weapons2.png
+::res://Scenes/Weapons, Tools, and Spells/Weapons/3D/::1711391552
+boneshiv.tscn::PackedScene::5388911170446977254::1711391552::0::1::::<><>::uid://c0nw0fd4pmhc::::res://Assets/Weapons and Armor/3D/Bone_Shiv.fbx
+::res://SingleTons/::1711389957
+Global.gd::GDScript::-1::1711389957::0::1::::<>Node2D<>::
+SavedGame.gd::GDScript::-1::1711351447::0::1::::<>Node<>::

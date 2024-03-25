@@ -1,0 +1,190 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgb7he6qj6uif"]
+
+[ext_resource type="Script" path="res://Scenes/GUI/Menus/MainMenu.gd" id="1_bnf2a"]
+[ext_resource type="Texture2D" uid="uid://caeultv7bepry" path="res://Assets/Icons and Background/MenuBackground.png" id="1_ut7x8"]
+[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://Scenes/GUI/Main2D.tscn" id="2_rrus1"]
+[ext_resource type="PackedScene" uid="uid://ciyug6i7bkol4" path="res://Scenes/Locations/TutorialArea.tscn" id="3_4pph3"]
+[ext_resource type="SpriteFrames" uid="uid://c0rbe7lty6le8" path="res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.tres" id="5_un0dn"]
+[ext_resource type="Texture2D" uid="uid://b0slo0xn4uymj" path="res://Assets/Tilesets/CharacterScreen.png" id="6_0bm5r"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bnf2a")
+MainScene = ExtResource("2_rrus1")
+Tutorial = ExtResource("3_4pph3")
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(571, 315.688)
+scale = Vector2(3.101, 2.10923)
+texture = ExtResource("1_ut7x8")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.5
+offset_top = -160.0
+offset_right = 312.5
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Tutorial" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Tutorial (WIP)"
+flat = true
+
+[node name="SinglePlayer" type="Button" parent="MainMenu" groups=["StartButton"]]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Single Player"
+flat = true
+
+[node name="Multiplayer" type="Button" parent="MainMenu" groups=["StartButton"]]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Multiplayer (WIP)"
+flat = true
+
+[node name="Controls" type="Button" parent="MainMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+flat = true
+
+[node name="Settings" type="Button" parent="MainMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Settings (WIP)"
+flat = true
+
+[node name="Exit" type="Button" parent="MainMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit Game"
+flat = true
+expand_icon = true
+
+[node name="Controls" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Movement" type="VBoxContainer" parent="Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Movement" type="RichTextLabel" parent="Controls/Movement"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 30
+text = "W to move up:
+
+S to move down:
+
+D to move right
+
+A to move left:"
+fit_content = true
+
+[node name="Combat" type="RichTextLabel" parent="Controls/Movement"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 30
+text = "Primary Attack is Left Click
+
+Secondary Attack is Right Click
+
+C Opens your character Sheet"
+fit_content = true
+
+[node name="Back" type="Button" parent="Controls/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Animations" type="Node2D" parent="Controls"]
+
+[node name="down" type="AnimatedSprite2D" parent="Controls/Animations"]
+position = Vector2(265, 31)
+scale = Vector2(2.17188, 1.9375)
+sprite_frames = ExtResource("5_un0dn")
+animation = &"walkup"
+autoplay = "walkup"
+
+[node name="up" type="AnimatedSprite2D" parent="Controls/Animations"]
+position = Vector2(270, 107)
+scale = Vector2(2.17188, 1.9375)
+sprite_frames = ExtResource("5_un0dn")
+animation = &"walkdown"
+autoplay = "walkdown"
+
+[node name="right" type="AnimatedSprite2D" parent="Controls/Animations"]
+position = Vector2(261, 180)
+scale = Vector2(2.17188, 1.9375)
+sprite_frames = ExtResource("5_un0dn")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="left" type="AnimatedSprite2D" parent="Controls/Animations"]
+position = Vector2(260, 260)
+scale = Vector2(2.17188, 1.9375)
+sprite_frames = ExtResource("5_un0dn")
+animation = &"walk"
+autoplay = "walk"
+flip_h = true
+
+[node name="PrimaryAttack" type="AnimatedSprite2D" parent="Controls/Animations"]
+position = Vector2(430, 331)
+scale = Vector2(2.17188, 1.9375)
+sprite_frames = ExtResource("5_un0dn")
+animation = &"attackside"
+autoplay = "attackside"
+
+[node name="SecondaryAttack" type="AnimatedSprite2D" parent="Controls/Animations"]
+position = Vector2(477, 390)
+scale = Vector2(2.17188, 1.9375)
+sprite_frames = ExtResource("5_un0dn")
+animation = &"idleside"
+autoplay = "shurikenside"
+
+[node name="CharacterScreen" type="Sprite2D" parent="Controls/Animations"]
+position = Vector2(539, 488)
+scale = Vector2(0.193713, 0.180809)
+texture = ExtResource("6_0bm5r")
+
+[connection signal="pressed" from="MainMenu/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MainMenu/SinglePlayer" to="." method="SinglePlayer"]
+[connection signal="pressed" from="MainMenu/Multiplayer" to="." method="SinglePlayer"]
+[connection signal="pressed" from="MainMenu/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenu/Exit" to="." method="ExitGame"]
+[connection signal="pressed" from="Controls/Movement/Back" to="." method="_on_back_pressed"]

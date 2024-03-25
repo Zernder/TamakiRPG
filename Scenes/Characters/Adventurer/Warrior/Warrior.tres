@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GameStats" load_steps=2 format=3 uid="uid://f21ey4cblbck"]
+
+[ext_resource type="Script" path="res://Resources/CharacterStats.gd" id="1_3ewc6"]
+
+
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_3ewc6")
+Name = "Warrior Slime"
+Type = "Warrior"
+level = 1.0
+DifficultyLevel = 3.0
+speed = 25.0
+location = Vector2(0, 0)

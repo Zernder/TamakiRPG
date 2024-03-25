@@ -1,0 +1,115 @@
+Summoning:
+	Summon Familiar
+	Summon Elemental
+	Summon Turret
+	Summon Specter
+	Summon Treant
+	Summon Guardian
+	Summon Minions
+	Summon Phoenix
+	Summon Golem
+	Summon Elemental Drake
+
+
+Illusion:
+	Programmed Illusion
+	Phantom Steed
+	Hallucinatory Terrain
+	Shadow Conjuration
+	Mirror Image
+	Invisibility
+	Project Image
+	Mislead
+	Phantasmal Killer
+	Illusory Reality
+
+
+Enchantment:
+	Charm Person
+	Feeblemind
+	Temporal Shift
+	Haste
+	Modify Memory
+	Mass Suggestion
+	Geas
+	Power Word: Stun
+	Dominate Person
+	Mind Control
+
+
+Evocation:
+	Shatter
+	Thunderwave
+	Light Burst
+	Wind Slash
+	Eclipse
+	Fireball
+	Lightning Bolt
+	Arcane Blast
+	Chain Lightning
+	Meteor Shower
+
+
+Transmutation:
+	Spirit Walk
+	Polymorph
+	Time Warp
+	Phase Shift
+	Shadow Step
+	Telekinesis
+	Teleport
+	Shapechange
+	Baleful Polymorph
+	True Polymorph
+
+
+Necromancy:
+	Lifesteal
+	Withering Touch
+	Life Drain
+	Soul Drain
+	Necrotic Burst
+	Raise Dead
+	Death Ward
+	Hex
+	Vampiric Touch
+	Finger of Death
+
+
+Conjuration:
+	Conjure Celestial
+	Conjure Animals
+	Poison Cloud
+	Frost Nova
+	Searing Aura
+	Entangle
+	Tornado
+	Gravity Well
+	Explosive Trap
+	Spirit Shield
+
+
+Abjuration:
+	Spell Immunity
+	Nondetection
+	Purify
+	Dispel Magic
+	Counterspell
+	Banishment
+	Globe of Invulnerability
+	Antimagic Field
+	Mana Shield
+	Ice Barrier
+
+
+Healing and Restoration:
+	Mend Armor
+	Regeneration
+	Healing Touch
+	Cure Wounds
+	Greater Restoration
+	Heal
+	Mass Heal
+	Revivify
+	Raise Dead
+	Resurrection

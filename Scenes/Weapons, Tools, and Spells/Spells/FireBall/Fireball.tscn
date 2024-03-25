@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://cof06tw5ry8ft"]
+
+[ext_resource type="Texture2D" uid="uid://bbon8fps60fqo" path="res://Assets/Fire.png" id="1_t7tec"]
+[ext_resource type="Script" path="res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.gd" id="1_uhg8d"]
+[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres" id="2_75vwu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tb2p"]
+radius = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3py7"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkkrj"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg85r"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a18i"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd5bl"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvrl4"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plr84"]
+atlas = ExtResource("1_t7tec")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52v4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3py7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkkrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg85r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a18i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd5bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvrl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plr84")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireBall" type="Area2D" groups=["Magic"]]
+scale = Vector2(0.06, 0.06)
+collision_layer = 40
+collision_mask = 16
+script = ExtResource("1_uhg8d")
+TamakiStats = ExtResource("2_75vwu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2tb2p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
+sprite_frames = SubResource("SpriteFrames_52v4s")
+frame_progress = 0.983009
+
+[node name="Lifespan" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="area_entered" from="." to="." method="EnteredEnemy"]
+[connection signal="timeout" from="Lifespan" to="." method="LifespanEnded"]

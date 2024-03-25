@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Spells" load_steps=4 format=3 uid="uid://bwwkj1821q4dh"]
+
+[ext_resource type="Texture2D" uid="uid://bbon8fps60fqo" path="res://Assets/Fire.png" id="1_3js7n"]
+[ext_resource type="Script" path="res://Resources/Spells.gd" id="1_fhr8b"]
+[ext_resource type="PackedScene" uid="uid://cof06tw5ry8ft" path="res://Scenes/Weapons, Tools, and Spells/Spells/FireBall/Fireball.tscn" id="2_0adm5"]
+
+
+
+[resource]
+script = ExtResource("1_fhr8b")
+Name = "FireBall"
+picture = ExtResource("1_3js7n")
+scene = ExtResource("2_0adm5")
+baseDamage = 5.0
+baseManaCost = 5.0
