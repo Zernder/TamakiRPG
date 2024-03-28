@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterClass" load_steps=2 format=3 uid="uid://4olujvpwjpxo"]
+
+[ext_resource type="Script" path="res://MasterClasses/CharacterClass.gd" id="1_axiya"]
+
+[resource]
+script = ExtResource("1_axiya")
+Name = "Tamaki"
+classtype = "Ninja"
+level = 1.0
+Strength = 10.0
+Dexterity = 14.0
+Constitution = 8.0
+Intelligence = 12.0
+Wisdom = 8.0
+Charisma = 12.0
+currentxp = 0.0
+requiredxp = 0.0
+overallexp = 0.0
+statpoints = 0.0

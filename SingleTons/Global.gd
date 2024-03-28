@@ -4,8 +4,11 @@ extends Node2D
 var Cooldown: bool
 var direction: Vector2 = Vector2.ZERO
 var LastDirection: Vector2 = Vector2.ZERO
-var is2D: bool = true
+var ActionCooldown: bool = false
+var FamiliarSummoned: bool = false
 
+
+var is2D: bool = true
 
 func _process(_delta):
 	WorldView()

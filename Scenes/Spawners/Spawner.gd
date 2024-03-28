@@ -1,7 +1,7 @@
 extends Node2D
 
 # Node refs
-const BLUESLIME = preload("res://Scenes/Characters/Enemy/Blue Slime/BlueSlime.tscn")
+const BLUESLIME = preload("res://Scenes/Characters/Enemy/Slime/Blue Slime/BlueSlime.tscn")
 
 @export var SpawnedBlueSlimes: Node2D
 @export var MaxBlueSlimes: int = 80

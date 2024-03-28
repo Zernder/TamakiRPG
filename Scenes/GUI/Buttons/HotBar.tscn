@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://2p0wiyrfsibb"]
+
+[ext_resource type="Script" path="res://Scenes/GUI/Buttons/HotBar.gd" id="1_i22dc"]
+[ext_resource type="Texture2D" uid="uid://cvdruxx1onap4" path="res://Assets/Items/Bone.png" id="5_lkws6"]
+[ext_resource type="Texture2D" uid="uid://cx4be1qko1oo8" path="res://Assets/Items/Branch.png" id="6_bhxpu"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_s7vct"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="InputEventKey" id="InputEventKey_pmwf1"]
+device = -1
+keycode = 32
+physical_keycode = 32
+key_label = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_1rjks"]
+events = [SubResource("InputEventKey_s7vct"), SubResource("InputEventKey_pmwf1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_mqpto"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_8enot"]
+events = [SubResource("InputEventKey_mqpto")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_sjwr8"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_3fqht"]
+events = [SubResource("InputEventKey_sjwr8")]
+
+[node name="HotBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 201.0
+offset_right = 201.0
+offset_bottom = 120.0
+script = ExtResource("1_i22dc")
+
+[node name="Bar One" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -120.0
+offset_right = 134.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Blink" type="VBoxContainer" parent="Bar One"]
+layout_mode = 2
+
+[node name="SlotNumber" type="Label" parent="Bar One/Blink"]
+layout_mode = 2
+text = " One"
+horizontal_alignment = 1
+
+[node name="Blinkbutton" type="TextureButton" parent="Bar One/Blink"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+shortcut = SubResource("Shortcut_1rjks")
+texture_normal = ExtResource("5_lkws6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlinkTag" type="Label" parent="Bar One/Blink"]
+layout_mode = 2
+text = "Blink
+5 Mana"
+horizontal_alignment = 1
+
+[node name="Fireball" type="VBoxContainer" parent="Bar One"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="SlotNumber" type="Label" parent="Bar One/Fireball"]
+layout_mode = 2
+text = "Two"
+horizontal_alignment = 1
+
+[node name="FireBall" type="TextureButton" parent="Bar One/Fireball"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+shortcut = SubResource("Shortcut_8enot")
+texture_normal = ExtResource("6_bhxpu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FireballTag" type="Label" parent="Bar One/Fireball"]
+layout_mode = 2
+text = "FireBall
+10 Mana"
+horizontal_alignment = 1
+
+[node name="Familiar" type="VBoxContainer" parent="Bar One"]
+layout_mode = 2
+
+[node name="SlotNumber" type="Label" parent="Bar One/Familiar"]
+layout_mode = 2
+text = "Three"
+horizontal_alignment = 1
+
+[node name="Familiar Button" type="TextureButton" parent="Bar One/Familiar"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+shortcut = SubResource("Shortcut_3fqht")
+texture_normal = ExtResource("5_lkws6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SummonFamiliarTag" type="Label" parent="Bar One/Familiar"]
+layout_mode = 2
+text = "Familiar
+10 Mana"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Bar One/Blink/Blinkbutton" to="." method="blinkpressed"]
+[connection signal="pressed" from="Bar One/Fireball/FireBall" to="." method="fireballpressed"]
+[connection signal="pressed" from="Bar One/Familiar/Familiar Button" to="." method="Familiarpressed"]

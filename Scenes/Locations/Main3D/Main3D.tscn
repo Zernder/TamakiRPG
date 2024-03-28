@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://48bhv7h1hxkt"]
 
 [ext_resource type="Script" path="res://Scenes/Locations/Main3D/Main3D.gd" id="1_aboww"]
-[ext_resource type="MeshLibrary" uid="uid://cuafllhaei68t" path="res://Resources/Blocks.tres" id="2_wdjwo"]
+[ext_resource type="MeshLibrary" uid="uid://cuafllhaei68t" path="res://Resources/Colors/Blocks.tres" id="2_wdjwo"]
 [ext_resource type="Script" path="res://Scenes/Locations/Main3D/GridMap.gd" id="3_jvl76"]
 [ext_resource type="PackedScene" uid="uid://cjx32xsnsrap7" path="res://Scenes/Characters/Tamaki/Tamaki3D/Tamaki3D.tscn" id="3_vcv6u"]
 [ext_resource type="Material" uid="uid://chvjue7phihm" path="res://Resources/Colors/PurpleMateriel.tres" id="4_a2trk"]

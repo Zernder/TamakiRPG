@@ -1,39 +1,45 @@
 extends CharacterBody2D
 class_name Tamaki
 
-@onready var player = $"."
+
 #-------------------------------# ALL VARIABLES #------------------------------------------#
 
-@export var Stats: CharacterStats
+@export var tamastats: CharacterClass
+@onready var tamaki = $"."
+@onready var blueslime = get_tree().current_scene.find_child("BlueSlime")
 
-@onready var HitBox = $"Areas/Tamaki Hitbox"
-var StealthActive: bool = false
-var SprintActive: bool = false
+# Animations
+@onready var animT = $AnimationTree
+@onready var animP = %AnimationPlayer
+
+
 var Swing : bool = false
 var Throw : bool = false
-var Sneaky : bool = false
+var Sneak : bool = false
+var Hit : bool = false
 
 
 #-------------------------------# The Runtimes #-------------------------------------------#
 
 func _ready():
-	Stats.speed = 60
+	tamastats.speed = 60
 	Global.is2D = true
-	Stats.StatCheck()
+	tamastats.statCheck()
 
 func _process(_delta):
-	Stats.location = position
+	tamastats.coordinates = position
 	castbar.value = cast.wait_time - cast.time_left
+	tamastats.LevelUp()
 
 
 func _physics_process(_delta):
 	Movement()
-	SwingKatana()
-	ThrowShuriken()
+	UseWeapons()
 	ExitGame()
 	move_and_slide()
 
 #------------------------------------# Movement #------------------------------------------#
+
 
 func Movement():
 	if Swing:
@@ -49,7 +55,7 @@ func Movement():
 			else:
 				Global.direction.x = 0
 
-			velocity = Global.direction * Stats.speed
+			velocity = Global.direction * tamastats.speed
 			SetWalking(true)
 			Global.LastDirection = Global.direction
 			UpdateBlend()
@@ -57,130 +63,110 @@ func Movement():
 			velocity = Vector2.ZERO
 			SetWalking(false)
 
-#
+
 		## Adjust speed based on sprint and stealth mode
 		#if Input.is_action_pressed("Sprint") and !StealthActive:
 			#SprintActive = true
-			#Stats.Speed = 150
+			#Tama.Speed = 150
 			#Anim.speed_scale = 2
 		#elif !StealthActive:
 			#SprintActive = false
-			#Stats.Speed = 120
+			#Tama.Speed = 120
 			#Anim.speed_scale = 1.0
 			#player.modulate = Color(1, 1, 1, 1)
 			#$CollisionPolygon2D.disabled = false
 
+
 #----------------------------------# Animation Blending #----------------------------------#
 
-@onready var Anim = $AnimationTree
-@onready var AnimPlayer = %AnimationPlayer
 
 func SetWalking(value):
-	Anim["parameters/conditions/Walking"] = value
-	Anim["parameters/conditions/Idle"] = not value
+	animT["parameters/conditions/Walking"] = value
+	animT["parameters/conditions/Idle"] = not value
 
 func setSwing(value = false):
 	Swing = value
-	Anim["parameters/conditions/Swing"] = value
+	animT["parameters/conditions/Swing"] = value
 
 func setThrow(value = false):
 	Throw = value
-	Anim["parameters/conditions/Throw"] = value
+	animT["parameters/conditions/Throw"] = value
 
 func UpdateBlend():
-	Anim["parameters/Idle/blend_position"] = Global.direction
-	Anim["parameters/Walking/blend_position"] = Global.direction
-	Anim["parameters/Katana/blend_position"] = Global.direction
-	Anim["parameters/Shuriken/blend_position"] = Global.direction
+	animT["parameters/Idle/blend_position"] = Global.direction
+	animT["parameters/Walking/blend_position"] = Global.direction
+	animT["parameters/Katana/blend_position"] = Global.direction
+	animT["parameters/Shuriken/blend_position"] = Global.direction
+
 
 #------------------------------------# Combat #--------------------------------------------#
 
-
-const ShurikenScene = preload("res://Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.tscn")
+# Weapons
 const KatanaScene = preload("res://Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn")
-@onready var castbar = $Magic/Castbar
+const ShurikenScene = preload("res://Scenes/Weapons, Tools, and Spells/Weapons/Shuriken.tscn")
+@onready var weaponmarker = %WeaponMarker
+@onready var shurikens = $Weapons/Shurikens
+@onready var castbar = $Weapons/Castbar
+
+# Timers
+@onready var weaponcooldown = $Timers/WeaponCooldown
 @onready var cast = $Timers/Cast
-var Hit = false
-@onready var ActionCooldown: bool = false
+@onready var regeneration = $Timers/Regeneration
+@onready var damaged = $Timers/Damaged
 
-
-func SwingKatana():
-	if Input.is_action_just_pressed("Primary") and ActionCooldown == false:
+func UseWeapons():
+	if Input.is_action_just_pressed("Primary") and Global.ActionCooldown == false:
 		setSwing(true)
-		ActionCooldown = true
-		%WeaponCooldown.start(.5)
+		Global.ActionCooldown = true
+		weaponcooldown.start(.5)
+		await weaponcooldown.timeout
+		Global.ActionCooldown = false
+	# Throw Shuriken
+	elif Input.is_action_pressed("Secondary") and Global.ActionCooldown == false and tamastats.stamina >= 2:
+		setThrow(true)
+		tamastats.stamina -= 2
+		Global.ActionCooldown = true
+		weaponcooldown.start(.2)
+		var Shuriken = ShurikenScene.instantiate()
+		add_child(Shuriken)
+		Shuriken.position = self.position
+		await weaponcooldown.timeout
+		Global.ActionCooldown = false
 
 
-func ThrowShuriken():
-	if Input.is_action_pressed("Secondary"):
-		if ActionCooldown == false and Stats.stamina >= 2:
-			setThrow(true)
-			Stats.stamina -= 2
-			ActionCooldown = true
-			%WeaponCooldown.start(.2)
-			var Shuriken = ShurikenScene.instantiate()
-			Shuriken.rotation = Global.direction.angle()
-			Shuriken.direction = Global.LastDirection
-			Shuriken.global_position = %WeaponMarker.global_position
-			$Weapons/Shurikens.add_child(Shuriken)
-
-func WeaponCooldown():
-	ActionCooldown = false
-
-
-func casting(time = 1.0):
+func CastSpell(time = 1.0):
 	castbar.max_value = time
 	castbar.show()
-	
 	cast.wait_time = time
 	cast.start()
-
-
-func casttimeout():
+	await cast.timeout
 	castbar.hide()
 
-func HitboxEntered(area):
-	if area.is_in_group("BlueSlimeDamageBox"):
-		if Hit == false:
-			Hit = true
-			AnimPlayer.play("Damaged")
-			$Timers/Damaged.start(2)
-			Stats.health -= (area.get_parent().get_parent().Stats.meleeDamage - Stats.meleeDefense)
 
-	if Stats.health <= 0:
+func HitboxEntered(area):
+	if area.is_in_group("BlueSlimeDamageBox") and !Hit:
+			Hit = true
+			animP.play("Damaged")
+			damaged.start(1)
+			tamastats.health -= (area.get_parent().get_parent().slimestats.meleeDamage - tamastats.meleeDefense)
+			await damaged.timeout
+			Hit = false
+	if tamastats.health <= 0:
 		get_tree().quit()
 
-func DamageTimeout():
-	Hit = false
-	HealthRegen()
-
-func HealthRegen():
-	if Stats.health < Stats.maxHealth:
-		Stats.health += Stats.healthRegeneration
-		if Stats.health > Stats.maxHealth:
-			Stats.health = Stats.maxHealth
-
-func StaminaRegen():
-	if Stats.stamina < Stats.maxStamina:
-		Stats.stamina += Stats.staminaRegeneration
-		if Stats.stamina > Stats.maxStamina:
-			Stats.stamina = Stats.maxStamina
-
-func ManaRegen():
-	if Stats.mana < Stats.maxMana:
-		Stats.mana += Stats.manaRegeneration
-		if Stats.mana > Stats.maxMana:
-			Stats.mana = Stats.maxMana
 
 func RegenTimer():
-	HealthRegen()
-	StaminaRegen()
-	ManaRegen()
+	tamastats.StartRegeneration()
+
+func Tamalevelup():
+	tamastats.LevelUp()
+	tamastats.level += 1
+	tamastats.Dexterity += 2
+	tamastats.statpoints += 3
+	tamastats.statCheck()
 
 
 func ExitGame():
-	if Input.is_action_just_pressed("Exit"):
+	if Input.is_action_just_pressed("Pause Menu"):
 		get_tree().quit()
-
-
 

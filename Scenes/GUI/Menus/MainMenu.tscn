@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/GUI/Menus/MainMenu.gd" id="1_bnf2a"]
 [ext_resource type="Texture2D" uid="uid://caeultv7bepry" path="res://Assets/Icons and Background/MenuBackground.png" id="1_ut7x8"]
-[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://Scenes/GUI/Main2D.tscn" id="2_rrus1"]
+[ext_resource type="PackedScene" uid="uid://2kdn131l8h1" path="res://Scenes/Locations/Main2D/Main2D.tscn" id="2_rrus1"]
 [ext_resource type="PackedScene" uid="uid://ciyug6i7bkol4" path="res://Scenes/Locations/TutorialArea.tscn" id="3_4pph3"]
 [ext_resource type="SpriteFrames" uid="uid://c0rbe7lty6le8" path="res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.tres" id="5_un0dn"]
 [ext_resource type="Texture2D" uid="uid://b0slo0xn4uymj" path="res://Assets/Tilesets/CharacterScreen.png" id="6_0bm5r"]

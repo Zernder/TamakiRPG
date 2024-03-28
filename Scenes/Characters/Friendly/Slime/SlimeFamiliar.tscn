@@ -1,0 +1,425 @@
+[gd_scene load_steps=20 format=3 uid="uid://chkannv5tdpjk"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Friendly/Slime/SlimeFamiliar.gd" id="1_jp2b5"]
+[ext_resource type="Texture2D" uid="uid://duf6qh1k575vk" path="res://Assets/Characters/Blue Slime/Blue Slime SpriteSheet.png" id="2_orfku"]
+[ext_resource type="Script" path="res://MasterClasses/EnemyClass.gd" id="2_wkrkb"]
+
+[sub_resource type="Resource" id="Resource_c4fol"]
+script = ExtResource("2_wkrkb")
+Name = "Slime Familiar"
+classtype = "Familiar"
+level = 0.0
+Strength = 5.0
+Dexterity = 5.0
+Constitution = 5.0
+Intelligence = 5.0
+Wisdom = 5.0
+Charisma = 5.0
+currentxp = 0.0
+requiredxp = 0.0
+overallexp = 0.0
+statpoints = 0.0
+
+[sub_resource type="Animation" id="Animation_rdrfg"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jns43"]
+resource_name = "castdown"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShootMarker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 15)]
+}
+
+[sub_resource type="Animation" id="Animation_nht4d"]
+resource_name = "castleft"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShootMarker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yqd8m"]
+resource_name = "death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31, 32]
+}
+
+[sub_resource type="Animation" id="Animation_xl843"]
+resource_name = "hit"
+length = 0.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_te23l"]
+resource_name = "idleleft"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ShootMarker:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uhc0j"]
+resource_name = "idleright"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ShootMarker:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_im11b"]
+resource_name = "sprint"
+length = 1.3
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19, 20]
+}
+
+[sub_resource type="Animation" id="Animation_1duv0"]
+resource_name = "walkleft"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShootMarker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c1hgn"]
+resource_name = "walkright"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShootMarker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17n6p"]
+_data = {
+"RESET": SubResource("Animation_rdrfg"),
+"castdown": SubResource("Animation_jns43"),
+"castleft": SubResource("Animation_nht4d"),
+"death": SubResource("Animation_yqd8m"),
+"hit": SubResource("Animation_xl843"),
+"idleleft": SubResource("Animation_te23l"),
+"idleright": SubResource("Animation_uhc0j"),
+"sprint": SubResource("Animation_im11b"),
+"walkleft": SubResource("Animation_1duv0"),
+"walkright": SubResource("Animation_c1hgn")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4mub"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b38ki"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1ldt"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjj8n"]
+radius = 78.0
+
+[node name="SlimeFamiliar" type="CharacterBody2D" groups=["SummonedSlime"]]
+z_index = 2
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 143
+wall_min_slide_angle = 0.0
+script = ExtResource("1_jp2b5")
+slimestats = SubResource("Resource_c4fol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("2_orfku")
+flip_h = true
+hframes = 7
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_17n6p")
+}
+
+[node name="Collisionbubble" type="CollisionShape2D" parent="." groups=["Slime"]]
+light_mask = 3
+visibility_layer = 3
+shape = SubResource("CircleShape2D_s4mub")
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="StateMachineTimeout" type="Timer" parent="Timers"]
+wait_time = 0.5
+autostart = true
+
+[node name="RegenTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Healthbar" type="ProgressBar" parent="UI"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = -10.0
+offset_top = -14.0
+offset_right = 10.0
+offset_bottom = -10.0
+max_value = 6.0
+value = 6.0
+show_percentage = false
+
+[node name="Name" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.75
+anchor_right = 0.992671
+anchor_bottom = -1.02181
+offset_left = -10.0
+offset_top = -33.0
+offset_right = 71.0
+offset_bottom = 16.0
+scale = Vector2(0.245104, 0.304342)
+text = "Level 1
+Blue Slime
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Blue Slime Hitbox" type="Area2D" parent="Areas" groups=["BlueSlimeHitbox"]]
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Blue Slime Hitbox"]
+shape = SubResource("CircleShape2D_b38ki")
+
+[node name="DamageBox" type="Area2D" parent="Areas" groups=["BlueSlimeDamageBox"]]
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DamageBox"]
+shape = SubResource("CircleShape2D_j1ldt")
+
+[node name="DetectionBox" type="Area2D" parent="Areas" groups=["bslimedetection"]]
+collision_layer = 64
+collision_mask = 519
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/DetectionBox"]
+shape = SubResource("CircleShape2D_vjj8n")
+
+[node name="ShootMarker" type="Marker2D" parent="."]
+position = Vector2(30, 0)
+
+[node name="Spells" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="DeathTimerTimeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="HitTimeout"]
+[connection signal="timeout" from="Timers/StateMachineTimeout" to="." method="StateReset"]
+[connection signal="timeout" from="Timers/RegenTimer" to="." method="RegenTimer"]
+[connection signal="area_entered" from="Areas/Blue Slime Hitbox" to="." method="HitboxEntered"]
+[connection signal="area_entered" from="Areas/DamageBox" to="." method="DamageBoxEntered"]
+[connection signal="body_entered" from="Areas/DetectionBox" to="." method="DetectionBoxEntered"]
+[connection signal="body_exited" from="Areas/DetectionBox" to="." method="DetectionBoxExited"]

@@ -1,34 +1,31 @@
-extends Area2D
+extends ThrownWeapons
 
 @onready var player = get_tree().current_scene.find_child("Tamaki")
-@onready var weapon = $"."
-var speed = 450
-var rotation_speed = 750  # Adjust the rotation speed as needed
+@onready var ShurikenTimeout = $ShurikenTimeout
+
 
 func _ready():
-	$ShurikenKiller.start()
+	ShurikenTimeout.start(0.6)
 	set_as_top_level(true)
 
-var direction = Vector2.ZERO
+func _physics_process(delta):
+	ShurikenOne(delta)
 
-func _process(delta):
+func ShurikenOne(delta):
+	rotation = Global.direction.angle()
+	direction = Global.LastDirection
 	position += direction.normalized() * speed * delta
-	rotate(rotation_speed * delta)  # Rotate the shuriken by rotation_speed degrees per second
-
-func set_direction(new_direction: Vector2) -> void:
-	direction = new_direction.normalized()
+	rotate(rotationSpeed * delta) 
 
 
-func LeftScreen():
+func DestroyShuriken(body):
 	queue_free()
 
-func EnteredEnemy(area):
+
+func EnemyHit(area):
 	if area.is_in_group("BlueSlimeHitbox"):
 		queue_free()
 
-func TilesetEntered(_body):
-	queue_free()
 
-
-func ShurikenKiller():
+func DestroyShurikenV():
 	queue_free()

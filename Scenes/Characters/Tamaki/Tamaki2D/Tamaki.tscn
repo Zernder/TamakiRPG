@@ -1,7 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://b7d0hpqe25dok"]
+[gd_scene load_steps=62 format=3 uid="uid://b7d0hpqe25dok"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Tamaki/Tamaki2D/Tamaki.gd" id="1_6bby0"]
-[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres" id="2_dnf7t"]
+[ext_resource type="Resource" uid="uid://4olujvpwjpxo" path="res://Scenes/Characters/Tamaki/TamaStats.tres" id="2_262bs"]
 [ext_resource type="Texture2D" uid="uid://cyxy07xpdoigs" path="res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.png" id="3_thsv2"]
 [ext_resource type="PackedScene" uid="uid://b67rcvhl30bxe" path="res://Scenes/Weapons, Tools, and Spells/Weapons/Katana.tscn" id="4_ixbi6"]
 [ext_resource type="Animation" uid="uid://bkhm4tu6uts41" path="res://Assets/Characters/Tamaki/Tamaki2D/Status/Damaged.res" id="5_hqaqf"]
@@ -10,7 +10,15 @@
 [ext_resource type="AnimationLibrary" uid="uid://iv586r1pdo85" path="res://Assets/Characters/Tamaki/Tamaki2D/Shuriken/Tamaki Shuriken Animations.res" id="8_7l5tw"]
 [ext_resource type="AnimationLibrary" uid="uid://wx8vlh5gslme" path="res://Assets/Characters/Tamaki/Tamaki2D/Stealth/Stealth.res" id="9_sxt66"]
 [ext_resource type="AnimationLibrary" uid="uid://bptwvxhu2e1gl" path="res://Assets/Characters/Tamaki/Tamaki2D/Walk/Tamaki Walking Animations.res" id="10_2xtj4"]
-[ext_resource type="PackedScene" uid="uid://c1grc52gaavag" path="res://Scenes/GUI/UI.tscn" id="11_2nylu"]
+[ext_resource type="Script" path="res://Scenes/GUI/UI.gd" id="11_q16l3"]
+[ext_resource type="Script" path="res://Scenes/GUI/Buttons/HotBar.gd" id="12_sa5fx"]
+[ext_resource type="Texture2D" uid="uid://cvdruxx1onap4" path="res://Assets/Items/Bone.png" id="17_f6xao"]
+[ext_resource type="Texture2D" uid="uid://cx4be1qko1oo8" path="res://Assets/Items/Branch.png" id="18_5k20v"]
+[ext_resource type="PackedScene" uid="uid://dfhphffc1sml0" path="res://Scenes/GUI/CharacterSheet.tscn" id="19_tfv02"]
+[ext_resource type="Script" path="res://Scenes/GUI/SubViewport.gd" id="20_3j1ig"]
+[ext_resource type="PackedScene" uid="uid://ciyug6i7bkol4" path="res://Scenes/Locations/TutorialArea.tscn" id="21_g8y4q"]
+[ext_resource type="SpriteFrames" uid="uid://dcfrlgc7sr4h3" path="res://Assets/Characters/Tamaki/Tamaki2D/TamakiOld.tres" id="22_hsl8u"]
+[ext_resource type="Script" path="res://Scenes/GUI/minimapTama.gd" id="23_ag8cs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2vpk7"]
 height = 36.0
@@ -314,6 +322,37 @@ states/Walking/position = Vector2(723, 132)
 transitions = ["Idle", "Katana", SubResource("AnimationNodeStateMachineTransition_6yxvs"), "Katana", "Idle", SubResource("AnimationNodeStateMachineTransition_sxoad"), "Idle", "Shuriken", SubResource("AnimationNodeStateMachineTransition_wvl05"), "Shuriken", "Idle", SubResource("AnimationNodeStateMachineTransition_sjrdr"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_c0bpd"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_8d0i1"), "Shuriken", "Walking", SubResource("AnimationNodeStateMachineTransition_1hu2t"), "Katana", "Walking", SubResource("AnimationNodeStateMachineTransition_va65i"), "Walking", "Katana", SubResource("AnimationNodeStateMachineTransition_4vbpn"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_q3gqy"), "Walking", "Shuriken", SubResource("AnimationNodeStateMachineTransition_03px5")]
 graph_offset = Vector2(-16, -83)
 
+[sub_resource type="InputEventKey" id="InputEventKey_s7vct"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="InputEventKey" id="InputEventKey_pmwf1"]
+device = -1
+keycode = 32
+physical_keycode = 32
+key_label = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_1rjks"]
+events = [SubResource("InputEventKey_s7vct"), SubResource("InputEventKey_pmwf1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_mqpto"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_8enot"]
+events = [SubResource("InputEventKey_mqpto")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_sjwr8"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_3fqht"]
+events = [SubResource("InputEventKey_sjwr8")]
+
 [node name="Tamaki" type="CharacterBody2D" groups=["Tamaki"]]
 z_index = 2
 y_sort_enabled = true
@@ -322,13 +361,13 @@ scale = Vector2(0.5, 0.5)
 collision_mask = 15
 slide_on_ceiling = false
 script = ExtResource("1_6bby0")
-Stats = ExtResource("2_dnf7t")
+tamastats = ExtResource("2_262bs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2vpk7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(5, 5)
 limit_left = 7
 limit_top = 23
 limit_right = 1152
@@ -354,9 +393,7 @@ monitorable = false
 
 [node name="Shurikens" type="Node2D" parent="Weapons"]
 
-[node name="Magic" type="Node2D" parent="."]
-
-[node name="Castbar" type="ProgressBar" parent="Magic"]
+[node name="Castbar" type="ProgressBar" parent="Weapons"]
 visible = false
 modulate = Color(0.968627, 1, 0, 1)
 offset_left = -24.0
@@ -365,22 +402,20 @@ offset_right = 26.0
 offset_bottom = -7.0
 scale = Vector2(1.02905, 0.412328)
 
-[node name="Timers" type="Node2D" parent="."]
+[node name="Timers" type="Node" parent="."]
 
 [node name="WeaponCooldown" type="Timer" parent="Timers"]
-unique_name_in_owner = true
 wait_time = 0.5
 one_shot = true
 
+[node name="Cast" type="Timer" parent="Timers"]
+
 [node name="Regeneration" type="Timer" parent="Timers"]
-unique_name_in_owner = true
-wait_time = 8.0
+wait_time = 5.0
 autostart = true
 
 [node name="Damaged" type="Timer" parent="Timers"]
 wait_time = 5.0
-
-[node name="Cast" type="Timer" parent="Timers"]
 
 [node name="Areas" type="Node2D" parent="."]
 
@@ -422,30 +457,297 @@ parameters/Katana/blend_position = Vector2(0, 0)
 parameters/Shuriken/blend_position = Vector2(0, 0)
 parameters/Walking/blend_position = Vector2(0, 0)
 
-[node name="UI" parent="." instance=ExtResource("11_2nylu")]
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("11_q16l3")
 
-[node name="HotBar" parent="UI" index="1" node_paths=PackedStringArray("player")]
-player = NodePath("../..")
+[node name="Bars" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="SubViewportContainer" parent="UI" index="4"]
-stretch = false
+[node name="Healthbar" type="ProgressBar" parent="UI/Bars"]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00868056
+anchor_top = 0.848765
+anchor_right = 0.138889
+anchor_bottom = 0.895062
+offset_left = -1.0
+offset_top = -10.0
+offset_right = -1.0
+offset_bottom = -10.0
+grow_horizontal = 2
+max_value = 20.0
+value = 20.0
+show_percentage = false
 
-[node name="SubViewport" parent="UI/SubViewportContainer" index="0" node_paths=PackedStringArray("player")]
+[node name="HealthbarLabel" type="Label" parent="UI/Bars/Healthbar"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0112847
+anchor_top = 0.83179
+anchor_right = 0.133681
+anchor_bottom = 0.878087
+offset_left = -2.99996
+offset_right = 5.9996
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 15
+text = "Health"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaminaBar" type="ProgressBar" parent="UI/Bars"]
+self_modulate = Color(0, 0.670588, 0, 1)
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00868056
+anchor_top = 0.904321
+anchor_right = 0.138889
+anchor_bottom = 0.950617
+offset_left = -1.0
+offset_top = -10.0001
+offset_right = -1.0
+offset_bottom = -10.0001
+grow_horizontal = 2
+value = 100.0
+show_percentage = false
+
+[node name="StaminaText" type="Label" parent="UI/Bars/StaminaBar"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0112847
+anchor_top = 0.888889
+anchor_right = 0.141493
+anchor_bottom = 0.935185
+offset_left = -2.99996
+offset_right = -2.99997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Stamina"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="XPBar" type="ProgressBar" parent="UI/Bars"]
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0130208
+anchor_top = 0.0231481
+anchor_right = 0.273438
+anchor_bottom = 0.0694444
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="XPLabel" type="Label" parent="UI/Bars/XPBar"]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.133333
+anchor_right = 0.99
+anchor_bottom = 0.866667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "XP: 10000 Needed: 10000"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelLabel" type="Label" parent="UI/Bars/XPBar"]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00333333
+anchor_top = 0.766667
+anchor_right = 0.303333
+anchor_bottom = 2.16667
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Level: "
+metadata/_edit_use_anchors_ = true
+
+[node name="ManaBar" type="ProgressBar" parent="UI/Bars"]
+self_modulate = Color(0, 0, 1, 1)
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.168
+anchor_right = 0.169
+anchor_bottom = 0.248
+offset_left = 7.848
+offset_top = 501.136
+offset_right = -35.688
+offset_bottom = 479.296
+value = 100.0
+show_percentage = false
+
+[node name="ManaText" type="Label" parent="UI/Bars/ManaBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0133333
+anchor_top = 0.0666667
+anchor_right = 1.01333
+anchor_bottom = 0.866665
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
+theme_override_font_sizes/font_size = 15
+text = "Mana"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HotBar" type="Control" parent="UI" node_paths=PackedStringArray("weaponmarker")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 201.0
+offset_right = 201.0
+offset_bottom = 120.0
+script = ExtResource("12_sa5fx")
+weaponmarker = NodePath("../../Weapons/WeaponMarker")
+
+[node name="Bar One" type="HBoxContainer" parent="UI/HotBar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -120.0
+offset_right = 134.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Blink" type="VBoxContainer" parent="UI/HotBar/Bar One"]
+layout_mode = 2
+
+[node name="SlotNumber" type="Label" parent="UI/HotBar/Bar One/Blink"]
+layout_mode = 2
+text = " One"
+horizontal_alignment = 1
+
+[node name="Blinkbutton" type="TextureButton" parent="UI/HotBar/Bar One/Blink"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+shortcut = SubResource("Shortcut_1rjks")
+texture_normal = ExtResource("17_f6xao")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlinkTag" type="Label" parent="UI/HotBar/Bar One/Blink"]
+layout_mode = 2
+text = "Blink
+5 Mana"
+horizontal_alignment = 1
+
+[node name="Fireball" type="VBoxContainer" parent="UI/HotBar/Bar One"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="SlotNumber" type="Label" parent="UI/HotBar/Bar One/Fireball"]
+layout_mode = 2
+text = "Two"
+horizontal_alignment = 1
+
+[node name="FireBall" type="TextureButton" parent="UI/HotBar/Bar One/Fireball"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+shortcut = SubResource("Shortcut_8enot")
+texture_normal = ExtResource("18_5k20v")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FireballTag" type="Label" parent="UI/HotBar/Bar One/Fireball"]
+layout_mode = 2
+text = "FireBall
+10 Mana"
+horizontal_alignment = 1
+
+[node name="Familiar" type="VBoxContainer" parent="UI/HotBar/Bar One"]
+layout_mode = 2
+
+[node name="SlotNumber" type="Label" parent="UI/HotBar/Bar One/Familiar"]
+layout_mode = 2
+text = "Three"
+horizontal_alignment = 1
+
+[node name="Familiar Button" type="TextureButton" parent="UI/HotBar/Bar One/Familiar"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+shortcut = SubResource("Shortcut_3fqht")
+texture_normal = ExtResource("17_f6xao")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SummonFamiliarTag" type="Label" parent="UI/HotBar/Bar One/Familiar"]
+layout_mode = 2
+text = "Familiar
+10 Mana"
+horizontal_alignment = 1
+
+[node name="Timers" type="Node2D" parent="UI"]
+
+[node name="Timer" type="Timer" parent="UI/Timers"]
+
+[node name="CharacterSheet" parent="UI" instance=ExtResource("19_tfv02")]
+process_mode = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.869792
+anchor_right = 1.0
+anchor_bottom = 0.23
+offset_left = -18.0
+offset_top = 15.0
+offset_right = -18.0
+offset_bottom = 15.96
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer" node_paths=PackedStringArray("player")]
+handle_input_locally = false
+size = Vector2i(149, 150)
+render_target_update_mode = 4
+script = ExtResource("20_3j1ig")
 player = NodePath("../../..")
 
-[node name="Camera2D" parent="UI/SubViewportContainer/SubViewport" index="1"]
+[node name="TutorialArea" parent="UI/SubViewportContainer/SubViewport" instance=ExtResource("21_g8y4q")]
+
+[node name="Camera2D" type="Camera2D" parent="UI/SubViewportContainer/SubViewport"]
 limit_left = 7
 limit_top = 23
 limit_right = 1152
 limit_bottom = 1130
 
-[connection signal="timeout" from="Timers/WeaponCooldown" to="." method="WeaponCooldown"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/SubViewportContainer"]
+position = Vector2(80.9996, 77)
+sprite_frames = ExtResource("22_hsl8u")
+animation = &"idle"
+script = ExtResource("23_ag8cs")
+
 [connection signal="timeout" from="Timers/Regeneration" to="." method="RegenTimer"]
-[connection signal="timeout" from="Timers/Damaged" to="." method="DamageTimeout"]
-[connection signal="timeout" from="Timers/Cast" to="." method="casttimeout"]
 [connection signal="area_entered" from="Areas/Tamaki Hitbox" to="." method="HitboxEntered"]
+[connection signal="pressed" from="UI/HotBar/Bar One/Blink/Blinkbutton" to="UI/HotBar" method="blinkpressed"]
+[connection signal="pressed" from="UI/HotBar/Bar One/Fireball/FireBall" to="UI/HotBar" method="fireballpressed"]
+[connection signal="pressed" from="UI/HotBar/Bar One/Familiar/Familiar Button" to="UI/HotBar" method="Familiarpressed"]
 
 [editable path="Weapons/Katana"]
-[editable path="UI"]
-[editable path="UI/HotBar"]
 [editable path="UI/CharacterSheet"]

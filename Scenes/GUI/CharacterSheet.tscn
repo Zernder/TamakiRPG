@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfhphffc1sml0"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/CharacterSheet.gd" id="1_mnhib"]
-[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Scenes/Characters/Tamaki/Tamaki2D/TamakiStats.tres" id="2_l6fbp"]
+[ext_resource type="Resource" uid="uid://8sdd4l35tq1j" path="res://Scenes/Characters/Tamaki/TamaStats.tres" id="2_l6fbp"]
 [ext_resource type="SpriteFrames" uid="uid://c0rbe7lty6le8" path="res://Assets/Characters/Tamaki/Tamaki2D/Tamaki.tres" id="3_q6uah"]
 
 [node name="CharacterSheet" type="Control"]

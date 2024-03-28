@@ -1,66 +1,47 @@
 extends CanvasLayer
 class_name GUI
 
-@export var TamakiStats: CharacterStats
+const tamastats = preload("res://Scenes/Characters/Tamaki/TamaStats.tres")
 
-@onready var HBar = %Healthbar
-@onready var HBarlabel = %HealthbarLabel
-@onready var StaminaBar = %StaminaBar
-@onready var Staminalabel = %StaminaText
-@onready var LevelLabel = %LevelLabel
-@onready var XPBar = %XPBar
-@onready var XPLabel =%XPLabel
-@onready var manabar = %ManaBar
-@onready var manalabel = %ManaText
+
+# Define GUI elements
+@onready var healthbar = $Bars/Healthbar
+@onready var healthbarlabel = $Bars/Healthbar/HealthbarLabel
+@onready var staminabar = $Bars/StaminaBar
+@onready var staminatext = $Bars/StaminaBar/StaminaText
+@onready var xpbar = $Bars/XPBar
+@onready var xplabel = $Bars/XPBar/XPLabel
+@onready var levellabel = $Bars/XPBar/LevelLabel
+@onready var manabar = $Bars/ManaBar
+@onready var manatext = $Bars/ManaBar/ManaText
 
 
 func _process(_delta):
-	Bars()
-	TamakiStats.LevelUp()
-	XPBar.max_value = TamakiStats.requiredxp
+	updateBars()
+	tamastats.LevelUp()
+	xpbar.max_value = tamastats.requiredxp
 
-func Bars():
-	HBar.value = TamakiStats.health
-	StaminaBar.value = TamakiStats.stamina
-	XPBar.value = TamakiStats.currentxp
-	manabar.value = TamakiStats.mana
-	HBarlabel.text = "Health: " + str(TamakiStats.health) + "/" + str(TamakiStats.maxHealth)
-	Staminalabel.text = "Stamina: " + str(TamakiStats.stamina) + "/" + str(TamakiStats.maxStamina)
-	manalabel.text = "Mana: " + str(TamakiStats.mana) + "/" + str(TamakiStats.maxMana)
-	XPLabel.text = "XP: " + str(TamakiStats.currentxp) + "   Needed: " + str(TamakiStats.requiredxp)
-	HBar.tooltip_text = "Health: " + str(TamakiStats.health) + "/" + str(TamakiStats.maxHealth)
-	StaminaBar.tooltip_text = "Stamina: " + str(TamakiStats.stamina) + "/" + str(TamakiStats.maxStamina)
-	LevelLabel.text = "Level " + str(TamakiStats.level)
-	HBar.max_value = TamakiStats.maxHealth
-	StaminaBar.max_value = TamakiStats.maxStamina
-	manabar.max_value = TamakiStats.maxMana
+func updateBars():
+	# Update health bar
+	healthbar.value = tamastats.health
+	healthbar.max_value = tamastats.maxHealth
+	healthbarlabel.text = "Health: " + str(tamastats.health) + "/" + str(tamastats.maxHealth)
+	healthbar.tooltip_text = "Health: " + str(tamastats.health) + "/" + str(tamastats.maxHealth)
 
+	# Update stamina bar
+	staminabar.value = tamastats.stamina
+	staminabar.max_value = tamastats.maxStamina
+	staminatext.text = "Stamina: " + str(tamastats.stamina) + "/" + str(tamastats.maxStamina)
+	staminabar.tooltip_text = "Stamina: " + str(tamastats.stamina) + "/" + str(tamastats.maxStamina)
 
-func _on_restart_game_pressed():
-	get_tree().reload_current_scene()
+	# Update mana bar
+	manabar.value = tamastats.mana
+	manabar.max_value = tamastats.maxMana
+	manatext.text = "Mana: " + str(tamastats.mana) + "/" + str(tamastats.maxMana)
 
+	# Update level label
+	levellabel.text = "Level " + str(tamastats.level)
 
-func _on_exit_game_pressed():
-	get_tree().quit()
-
-
-
-#var InvSize = 16
-#var itemsload = [
-	#"res://Resources/Shuriken.tres"
-#]
-#
-#func Invready():
-	#for I in InvSize:
-		#var slot := InventorySlot.new()
-		#slot.init(ItemData.Type.Main, Vector2(105, 105))
-		#%Inv.add_child(slot)
-		#
-	#for i in itemsload.size():
-		#var item := InventoryItem.new()
-		#item.init(load(itemsload[i]))
-		#%Inv.get_child(i).add_child(item)
-#
-#func InventoryProcess():
-	#if Input.is_action_just_pressed("Inventory"):
-		#$Inventory.visible = !$Inventory.visible
+	# Update XP bar and label
+	xpbar.value = tamastats.currentxp
+	xplabel.text = "XP: " + str(tamastats.currentxp) + "   Needed: " + str(tamastats.requiredxp)
